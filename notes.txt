@@ -1,0 +1,33 @@
+create and start virtual env:
+
+py -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate
+pip install -r requirements.txt
+
+---
+REQUIREMENTS:
+download pytorch based on the driver
+
+- check driver 
+nvidia-smi -> 
+GPU: RTX 3080
+Driver: 522.06
+CUDA shown by driver: 11.8
+
+- install the compatible pytorch
+pip install torch==2.4.1+cu118 torchvision==0.19.1+cu118 torchaudio==2.4.1+cu118 `
+  --index-url https://download.pytorch.org/whl/cu118
+
+- scikitlearn 
+pip install opencv-python albumentations==1.4.8 scikit-learn timm tqdm
+
+MISMATCH:
+pip show albumentations
+pip show albucore
+
+---
+To generate count summary modify and run: 
+python analyze_metadata.py
+
+---
