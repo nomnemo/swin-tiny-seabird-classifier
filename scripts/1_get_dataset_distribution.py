@@ -11,16 +11,13 @@ coverage by minimum count thresholds, and tern species summary.
 It outputs CSV files and plots to visualize the dataset distribution.
 """
 
-# === CONFIG ===
-# metadata_in = r"C:/Users/Audub/saahil_classification/data/metadata_full.json"
-metadata_in = r"C:/Users/Audub/Classification/results/metadata_balanced_t100.json"
-outdir = Path(".")   # current working directory
+data = r"data/metadata_balanced_t100.json"
+outdir = Path("data_exploration")
 
-# === LOAD ===
-with open(metadata_in, "r", encoding="utf-8") as f:
+with open(data, "r", encoding="utf-8") as f:
     meta = json.load(f)
 
-print(f"[info] loaded {len(meta):,} crop records from {metadata_in}")
+print(f"[info] loaded {len(meta):,} crop records from {data}")
 
 # === COUNT PER SPECIES ===
 by_species = collections.Counter()
