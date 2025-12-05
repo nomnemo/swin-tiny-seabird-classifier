@@ -84,10 +84,19 @@ class BirdDataset(Dataset):
 
         # Resolve to an absolute path: use as-is if absolute, otherwise
         # join to the configured image root directory.
+        #
+        # Note: some metadata rows already store paths like "crops/CLASS/file.jpg",
+        # while IMAGE_ROOT is "data/crops". To avoid "data/crops/crops/...",
+        # strip a leading "crops" component before joining.
         if p0.is_absolute():
             full_path = p0
         else:
-            full_path = (self.img_root / p0).resolve()
+            parts = p0.parts
+            if len(parts) > 0 and parts[0].lower() == "crops":
+                relative = Path(*parts[1:])
+            else:
+                relative = p0
+            full_path = (self.img_root / relative).resolve()
 
         # Read the image from disk in BGR format.
         img = cv2.imread(full_path.as_posix())
