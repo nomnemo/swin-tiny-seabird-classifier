@@ -114,7 +114,8 @@ def plot_two_cms(y1, p1, y2, p2, classes, path, titles=("Validation", "Test")):
     cm1_pct = _row_normalize(cm1)
     cm2_pct = _row_normalize(cm2)
 
-    fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+    # Use constrained_layout so the colorbar and subplots do not overlap.
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6), constrained_layout=True)
     vmin, vmax = 0.0, 100.0
     im = None
     for ax, cm_pct, title in zip(axes, (cm1_pct, cm2_pct), titles):
@@ -134,9 +135,9 @@ def plot_two_cms(y1, p1, y2, p2, classes, path, titles=("Validation", "Test")):
                 color = "white" if val > thresh else "black"
                 ax.text(j, i, text, ha="center", va="center", color=color, fontsize=6)
 
-    cbar = fig.colorbar(im, ax=axes.ravel().tolist(), fraction=0.046, pad=0.04)
+    # Place a single colorbar to the right of both subplots.
+    cbar = fig.colorbar(im, ax=axes, location="right", fraction=0.046, pad=0.02)
     cbar.set_label("Percentage (%)")
-    fig.tight_layout()
     fig.savefig(path, dpi=180)
     plt.close(fig)
 
