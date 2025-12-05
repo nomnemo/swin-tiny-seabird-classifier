@@ -24,6 +24,15 @@ DEFAULT_TRAIN_CSV = DEFAULT_JSON.parent / "split_train.csv"
 DEFAULT_VAL_CSV = DEFAULT_JSON.parent / "split_val.csv"
 DEFAULT_TEST_CSV = DEFAULT_JSON.parent / "split_test.csv"
 
+# Default split ratios (must sum to 1.0)
+DEFAULT_TRAIN_RATIO: float = 0.8
+DEFAULT_VAL_RATIO: float = 0.1
+DEFAULT_TEST_RATIO: float = 0.1
+
+# Default random seeds for GroupShuffleSplit
+DEFAULT_RANDOM_STATE_1: int = 42
+DEFAULT_RANDOM_STATE_2: int = 123
+
 def _get_parent_from_source(source_path_name: str) -> str:
     """
     Given a source image path like 'images\102741 - 00001.jpg',
@@ -92,11 +101,11 @@ def _print_split_summary(info: Dict) -> None:
 
 def create_grouped_splits(
     parent_images_per_record: np.ndarray,
-    train_ratio: float = 0.8,
-    val_ratio: float = 0.1,
-    test_ratio: float = 0.1,
-    random_state_1: int = 42,
-    random_state_2: int = 123,
+    train_ratio: float = DEFAULT_TRAIN_RATIO,
+    val_ratio: float = DEFAULT_VAL_RATIO,
+    test_ratio: float = DEFAULT_TEST_RATIO,
+    random_state_1: int = DEFAULT_RANDOM_STATE_1,
+    random_state_2: int = DEFAULT_RANDOM_STATE_2,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
     Create train/val/test splits with no data leakage between groups.
@@ -144,11 +153,11 @@ def create_grouped_splits(
 
 def get_data_splits(
     json_path: Path = DEFAULT_JSON,
-    train_ratio: float = 0.8,
-    val_ratio: float = 0.1,
-    test_ratio: float = 0.1,
-    random_state_1: int = 42,
-    random_state_2: int = 123,
+    train_ratio: float = DEFAULT_TRAIN_RATIO,
+    val_ratio: float = DEFAULT_VAL_RATIO,
+    test_ratio: float = DEFAULT_TEST_RATIO,
+    random_state_1: int = DEFAULT_RANDOM_STATE_1,
+    random_state_2: int = DEFAULT_RANDOM_STATE_2,
 ) -> Tuple[List[Dict], List[Dict], List[Dict], Dict]:
     """
     Load metadata from JSON and create grouped train/val/test splits.
