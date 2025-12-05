@@ -13,19 +13,20 @@ from torch.amp import GradScaler, autocast
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from sklearn.metrics import (classification_report, confusion_matrix, f1_score,
                              average_precision_score)
-from scripts.DataLoader import build_loaders
+from scripts.DataLoader import set_up_data_loaders
 
 # ===== config =====
 MODEL_NAME   = "swin_tiny_patch4_window7_224"
-EPOCHS       = 10 # 10,20,30
-LR           = 3e-4 # 0.0003, 0.0001, 0.00005
-WEIGHT_DECAY = 0.01 # 0.01, 0.03
-ACCUM_STEPS  = 1 # (gradient accumulation steps) 
-DEVICE       = "cuda" if torch.cuda.is_available() else "cpu"
-AMP          = True
+EPOCHS       = 10 
+LR           = 3e-4
+WEIGHT_DECAY = 0.01
+ACCUM_STEPS  = 1 
+DEVICE       = "cuda" if torch.cuda.is_available() else "cpu" # what is this doing?
+
+AMP          = True # what is thos
 CKPT_PATH    = "best_swin.pt"
-MAX_PER_CLASS = 100 # tried 50, 100, 200, 500.
-OUT_DIR      = Path("runs_swin")  # logs/artifacts live here
+MAX_PER_CLASS = 100 
+OUT_DIR      = Path("runs_swin2")  
 OUT_DIR.mkdir(exist_ok=True)
 # ==================
 
@@ -62,9 +63,6 @@ def make_run_dir_name(model_name: str, max_per_class: int, epochs: int, lr: floa
     
     run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}"
     return run_name
-
-def fmt(s: float) -> str:
-    return str(timedelta(seconds=s))
 
 def plot_curves(history, path):
     fig = plt.figure(figsize=(7.5,4.5))
@@ -163,9 +161,7 @@ def compute_map_ovr(y_true, probs, num_classes):
 
 def evaluate_full(model, dl, classes, header, save_prefix):
     """Full report + mAP + CM + saves predictions/probs."""
-    t0 = time.perf_counter()
     y_true, y_pred, probs = eval_collect(model, dl, len(classes))
-    t_forward = time.perf_counter() - t0
 
     labels = list(range(len(classes)))
     print(f"\n{header}:")
@@ -198,66 +194,73 @@ def evaluate_full(model, dl, classes, header, save_prefix):
 
 def main():
     global OUT_DIR
-    script_start = time.perf_counter()
 
     # ----- create run-specific output directory -----
     run_name = make_run_dir_name(MODEL_NAME, MAX_PER_CLASS, EPOCHS, LR, WEIGHT_DECAY, ACCUM_STEPS)
     run_dir = OUT_DIR / run_name
     run_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Update global OUT_DIR to this run's subdirectory so all outputs go there
-    OUT_DIR = run_dir
+    OUT_DIR = run_dir # Update global OUT_DIR to this run's subdirectory so all outputs go there
     print(f"[info] run directory: {OUT_DIR}")
 
-    # ----- loaders -----
-    t0 = time.perf_counter()
 
-    dl_train, dl_val, dl_test, meta = build_loaders(max_per_class=MAX_PER_CLASS)
-    t_build = time.perf_counter() - t0
-
+    # ----- set up data loaders -----
+    dl_train, dl_val, dl_test, meta = set_up_data_loaders(max_per_class=MAX_PER_CLASS)
     classes = meta["classes"]; num_classes = len(classes)
-
-    # Print out the config used for this run
-    print(f"[info] model: {MODEL_NAME}")
-    print(f"[info] epochs: {EPOCHS}, lr: {LR}, weight_decay: {WEIGHT_DECAY}, accum_steps: {ACCUM_STEPS}")
-
-    # split composition
+    # spit out validation and test split distributions
     comp_val  = split_composition(dl_val.dataset,  classes)
     comp_test = split_composition(dl_test.dataset, classes)
     with open(OUT_DIR / "split_composition.json", "w", encoding="utf-8") as f:
         json.dump({"val": comp_val, "test": comp_test}, f, indent=2)
     print("[info] saved split_composition.json")
-
+    
+    
     # ----- model / opt -----
-    t1 = time.perf_counter()
     model = timm.create_model(MODEL_NAME, pretrained=True, num_classes=num_classes).to(DEVICE)
     opt   = AdamW(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
     sched = CosineAnnealingLR(opt, T_max=EPOCHS)
     scaler= GradScaler(device="cuda", enabled=AMP)
-    t_model = time.perf_counter() - t1
+    # Print out the model config used for this run
+    print(f"[info] model: {MODEL_NAME}")
+    print(f"[info] epochs: {EPOCHS}, lr: {LR}, weight_decay: {WEIGHT_DECAY}, accum_steps: {ACCUM_STEPS}")
 
     # training logs
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
     best_val = 0.0
 
-    # ----- training -----
+    # ----- training loop -----
     for ep in range(1, EPOCHS+1):
-        t_ep = time.perf_counter()
-        model.train()
+        # train pass
+        
+        # put model in training mode
+        model.train() 
+        
+        # set up running metrics
         running_loss = running_correct = running_count = 0
 
+        # clear gradients at start of epoch to avoid accumulation from previous epoch ? 
         opt.zero_grad(set_to_none=True)
+        
+        # iterate over training batches
         for step, (xb, yb) in enumerate(dl_train, start=1):
+            # move batch to device
             xb, yb = xb.to(DEVICE, non_blocking=True), yb.to(DEVICE, non_blocking=True)
+            
+            # forward pass with mixed precision
             with autocast(device_type="cuda", enabled=AMP):
-                logits = model(xb)
+                # compute logits and loss
+                # logits is (batch_size, num_classes) tensor of raw class scores after model forward pass
+                logits = model(xb) 
+                
+                # use cross-entropy loss for multi-class classification
                 loss   = nn.functional.cross_entropy(logits, yb)
 
+            # backward pass with gradient scaling for AMP
             scaler.scale(loss / ACCUM_STEPS).backward()
             if step % ACCUM_STEPS == 0:
                 scaler.step(opt); scaler.update()
                 opt.zero_grad(set_to_none=True)
 
+            # update running metrics
             with torch.no_grad():
                 pred = logits.argmax(1)
                 running_correct += (pred == yb).sum().item()
@@ -268,7 +271,7 @@ def main():
         train_acc  = running_correct / max(1, running_count)
         train_loss = running_loss  / max(1, running_count)
 
-        # quick val
+        # validation pass
         t_val = time.perf_counter()
         model.eval()
         v_loss = v_correct = v_count = 0
@@ -316,7 +319,6 @@ def main():
     print("[info] saved curves.png, metrics.csv, run_config.json")
 
     # ----- final evaluation -----
-    t_load = time.perf_counter()
     ckpt = torch.load(CKPT_PATH, map_location=DEVICE)
     model.load_state_dict(ckpt["model"])
 
@@ -329,10 +331,6 @@ def main():
     with open(OUT_DIR / "summary.json", "w", encoding="utf-8") as f:
         json.dump({"val": val_summary, "test": test_summary}, f, indent=2)
     print("[info] saved cm_val.png, cm_test.png, val_test_cms.png, *_ap_per_class.json, summary.json")
-
-    # ----- total time -----
-    total_dt = time.perf_counter() - script_start
-    print(f"[time] TOTAL script wall time: {fmt(total_dt)}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train Swin with configurable hyperparameters")
