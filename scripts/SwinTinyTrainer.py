@@ -34,9 +34,8 @@ OUT_DIR.mkdir(exist_ok=True)
 # Optional log file path; set inside main() once the run directory is known.
 LOG_PATH: Optional[Path] = None
 
-# Learning rate warmup and early stopping
+# Learning rate warmup
 WARMUP_EPOCHS = 2
-EARLY_STOP_PATIENCE = 5
 # ==================
 
 
@@ -263,7 +262,6 @@ def main():
     # training logs
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
     best_metric = float("-inf")  # best validation macro-F1 so far
-    patience_counter = 0
 
     # ----- training loop -----
     for ep in range(1, EPOCHS+1):
@@ -366,20 +364,11 @@ def main():
             f"val_time {t_ep_val:.1f}s | ep_time {ep_dt:.1f}s"
         )
 
-        # ----- early stopping on validation macro-F1 -----
+        # ----- track best model by validation macro-F1 -----
         if val_macro_f1 > best_metric:
             best_metric = val_macro_f1
-            patience_counter = 0
             torch.save({"model": model.state_dict(), "classes": classes, "name": MODEL_NAME}, CKPT_PATH)
             log(f"[info] new best val macro-F1 {best_metric:.3f} at epoch {ep:02d}")
-        else:
-            patience_counter += 1
-            if patience_counter >= EARLY_STOP_PATIENCE:
-                log(
-                    f"[info] early stopping triggered at epoch {ep:02d} "
-                    f"(best val macro-F1 {best_metric:.3f})"
-                )
-                break
 
     # save curves & csv
     plot_curves(history, OUT_DIR / "curves.png")
