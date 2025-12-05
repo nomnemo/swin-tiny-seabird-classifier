@@ -109,7 +109,8 @@ def plot_curves(history, path):
     ax_acc.legend()
 
     fig.tight_layout()
-    fig.savefig(path, dpi=180)
+    # Save as high-resolution PDF/bitmap depending on extension of `path`.
+    fig.savefig(path, dpi=300)
     plt.close(fig)
 
 def plot_two_cms(y1, p1, y2, p2, classes, path, titles=("Validation", "Test")):
@@ -157,7 +158,7 @@ def plot_two_cms(y1, p1, y2, p2, classes, path, titles=("Validation", "Test")):
     # Place a single colorbar to the right of both subplots.
     cbar = fig.colorbar(im, ax=axes, location="right", fraction=0.046, pad=0.02)
     cbar.set_label("Percentage (%)")
-    fig.savefig(path, dpi=180)
+    fig.savefig(path, dpi=300)
     plt.close(fig)
 
 def split_composition(ds, classes):
@@ -218,6 +219,12 @@ def evaluate_full(model, dl, classes, header, save_prefix):
 
     mAP_macro, ap_cls = compute_map_ovr(y_true, probs, len(classes))
     log(f"{header} mAP (macro, one-vs-rest): {mAP_macro:.3f}")
+
+    # Save per-class AP scores for this split.
+    per_class_ap = {cls: float(ap) for cls, ap in zip(classes, ap_cls.tolist())}
+    with (OUT_DIR / f"{save_prefix}_ap_per_class.json").open("w", encoding="utf-8") as f:
+        json.dump(per_class_ap, f, indent=2)
+    log(f"{header} per-class AP written to {save_prefix}_ap_per_class.json")
 
     metrics = {
         "macro_f1": float(macro_f1),
@@ -371,8 +378,8 @@ def main():
             log(f"[info] new best val macro-F1 {best_metric:.3f} at epoch {ep:02d}")
 
     # save curves & csv
-    plot_curves(history, OUT_DIR / "curves.png")
-    log("[info] saved curves.png")
+    plot_curves(history, OUT_DIR / "curves.pdf")
+    log("[info] saved curves.pdf")
 
     # ----- final evaluation -----
     ckpt = torch.load(CKPT_PATH, map_location=DEVICE)
@@ -382,9 +389,9 @@ def main():
     test_summary, test_y, test_p = evaluate_full(model, dl_test, classes, header="Test report",       save_prefix="test")
 
     # combined confusion matrices side-by-side
-    plot_two_cms(val_y, val_p, test_y, test_p, classes, OUT_DIR / "val_test_cms.png", titles=("Validation", "Test"))
+    plot_two_cms(val_y, val_p, test_y, test_p, classes, OUT_DIR / "val_test_cms.pdf", titles=("Validation", "Test"))
 
-    log("[info] saved val_test_cms.png")
+    log("[info] saved val_test_cms.pdf")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train Swin with configurable hyperparameters")
