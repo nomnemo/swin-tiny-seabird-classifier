@@ -40,7 +40,7 @@ INPUT_SIZE = 224            # 224 or 256 or 320
 USE_SAMPLER = True 
 BATCH_TRAIN = 32            
 BATCH_EVAL  = 128
-NUM_WORKERS = 6 # DataLoader parallelization is on the CPU side # Start around num_workers = (#CPU cores) / 2
+NUM_WORKERS = 16 # DataLoader parallelization is on the CPU side # Start around num_workers = (#CPU cores) / 2
 SEED = 42
 
 def _build_label_map(rows: List[Dict], label_key: str = "species_name"):

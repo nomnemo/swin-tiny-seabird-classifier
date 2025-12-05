@@ -19,7 +19,7 @@ from scripts.DataLoader import set_up_data_loaders
 # ===== config =====
 MODEL_NAME   = "swin_tiny_patch4_window7_224"
 EPOCHS       = 40 
-LR           = 3e-4
+LR           = 1e-4
 WEIGHT_DECAY = 0.01
 ACCUM_STEPS  = 1 
 DEVICE       = "cuda" if torch.cuda.is_available() else "cpu" # what is this doing?
