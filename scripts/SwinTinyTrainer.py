@@ -35,7 +35,7 @@ OUT_DIR.mkdir(exist_ok=True)
 LOG_PATH: Optional[Path] = None
 
 # Learning rate warmup
-WARMUP_EPOCHS = 2
+WARMUP_EPOCHS = 10
 # ==================
 
 
