@@ -9,7 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch, timm
 from torch import nn
-import torch.nn.functional as F
 from torch.optim import AdamW
 from torch.amp import GradScaler, autocast
 from torch.optim.lr_scheduler import CosineAnnealingLR
@@ -21,7 +20,7 @@ from sklearn.metrics import (
 from scripts.DataLoader import set_up_data_loaders
 
 # ===== config =====
-MODEL_NAME   = "swin_tiny_patch4_window7_224"
+MODEL_NAME   = "swin_small_patch4_window7_224"
 EPOCHS       = 30
 LR           = 1e-4
 WEIGHT_DECAY = 0.01
@@ -30,7 +29,7 @@ DEVICE       = "cuda" if torch.cuda.is_available() else "cpu"
 AMP          = True
 CKPT_PATH    = "best_swin.pt"
 MAX_PER_CLASS = 1000
-OUT_DIR      = Path("runs_swin2")
+OUT_DIR      = Path("runs_swin_small")
 OUT_DIR.mkdir(exist_ok=True)
 # Optional log file path; set inside main() once the run directory is known.
 LOG_PATH: Optional[Path] = None
@@ -50,51 +49,6 @@ def log(message: str) -> None:
         with LOG_PATH.open("a", encoding="utf-8") as f:
             f.write(message + "\n")
 
-
-class FocalLoss(nn.Module):
-    """
-    Multi-class Focal Loss with optional per-class alpha weights.
-
-    Args:
-        alpha: tensor of shape (num_classes,) or None.
-               If provided, this scales the loss per class (e.g., class_weights).
-        gamma: focusing parameter (gamma >= 0). Typical values: 1.0–3.0.
-        reduction: 'mean' | 'sum' | 'none'.
-    """
-
-    def __init__(
-        self,
-        alpha: Optional[torch.Tensor] = None,
-        gamma: float = 2.0,
-        reduction: str = "mean",
-    ) -> None:
-        super().__init__()
-        self.register_buffer("alpha", alpha if alpha is not None else None)
-        self.gamma = gamma
-        self.reduction = reduction
-
-    def forward(self, logits: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
-        # Cross-entropy per sample (no reduction), optionally with class weights.
-        ce_loss = F.cross_entropy(
-            logits,
-            target,
-            weight=self.alpha,
-            reduction="none",
-        )  # shape: (N,)
-
-        # p_t is the model probability for the true class.
-        pt = torch.exp(-ce_loss)  # shape: (N,)
-
-        # Focal loss factor: (1 - p_t)^gamma.
-        focal_factor = (1.0 - pt) ** self.gamma
-
-        loss = focal_factor * ce_loss
-
-        if self.reduction == "mean":
-            return loss.mean()
-        if self.reduction == "sum":
-            return loss.sum()
-        return loss
 
 def make_run_dir_name(model_name: str, max_per_class: int, epochs: int, lr: float, 
                        weight_decay: float, accum_steps: int) -> str:
@@ -313,10 +267,6 @@ def main():
     log(f"[info] model: {MODEL_NAME}")
     log(f"[info] epochs: {EPOCHS}, lr: {LR}, weight_decay: {WEIGHT_DECAY}, accum_steps: {ACCUM_STEPS}")
 
-    # Focal loss criterion with class weights from the dataloader meta.
-    class_weights = meta["class_weights"].to(DEVICE)
-    criterion = FocalLoss(alpha=class_weights, gamma=2.0, reduction="mean")
-
     # training logs
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
     best_metric = float("-inf")  # best validation macro-F1 so far
@@ -354,10 +304,10 @@ def main():
             
             # forward pass with mixed precision
             with autocast(device_type="cuda", enabled=AMP):
-                # compute logits and focal loss
+                # compute logits and cross-entropy loss
                 # logits is (batch_size, num_classes) tensor of raw class scores after model forward pass
                 logits = model(xb)
-                loss   = criterion(logits, yb)
+                loss   = nn.functional.cross_entropy(logits, yb)
 
             # backward pass with gradient scaling for AMP
             scaler.scale(loss / ACCUM_STEPS).backward()
@@ -385,7 +335,7 @@ def main():
                 xb, yb = xb.to(DEVICE), yb.to(DEVICE)
                 with autocast(device_type="cuda", enabled=AMP):
                     logits = model(xb)
-                    loss   = criterion(logits, yb)
+                    loss   = nn.functional.cross_entropy(logits, yb)
                 v_loss    += loss.item() * yb.size(0)
                 preds = logits.argmax(1)
                 v_correct += (preds == yb).sum().item()
