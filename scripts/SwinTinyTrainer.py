@@ -31,7 +31,8 @@ CKPT_PATH    = "best_swin.pt"
 MAX_PER_CLASS = 1000
 OUT_DIR      = Path("runs_swin_small")
 OUT_DIR.mkdir(exist_ok=True)
-# Optional log file path; set inside main() once the run directory is known.
+# Optional log file path and checkpoint path; set inside main()
+# once the run directory is known.
 LOG_PATH: Optional[Path] = None
 
 # Learning rate warmup
@@ -48,7 +49,6 @@ def log(message: str) -> None:
         LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
         with LOG_PATH.open("a", encoding="utf-8") as f:
             f.write(message + "\n")
-
 
 def make_run_dir_name(model_name: str, max_per_class: int, epochs: int, lr: float, 
                        weight_decay: float, accum_steps: int) -> str:
@@ -236,13 +236,15 @@ def evaluate_full(model, dl, classes, header, save_prefix):
     return metrics, y_true, y_pred
 
 def main():
-    global OUT_DIR, LOG_PATH
+    global OUT_DIR, LOG_PATH, CKPT_PATH
 
     # ----- create run-specific output directory -----
     run_name = make_run_dir_name(MODEL_NAME, MAX_PER_CLASS, EPOCHS, LR, WEIGHT_DECAY, ACCUM_STEPS)
     run_dir = OUT_DIR / run_name
     run_dir.mkdir(parents=True, exist_ok=True)
     OUT_DIR = run_dir  # Update global OUT_DIR to this run's subdirectory so all outputs go there
+    # Each run/model gets its own checkpoint inside the run directory.
+    CKPT_PATH = OUT_DIR / "best.pt"
     LOG_PATH = OUT_DIR / "train.log"
     log(f"[info] run directory: {OUT_DIR}")
 
