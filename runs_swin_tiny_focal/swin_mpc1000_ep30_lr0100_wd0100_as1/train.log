@@ -1,0 +1,118 @@
+[info] run directory: runs_swin_tiny_focal/swin_mpc1000_ep30_lr0100_wd0100_as1
+[info] saved split_composition.json
+[info] model: swin_tiny_patch4_window7_224
+[info] epochs: 30, lr: 0.0001, weight_decay: 0.01, accum_steps: 1
+ep 01 | train acc 0.439 loss 0.925 | val acc 0.581 loss 0.250 | macroF1 0.566 | lr 1.00e-05 | val_time 6.1s | ep_time 75.8s
+[info] new best val macro-F1 0.566 at epoch 01
+ep 02 | train acc 0.753 loss 0.265 | val acc 0.721 loss 0.160 | macroF1 0.680 | lr 2.00e-05 | val_time 4.2s | ep_time 66.5s
+[info] new best val macro-F1 0.680 at epoch 02
+ep 03 | train acc 0.825 loss 0.163 | val acc 0.754 loss 0.141 | macroF1 0.713 | lr 3.00e-05 | val_time 4.3s | ep_time 67.5s
+[info] new best val macro-F1 0.713 at epoch 03
+ep 04 | train acc 0.854 loss 0.124 | val acc 0.835 loss 0.108 | macroF1 0.785 | lr 4.00e-05 | val_time 4.7s | ep_time 69.4s
+[info] new best val macro-F1 0.785 at epoch 04
+ep 05 | train acc 0.864 loss 0.115 | val acc 0.821 loss 0.091 | macroF1 0.778 | lr 5.00e-05 | val_time 4.4s | ep_time 66.8s
+ep 06 | train acc 0.874 loss 0.107 | val acc 0.839 loss 0.096 | macroF1 0.788 | lr 6.00e-05 | val_time 4.3s | ep_time 68.1s
+[info] new best val macro-F1 0.788 at epoch 06
+ep 07 | train acc 0.877 loss 0.091 | val acc 0.823 loss 0.113 | macroF1 0.769 | lr 7.00e-05 | val_time 4.5s | ep_time 68.5s
+ep 08 | train acc 0.884 loss 0.091 | val acc 0.865 loss 0.105 | macroF1 0.817 | lr 8.00e-05 | val_time 4.0s | ep_time 66.5s
+[info] new best val macro-F1 0.817 at epoch 08
+ep 09 | train acc 0.876 loss 0.098 | val acc 0.794 loss 0.153 | macroF1 0.742 | lr 9.00e-05 | val_time 4.6s | ep_time 69.0s
+ep 10 | train acc 0.883 loss 0.090 | val acc 0.848 loss 0.117 | macroF1 0.780 | lr 1.00e-04 | val_time 4.4s | ep_time 67.9s
+ep 11 | train acc 0.890 loss 0.086 | val acc 0.843 loss 0.100 | macroF1 0.794 | lr 9.94e-05 | val_time 4.2s | ep_time 66.8s
+ep 12 | train acc 0.919 loss 0.051 | val acc 0.870 loss 0.087 | macroF1 0.830 | lr 9.76e-05 | val_time 4.2s | ep_time 68.9s
+[info] new best val macro-F1 0.830 at epoch 12
+ep 13 | train acc 0.918 loss 0.052 | val acc 0.845 loss 0.110 | macroF1 0.793 | lr 9.46e-05 | val_time 4.2s | ep_time 66.7s
+ep 14 | train acc 0.913 loss 0.060 | val acc 0.859 loss 0.109 | macroF1 0.811 | lr 9.05e-05 | val_time 4.4s | ep_time 66.9s
+ep 15 | train acc 0.915 loss 0.057 | val acc 0.874 loss 0.088 | macroF1 0.819 | lr 8.54e-05 | val_time 4.4s | ep_time 69.0s
+ep 16 | train acc 0.938 loss 0.033 | val acc 0.861 loss 0.107 | macroF1 0.808 | lr 7.94e-05 | val_time 4.3s | ep_time 66.6s
+ep 17 | train acc 0.940 loss 0.030 | val acc 0.876 loss 0.094 | macroF1 0.840 | lr 7.27e-05 | val_time 4.5s | ep_time 68.0s
+[info] new best val macro-F1 0.840 at epoch 17
+ep 18 | train acc 0.940 loss 0.030 | val acc 0.896 loss 0.096 | macroF1 0.851 | lr 6.55e-05 | val_time 4.4s | ep_time 70.3s
+[info] new best val macro-F1 0.851 at epoch 18
+ep 19 | train acc 0.951 loss 0.023 | val acc 0.880 loss 0.099 | macroF1 0.820 | lr 5.78e-05 | val_time 4.5s | ep_time 67.4s
+ep 20 | train acc 0.953 loss 0.023 | val acc 0.897 loss 0.088 | macroF1 0.860 | lr 5.00e-05 | val_time 4.2s | ep_time 67.6s
+[info] new best val macro-F1 0.860 at epoch 20
+ep 21 | train acc 0.961 loss 0.015 | val acc 0.898 loss 0.090 | macroF1 0.854 | lr 4.22e-05 | val_time 4.5s | ep_time 68.7s
+ep 22 | train acc 0.964 loss 0.014 | val acc 0.913 loss 0.092 | macroF1 0.867 | lr 3.45e-05 | val_time 4.4s | ep_time 66.8s
+[info] new best val macro-F1 0.867 at epoch 22
+ep 23 | train acc 0.968 loss 0.013 | val acc 0.916 loss 0.093 | macroF1 0.869 | lr 2.73e-05 | val_time 4.7s | ep_time 68.5s
+[info] new best val macro-F1 0.869 at epoch 23
+ep 24 | train acc 0.971 loss 0.011 | val acc 0.917 loss 0.081 | macroF1 0.878 | lr 2.06e-05 | val_time 4.5s | ep_time 67.8s
+[info] new best val macro-F1 0.878 at epoch 24
+ep 25 | train acc 0.973 loss 0.009 | val acc 0.906 loss 0.090 | macroF1 0.872 | lr 1.46e-05 | val_time 4.4s | ep_time 67.0s
+ep 26 | train acc 0.974 loss 0.010 | val acc 0.922 loss 0.087 | macroF1 0.882 | lr 9.55e-06 | val_time 4.4s | ep_time 68.7s
+[info] new best val macro-F1 0.882 at epoch 26
+ep 27 | train acc 0.977 loss 0.008 | val acc 0.915 loss 0.087 | macroF1 0.878 | lr 5.45e-06 | val_time 4.1s | ep_time 67.5s
+ep 28 | train acc 0.978 loss 0.007 | val acc 0.921 loss 0.089 | macroF1 0.885 | lr 2.45e-06 | val_time 3.2s | ep_time 61.0s
+[info] new best val macro-F1 0.885 at epoch 28
+ep 29 | train acc 0.980 loss 0.006 | val acc 0.922 loss 0.090 | macroF1 0.886 | lr 6.16e-07 | val_time 3.2s | ep_time 46.4s
+[info] new best val macro-F1 0.886 at epoch 29
+ep 30 | train acc 0.978 loss 0.007 | val acc 0.922 loss 0.090 | macroF1 0.886 | lr 0.00e+00 | val_time 3.3s | ep_time 43.8s
+[info] saved curves.pdf
+
+Validation report:
+              precision    recall  f1-score   support
+
+        BCNH      0.982     0.957     0.970       117
+        BLSK      0.943     0.985     0.964        67
+        BRPE      1.000     0.990     0.995       200
+       BRPEC      0.973     0.947     0.960        38
+        CAEG      0.991     0.991     0.991       117
+        GBHE      0.975     0.995     0.985       197
+        GREG      0.705     0.689     0.697        45
+        LAGU      0.955     0.960     0.958       200
+       MEGRT      0.700     0.737     0.718        38
+        MTRN      0.864     0.795     0.828       200
+      OTHERS      0.750     0.833     0.789        18
+        OTHR      0.750     0.750     0.750        20
+        REEG      0.968     0.987     0.977       153
+      REEGWM      0.839     0.897     0.867        29
+        ROSP      1.000     0.973     0.986       110
+        ROTE      0.856     0.830     0.843       200
+        SATE      0.755     0.947     0.840        75
+        SNEG      0.565     0.765     0.650        17
+        TRHE      0.975     0.975     0.975       119
+        WHIB      0.931     0.875     0.902       200
+       WHIBC      0.926     1.000     0.962        25
+
+    accuracy                          0.922      2185
+   macro avg      0.876     0.899     0.886      2185
+weighted avg      0.924     0.922     0.922      2185
+
+Validation report macro-F1: 0.886
+Validation report mAP (macro, one-vs-rest): 0.937
+Validation report per-class AP written to val_ap_per_class.json
+
+Test report:
+              precision    recall  f1-score   support
+
+        BCNH      0.983     0.967     0.975       121
+        BLSK      1.000     1.000     1.000       200
+        BRPE      0.995     0.960     0.977       200
+       BRPEC      0.974     0.949     0.961        39
+        CAEG      0.949     0.979     0.964        95
+        GBHE      0.943     0.978     0.960       135
+        GREG      0.828     0.774     0.800        62
+        LAGU      0.965     0.960     0.962       200
+       MEGRT      0.577     0.750     0.652        40
+        MTRN      0.902     0.825     0.862       200
+      OTHERS      0.826     0.864     0.844        22
+        OTHR      0.867     0.839     0.852        31
+        REEG      0.959     0.982     0.971       168
+      REEGWM      0.821     0.914     0.865        35
+        ROSP      1.000     0.969     0.984        64
+        ROTE      0.839     0.885     0.861       200
+        SATE      0.875     0.949     0.911        59
+        SNEG      0.639     1.000     0.780        23
+        TRHE      0.973     0.967     0.970       150
+        WHIB      0.966     0.855     0.907       200
+       WHIBC      0.909     1.000     0.952        10
+
+    accuracy                          0.928      2254
+   macro avg      0.895     0.922     0.905      2254
+weighted avg      0.933     0.928     0.929      2254
+
+Test report macro-F1: 0.905
+Test report mAP (macro, one-vs-rest): 0.951
+Test report per-class AP written to test_ap_per_class.json
+[info] saved val_test_cms.pdf

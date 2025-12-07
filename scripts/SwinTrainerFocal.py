@@ -21,7 +21,7 @@ from sklearn.metrics import (
 from scripts.DataLoader import set_up_data_loaders
 
 # ===== config =====
-MODEL_NAME   = "swin_small_patch4_window7_224"
+MODEL_NAME   = "swin_tiny_patch4_window7_224"
 EPOCHS       = 30
 LR           = 1e-4
 WEIGHT_DECAY = 0.01
@@ -30,7 +30,7 @@ DEVICE       = "cuda" if torch.cuda.is_available() else "cpu"
 AMP          = True
 CKPT_PATH    = "best_swin.pt"
 MAX_PER_CLASS = 1000
-OUT_DIR      = Path("runs_swin_small_focal")
+OUT_DIR      = Path("runs_swin_tiny_focal")
 OUT_DIR.mkdir(exist_ok=True)
 # Optional log file path and checkpoint path; set inside main()
 # once the run directory is known.
