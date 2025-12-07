@@ -1,0 +1,13 @@
+[info] run directory: runs_swin_small/swin_mpc1000_ep30_lr0100_wd0100_as1
+[info] saved split_composition.json
+[info] model: swin_small_patch4_window7_224
+[info] epochs: 30, lr: 0.0001, weight_decay: 0.01, accum_steps: 1
+ep 01 | train acc 0.633 loss 1.382 | val acc 0.791 loss 0.631 | macroF1 0.735 | lr 1.00e-05 | val_time 4.8s | ep_time 43.6s
+[info] new best val macro-F1 0.735 at epoch 01
+ep 02 | train acc 0.869 loss 0.416 | val acc 0.845 loss 0.468 | macroF1 0.804 | lr 2.00e-05 | val_time 2.3s | ep_time 40.5s
+[info] new best val macro-F1 0.804 at epoch 02
+ep 03 | train acc 0.908 loss 0.283 | val acc 0.849 loss 0.468 | macroF1 0.809 | lr 3.00e-05 | val_time 2.2s | ep_time 39.8s
+[info] new best val macro-F1 0.809 at epoch 03
+ep 04 | train acc 0.923 loss 0.218 | val acc 0.894 loss 0.308 | macroF1 0.854 | lr 4.00e-05 | val_time 2.5s | ep_time 39.6s
+[info] new best val macro-F1 0.854 at epoch 04
+ep 05 | train acc 0.929 loss 0.205 | val acc 0.877 loss 0.367 | macroF1 0.835 | lr 5.00e-05 | val_time 2.6s | ep_time 40.0s
