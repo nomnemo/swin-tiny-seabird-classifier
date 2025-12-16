@@ -128,7 +128,7 @@ def make_run_dir_name(model_name: str, max_per_class: int, epochs: int, lr: floa
     wd_int = int(round(weight_decay * 10000))
     wd_str = f"{wd_int:04d}"
     
-    run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}"
+    run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}_noAlpha"
     return run_name
 
 def plot_curves(history, path):
@@ -318,7 +318,7 @@ def main():
 
     # Focal loss criterion with class weights from the dataloader meta.
     class_weights = meta["class_weights"].to(DEVICE)
-    criterion = FocalLoss(alpha=class_weights, gamma=2.0, reduction="mean")
+    criterion = FocalLoss(alpha=None, gamma=2.0, reduction="mean")
 
     # training logs
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
