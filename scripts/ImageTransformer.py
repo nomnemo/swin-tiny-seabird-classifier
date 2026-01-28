@@ -44,8 +44,8 @@ def build_train_transforms(img_size: int) -> A.Compose:
     transforms = _resize_and_pad(img_size, min_size=256) + [
         # colony images are roughly rotation/flip invariant
         A.RandomResizedCrop(
-            img_size,
-            img_size,
+            height=img_size,
+            width=img_size,
             scale=(0.7, 1.0),
             ratio=(0.75, 1.333),
             always_apply=True,
@@ -88,7 +88,7 @@ def build_eval_transforms(img_size: int) -> A.Compose:
       - ImageNet normalization.
     """
     transforms = _resize_and_pad(img_size, min_size=img_size) + [
-        A.CenterCrop(img_size, img_size),
+        A.CenterCrop(height=img_size, width=img_size),
         _normalize(),
     ]
     return A.Compose(transforms)
