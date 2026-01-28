@@ -128,12 +128,16 @@ The project assumes Python 3.9+ and a GPU‑enabled PyTorch installation. The ex
 
 2. **Install dependencies**
 
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
+  For GPU training, install the matching PyTorch build first (see
+  [https://pytorch.org](https://pytorch.org) for the recommended command), then
+  install the remaining dependencies:
 
-   Make sure your PyTorch install matches your CUDA version if you plan to train on GPU (see [https://pytorch.org](https://pytorch.org) for the recommended command).
+  ```bash
+  pip install --upgrade pip
+  pip install -r requirements.txt
+  ```
+
+  If you only need CPU, the command above is sufficient as-is.
 
 
 Running the Pipeline

@@ -1,9 +1,9 @@
---extra-index-url https://download.pytorch.org/whl/cu118
-
-# PyTorch CUDA 11.8 stack
-torch==2.4.1+cu118
-torchvision==0.19.1+cu118
-torchaudio==2.4.1+cu118
+# PyTorch (CPU build by default). For CUDA builds, install from
+# https://pytorch.org/get-started/locally/ and then install the rest
+# of these requirements.
+torch==2.4.1
+torchvision==0.19.1
+torchaudio==2.4.1
 
 # Vision / augmentation
 albumentations==1.2.1             # pre-albucore release (no import errors)
