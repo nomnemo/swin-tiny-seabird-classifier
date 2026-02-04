@@ -256,6 +256,33 @@ def main():
     # ----- set up data loaders -----
     dl_train, dl_val, dl_test, meta = set_up_data_loaders(max_per_class=MAX_PER_CLASS)
     classes = meta["classes"]; num_classes = len(classes)
+    dl_cfg = meta["dataloader_config"]
+
+    # ----- print training configuration -----
+    log("=" * 60)
+    log("TRAINING CONFIGURATION")
+    log("=" * 60)
+    log(f"  model:            {MODEL_NAME}")
+    log(f"  loss:             CrossEntropy")
+    log(f"  epochs:           {EPOCHS}")
+    log(f"  warmup_epochs:    {WARMUP_EPOCHS}")
+    log(f"  lr:               {LR}")
+    log(f"  weight_decay:     {WEIGHT_DECAY}")
+    log(f"  accum_steps:      {ACCUM_STEPS}")
+    log(f"  AMP:              {AMP}")
+    log(f"  device:           {DEVICE}")
+    log(f"  input_size:       {dl_cfg['input_size']}")
+    log(f"  batch_train:      {dl_cfg['batch_train']}")
+    log(f"  batch_eval:       {dl_cfg['batch_eval']}")
+    log(f"  use_sampler:      {dl_cfg['use_sampler']}")
+    log(f"  num_workers:      {dl_cfg['num_workers']}")
+    log(f"  max_per_class:    {dl_cfg['max_per_class']}")
+    log(f"  num_classes:      {num_classes}")
+    log(f"  train_size:       {meta['sizes']['train']}")
+    log(f"  val_size:         {meta['sizes']['val']}")
+    log(f"  test_size:        {meta['sizes']['test']}")
+    log("=" * 60)
+
     # compute split compositions for train/val/test
     comp_train = split_composition(dl_train.dataset, classes)
     comp_val   = split_composition(dl_val.dataset,   classes)
@@ -263,15 +290,12 @@ def main():
     with open(OUT_DIR / "split_composition.json", "w", encoding="utf-8") as f:
         json.dump({"train": comp_train, "val": comp_val, "test": comp_test}, f, indent=2)
     log("[info] saved split_composition.json")
-    
+
     # ----- model / opt -----
     model = timm.create_model(MODEL_NAME, pretrained=True, num_classes=num_classes).to(DEVICE)
     opt   = AdamW(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
     sched = CosineAnnealingLR(opt, T_max=max(EPOCHS - WARMUP_EPOCHS, 1))
     scaler= GradScaler(device="cuda", enabled=AMP)
-    # Print out the model config used for this run
-    log(f"[info] model: {MODEL_NAME}")
-    log(f"[info] epochs: {EPOCHS}, lr: {LR}, weight_decay: {WEIGHT_DECAY}, accum_steps: {ACCUM_STEPS}")
 
     # training logs
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}

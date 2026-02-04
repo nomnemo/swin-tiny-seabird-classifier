@@ -223,6 +223,14 @@ def set_up_data_loaders(
         "class_counts": class_counts,
         "class_weights": torch.tensor(normalized_cls_weights, dtype=torch.float32),
         "sizes": {"train": len(train_rows), "val": len(val_rows), "test": len(test_rows)},
+        "dataloader_config": {
+            "input_size": input_size,
+            "use_sampler": use_sampler,
+            "batch_train": batch_train,
+            "batch_eval": batch_eval,
+            "num_workers": num_workers,
+            "max_per_class": max_per_class,
+        },
     }
     return dl_train, dl_val, dl_test, meta
 
