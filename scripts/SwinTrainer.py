@@ -41,6 +41,9 @@ LOG_PATH: Optional[Path] = None
 
 # Learning rate warmup
 WARMUP_EPOCHS = 10
+
+# Hardware (edit this when switching GPU instances)
+HARDWARE = "1x NVIDIA A10 (Lambda)"
 # ==================
 
 
@@ -231,6 +234,23 @@ def evaluate_full(model, dl, classes, header, save_prefix):
         json.dump(per_class_ap, f, indent=2)
     log(f"{header} per-class AP written to {save_prefix}_ap_per_class.json")
 
+    # Save misclassified images with paths and confidence scores
+    ds = dl.dataset
+    misclassified = []
+    for i, (yt, yp) in enumerate(zip(y_true, y_pred)):
+        if yt != yp:
+            row = ds.rows[i]
+            misclassified.append({
+                "crop_path": row["crop_path"],
+                "true_label": classes[yt],
+                "predicted_label": classes[yp],
+                "true_class_conf": round(float(probs[i][yt]), 4),
+                "predicted_class_conf": round(float(probs[i][yp]), 4),
+            })
+    with open(OUT_DIR / f"{save_prefix}_misclassified.json", "w", encoding="utf-8") as f:
+        json.dump(misclassified, f, indent=2)
+    log(f"{header}: {len(misclassified)} misclassified images saved to {save_prefix}_misclassified.json")
+
     metrics = {
         "macro_f1": float(macro_f1),
         "map_macro": float(mAP_macro),
@@ -241,6 +261,7 @@ def evaluate_full(model, dl, classes, header, save_prefix):
 
 def main():
     global OUT_DIR, LOG_PATH, CKPT_PATH
+    run_start = time.perf_counter()
 
     # ----- create run-specific output directory -----
     run_name = make_run_dir_name(MODEL_NAME, MAX_PER_CLASS, EPOCHS, LR, WEIGHT_DECAY, ACCUM_STEPS)
@@ -271,6 +292,7 @@ def main():
     log(f"  accum_steps:      {ACCUM_STEPS}")
     log(f"  AMP:              {AMP}")
     log(f"  device:           {DEVICE}")
+    log(f"  hardware:         {HARDWARE}")
     log(f"  input_size:       {dl_cfg['input_size']}")
     log(f"  batch_train:      {dl_cfg['batch_train']}")
     log(f"  batch_eval:       {dl_cfg['batch_eval']}")
@@ -421,6 +443,9 @@ def main():
     plot_two_cms(val_y, val_p, test_y, test_p, classes, OUT_DIR / "val_test_cms.pdf", titles=("Validation", "Test"))
 
     log("[info] saved val_test_cms.pdf")
+
+    total_time = time.perf_counter() - run_start
+    log(f"[info] total run time: {str(timedelta(seconds=int(total_time)))}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train Swin with configurable hyperparameters")
