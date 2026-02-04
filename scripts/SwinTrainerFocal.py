@@ -357,6 +357,10 @@ def main():
     log(f"  num_workers:      {dl_cfg['num_workers']}")
     log(f"  max_per_class:    {dl_cfg['max_per_class']}")
     log(f"  merge_groups:     {dl_cfg['merge_groups']}")
+    if dl_cfg['merge_groups']:
+        for group in dl_cfg['merge_groups']:
+            merged_name = "_".join(sorted(group))
+            log(f"    {', '.join(group)} -> {merged_name}")
     log(f"  num_classes:      {num_classes}")
     log(f"  train_size:       {meta['sizes']['train']}")
     log(f"  val_size:         {meta['sizes']['val']}")

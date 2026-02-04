@@ -33,7 +33,7 @@ DEVICE       = "cuda" if torch.cuda.is_available() else "cpu"
 AMP          = True
 CKPT_PATH    = "best_swin.pt"
 MAX_PER_CLASS = 1000
-OUT_DIR      = Path("runs_swin_tiny")
+OUT_DIR      = Path("runs_swin_tiny_merged_classes")
 OUT_DIR.mkdir(exist_ok=True)
 # Optional log file path and checkpoint path; set inside main()
 # once the run directory is known.
@@ -47,7 +47,7 @@ HARDWARE = "1x NVIDIA A10 (Lambda)"
 
 # Class merging (set to None to disable, or list of lists to merge confused classes)
 # e.g. [["GREG", "WHIB", "MEGRT"]] or [["GREG", "WHIB", "MEGRT"], ["ROTE", "MTRN"]]
-MERGE_GROUPS = None
+MERGE_GROUPS = [["GREG", "WHIB", "MEGRT"]]
 # ==================
 
 
@@ -304,6 +304,10 @@ def main():
     log(f"  num_workers:      {dl_cfg['num_workers']}")
     log(f"  max_per_class:    {dl_cfg['max_per_class']}")
     log(f"  merge_groups:     {dl_cfg['merge_groups']}")
+    if dl_cfg['merge_groups']:
+        for group in dl_cfg['merge_groups']:
+            merged_name = "_".join(sorted(group))
+            log(f"    {', '.join(group)} -> {merged_name}")
     log(f"  num_classes:      {num_classes}")
     log(f"  train_size:       {meta['sizes']['train']}")
     log(f"  val_size:         {meta['sizes']['val']}")
