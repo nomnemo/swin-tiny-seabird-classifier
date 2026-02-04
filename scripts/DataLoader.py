@@ -2,7 +2,7 @@ from pathlib import Path
 import csv
 import random
 from collections import Counter
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
@@ -78,6 +78,51 @@ def _cap_per_class(df: pd.DataFrame, max_per_class: int) -> pd.DataFrame:
         .reset_index(drop=True) # drop=True means we don’t add the old index as a new column.
     )
     
+def _apply_merge_groups(
+    df: pd.DataFrame,
+    merge_groups: List[List[str]],
+    cap_per_class: Optional[int],
+) -> pd.DataFrame:
+    """
+    Merge specified classes into combined classes with balanced sub-class sampling.
+
+    For each group (e.g. ["GREG", "WHIB", "MEGRT"]):
+      1) Cap each sub-class at cap_per_class // group_size so the merged class
+         has roughly equal representation from each original species.
+      2) Rename species_name to the merged name (sorted, joined with "_").
+
+    Args:
+        df:             DataFrame with a 'species_name' column.
+        merge_groups:   list of lists, e.g. [["GREG", "WHIB", "MEGRT"]].
+        cap_per_class:  overall per-class cap for this split (max_per_class for
+                        train, cap_val_test for val/test).  If None the sub-class
+                        balancing step is skipped and all rows are kept.
+    """
+    for group in merge_groups:
+        merged_name = "_".join(sorted(group))
+        group_size = len(group)
+
+        mask = df["species_name"].isin(group)
+        group_df = df[mask].copy()
+        other_df = df[~mask].copy()
+
+        # balance sub-classes within the merge group
+        if cap_per_class is not None:
+            sub_cap = max(1, cap_per_class // group_size)
+            group_df = group_df.sample(frac=1.0, random_state=42)
+            group_df = (
+                group_df.groupby("species_name", group_keys=False)
+                .head(sub_cap)
+            )
+
+        # rename to merged label
+        group_df["species_name"] = merged_name
+
+        df = pd.concat([other_df, group_df], ignore_index=True)
+
+    return df
+
+
 def set_up_data_loaders(
     train_csv=TRAIN_CSV,
     val_csv=VAL_CSV,
@@ -88,6 +133,7 @@ def set_up_data_loaders(
     batch_eval=BATCH_EVAL,
     num_workers=NUM_WORKERS,
     max_per_class=None,
+    merge_groups: Optional[List[List[str]]] = None,
 ) -> Tuple[DataLoader, DataLoader, DataLoader, dict]:
     """
     Build PyTorch DataLoaders for train/val/test splits.
@@ -134,12 +180,19 @@ def set_up_data_loaders(
     val_df   = pd.read_csv(val_csv)
     test_df  = pd.read_csv(test_csv)
 
-    # 2) ================= CAP CLASS SIZES (if max_per_class is provided) =================
-    train_df = _cap_per_class(train_df, max_per_class)
+    # 2a) ================= MERGE CLASSES (if merge_groups is provided) =================
     if max_per_class is not None:
-        cap_val_test = max(1, max_per_class // 5)   # smaller val/test per class
+        cap_val_test = max(1, max_per_class // 5)
     else:
         cap_val_test = None
+
+    if merge_groups is not None:
+        train_df = _apply_merge_groups(train_df, merge_groups, max_per_class)
+        val_df   = _apply_merge_groups(val_df,   merge_groups, cap_val_test)
+        test_df  = _apply_merge_groups(test_df,  merge_groups, cap_val_test)
+
+    # 2b) ================= CAP CLASS SIZES (if max_per_class is provided) =================
+    train_df = _cap_per_class(train_df, max_per_class)
     val_df  = _cap_per_class(val_df,  cap_val_test)
     test_df = _cap_per_class(test_df, cap_val_test)
 
@@ -230,6 +283,7 @@ def set_up_data_loaders(
             "batch_eval": batch_eval,
             "num_workers": num_workers,
             "max_per_class": max_per_class,
+            "merge_groups": merge_groups,
         },
     }
     return dl_train, dl_val, dl_test, meta

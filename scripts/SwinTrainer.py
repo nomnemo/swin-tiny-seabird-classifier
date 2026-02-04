@@ -44,6 +44,10 @@ WARMUP_EPOCHS = 10
 
 # Hardware (edit this when switching GPU instances)
 HARDWARE = "1x NVIDIA A10 (Lambda)"
+
+# Class merging (set to None to disable, or list of lists to merge confused classes)
+# e.g. [["GREG", "WHIB", "MEGRT"]] or [["GREG", "WHIB", "MEGRT"], ["ROTE", "MTRN"]]
+MERGE_GROUPS = None
 # ==================
 
 
@@ -275,7 +279,7 @@ def main():
 
 
     # ----- set up data loaders -----
-    dl_train, dl_val, dl_test, meta = set_up_data_loaders(max_per_class=MAX_PER_CLASS)
+    dl_train, dl_val, dl_test, meta = set_up_data_loaders(max_per_class=MAX_PER_CLASS, merge_groups=MERGE_GROUPS)
     classes = meta["classes"]; num_classes = len(classes)
     dl_cfg = meta["dataloader_config"]
 
@@ -299,6 +303,7 @@ def main():
     log(f"  use_sampler:      {dl_cfg['use_sampler']}")
     log(f"  num_workers:      {dl_cfg['num_workers']}")
     log(f"  max_per_class:    {dl_cfg['max_per_class']}")
+    log(f"  merge_groups:     {dl_cfg['merge_groups']}")
     log(f"  num_classes:      {num_classes}")
     log(f"  train_size:       {meta['sizes']['train']}")
     log(f"  val_size:         {meta['sizes']['val']}")
