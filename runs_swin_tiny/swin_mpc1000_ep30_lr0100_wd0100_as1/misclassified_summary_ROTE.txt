@@ -1,0 +1,28 @@
+Total misclassified: 23
+True label: ROTE
+Confused into 2 different classes:
+          MTRN:  18  (avg pred_conf=0.821, avg true_conf=0.169)
+    crops\ROTE\16522_90673.jpg  pred_conf=0.9903  true_conf=0.0093
+    crops\ROTE\16803_94200.jpg  pred_conf=0.9659  true_conf=0.0341
+    crops\ROTE\16505_90342.jpg  pred_conf=0.9834  true_conf=0.0163
+    crops\ROTE\16505_90341.jpg  pred_conf=0.8872  true_conf=0.1119
+    crops\ROTE\16795_94048.jpg  pred_conf=0.8918  true_conf=0.1082
+    crops\ROTE\16795_94058.jpg  pred_conf=0.5448  true_conf=0.4552
+    crops\ROTE\9496_67738.jpg  pred_conf=0.8149  true_conf=0.0914
+    crops\ROTE\16505_90330.jpg  pred_conf=0.7785  true_conf=0.2213
+    crops\ROTE\16580_91787.jpg  pred_conf=0.7233  true_conf=0.2767
+    crops\ROTE\16522_90683.jpg  pred_conf=0.5813  true_conf=0.4187
+    crops\ROTE\9521_68170.jpg  pred_conf=0.9385  true_conf=0.0546
+    crops\ROTE\9496_67742.jpg  pred_conf=0.7365  true_conf=0.2626
+    crops\ROTE\16505_90340.jpg  pred_conf=0.9849  true_conf=0.0151
+    crops\ROTE\16522_90659.jpg  pred_conf=0.7892  true_conf=0.2108
+    crops\ROTE\16693_92412.jpg  pred_conf=0.6134  true_conf=0.3839
+    crops\ROTE\16596_92056.jpg  pred_conf=0.9959  true_conf=0.0004
+    crops\ROTE\16505_90337.jpg  pred_conf=0.6361  true_conf=0.3625
+    crops\ROTE\9534_68411.jpg  pred_conf=0.9228  true_conf=0.0138
+          SATE:   5  (avg pred_conf=0.977, avg true_conf=0.022)
+    crops\ROTE\9524_68229.jpg  pred_conf=0.9991  true_conf=0.0006
+    crops\ROTE\6345_49941.jpg  pred_conf=0.9998  true_conf=0.0001
+    crops\ROTE\16596_92053.jpg  pred_conf=0.9984  true_conf=0.0015
+    crops\ROTE\9520_68169.jpg  pred_conf=0.9999  true_conf=0.0001
+    crops\ROTE\16806_94246.jpg  pred_conf=0.8880  true_conf=0.1086

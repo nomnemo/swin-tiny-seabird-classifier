@@ -1,0 +1,4 @@
+I run this to get misclassified details from the test set:
+
+python -m scripts.utils.summarize_misclassified runs_swin_tiny_merged_classes/swin_mpc1000_ep30_lr0100_wd0100_as1_1/test_misclassified.json --true-label OTHR --visual
+

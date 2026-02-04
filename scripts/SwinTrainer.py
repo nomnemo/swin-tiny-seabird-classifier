@@ -47,7 +47,7 @@ HARDWARE = "1x NVIDIA A10 (Lambda)"
 
 # Class merging (set to None to disable, or list of lists to merge confused classes)
 # e.g. [["GREG", "WHIB", "MEGRT"]] or [["GREG", "WHIB", "MEGRT"], ["ROTE", "MTRN"]]
-MERGE_GROUPS = [["GREG", "WHIB", "MEGRT"]]
+MERGE_GROUPS = [['GREG', 'WHIB', 'MEGRT', 'SNEG'], ['ROTE', 'MTRN', 'SATE']]
 # ==================
 
 
@@ -92,7 +92,7 @@ def make_run_dir_name(model_name: str, max_per_class: int, epochs: int, lr: floa
     wd_int = int(round(weight_decay * 10000))
     wd_str = f"{wd_int:04d}"
     
-    run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}"
+    run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}_3"
     return run_name
 
 def plot_curves(history, path):

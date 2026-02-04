@@ -1,0 +1,32 @@
+Total misclassified: 24
+True label: WHIB
+Confused into 5 different classes:
+         MEGRT:  11  (avg pred_conf=0.776, avg true_conf=0.186)
+    crops\WHIB\4188_37068.jpg  pred_conf=0.9968  true_conf=0.0029
+    crops\WHIB\4176_37053.jpg  pred_conf=0.9837  true_conf=0.0054
+    crops\WHIB\4360_37409.jpg  pred_conf=0.5936  true_conf=0.3773
+    crops\WHIB\4384_37461.jpg  pred_conf=0.7102  true_conf=0.1500
+    crops\WHIB\4360_37410.jpg  pred_conf=0.7064  true_conf=0.2922
+    crops\WHIB\11927_73834.jpg  pred_conf=0.4702  true_conf=0.4452
+    crops\WHIB\4176_37052.jpg  pred_conf=0.9921  true_conf=0.0029
+    crops\WHIB\4350_37384.jpg  pred_conf=0.8712  true_conf=0.1236
+    crops\WHIB\4175_37049.jpg  pred_conf=0.8323  true_conf=0.0228
+    crops\WHIB\4360_37408.jpg  pred_conf=0.6859  true_conf=0.3140
+    crops\WHIB\4211_37134.jpg  pred_conf=0.6943  true_conf=0.3057
+          SNEG:  10  (avg pred_conf=0.799, avg true_conf=0.170)
+    crops\WHIB\15355_84356.jpg  pred_conf=0.7578  true_conf=0.2422
+    crops\WHIB\2807_33394.jpg  pred_conf=0.7578  true_conf=0.2422
+    crops\WHIB\2808_33397.jpg  pred_conf=0.6509  true_conf=0.3484
+    crops\WHIB\2844_33488.jpg  pred_conf=0.6416  true_conf=0.3516
+    crops\WHIB\15260_84159.jpg  pred_conf=0.9936  true_conf=0.0060
+    crops\WHIB\13166_77910.jpg  pred_conf=0.9864  true_conf=0.0114
+    crops\WHIB\2430_32478.jpg  pred_conf=0.6338  true_conf=0.3611
+    crops\WHIB\15895_85691.jpg  pred_conf=0.5826  true_conf=0.1300
+    crops\WHIB\17535_97798.jpg  pred_conf=0.9864  true_conf=0.0114
+    crops\WHIB\17534_97792.jpg  pred_conf=0.9999  true_conf=0.0000
+         BRPEC:   1  (avg pred_conf=0.934, avg true_conf=0.064)
+    crops\WHIB\11923_73822.jpg  pred_conf=0.9336  true_conf=0.0640
+          CAEG:   1  (avg pred_conf=0.587, avg true_conf=0.413)
+    crops\WHIB\12154_74472.jpg  pred_conf=0.5868  true_conf=0.4128
+        REEGWM:   1  (avg pred_conf=1.000, avg true_conf=0.000)
+    crops\WHIB\12476_75678.jpg  pred_conf=1.0000  true_conf=0.0000

@@ -1,0 +1,20 @@
+Total misclassified: 139
+
+Breakdown by true label (17 classes with errors):
+          MTRN:  36 misclassified -> ROTE(34), LAGU(2)
+          WHIB:  24 misclassified -> MEGRT(11), SNEG(10), BRPEC(1), CAEG(1), REEGWM(1)
+          ROTE:  23 misclassified -> MTRN(18), SATE(5)
+          GREG:  11 misclassified -> MEGRT(5), SNEG(2), REEGWM(2), CAEG(1), WHIB(1)
+         MEGRT:   7 misclassified -> GREG(3), WHIBC(1), LAGU(1), OTHERS(1), WHIB(1)
+        REEGWM:   6 misclassified -> GREG(3), CAEG(2), WHIB(1)
+          BRPE:   5 misclassified -> BCNH(2), MEGRT(1), BRPEC(1), GBHE(1)
+          OTHR:   4 misclassified -> LAGU(2), OTHERS(1), ROSP(1)
+          LAGU:   3 misclassified -> TRHE(2), MEGRT(1)
+          BCNH:   3 misclassified -> REEG(2), WHIBC(1)
+          REEG:   3 misclassified -> GBHE(2), TRHE(1)
+         BRPEC:   3 misclassified -> WHIB(1), MEGRT(1), BRPE(1)
+        OTHERS:   3 misclassified -> OTHR(1), GBHE(1), WHIB(1)
+          TRHE:   3 misclassified -> REEG(2), LAGU(1)
+          SATE:   3 misclassified -> ROTE(3)
+          GBHE:   1 misclassified -> OTHERS(1)
+          CAEG:   1 misclassified -> OTHR(1)

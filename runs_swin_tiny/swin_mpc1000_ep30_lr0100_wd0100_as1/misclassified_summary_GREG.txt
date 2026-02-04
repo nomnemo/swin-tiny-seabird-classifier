@@ -1,0 +1,19 @@
+Total misclassified: 11
+True label: GREG
+Confused into 5 different classes:
+         MEGRT:   5  (avg pred_conf=0.938, avg true_conf=0.062)
+    crops\GREG\16036_86020.jpg  pred_conf=0.9952  true_conf=0.0044
+    crops\GREG\16019_85984.jpg  pred_conf=0.9604  true_conf=0.0396
+    crops\GREG\16041_86028.jpg  pred_conf=0.9458  true_conf=0.0542
+    crops\GREG\16036_86021.jpg  pred_conf=0.8217  true_conf=0.1777
+    crops\GREG\16041_86027.jpg  pred_conf=0.9664  true_conf=0.0336
+          SNEG:   2  (avg pred_conf=0.841, avg true_conf=0.014)
+    crops\GREG\603_1567.jpg  pred_conf=0.9033  true_conf=0.0271
+    crops\GREG\13168_77921.jpg  pred_conf=0.7785  true_conf=0.0002
+        REEGWM:   2  (avg pred_conf=0.980, avg true_conf=0.019)
+    crops\GREG\10605_71088.jpg  pred_conf=0.9869  true_conf=0.0120
+    crops\GREG\17057_96335.jpg  pred_conf=0.9740  true_conf=0.0252
+          CAEG:   1  (avg pred_conf=0.820, avg true_conf=0.078)
+    crops\GREG\12765_76720.jpg  pred_conf=0.8204  true_conf=0.0778
+          WHIB:   1  (avg pred_conf=0.502, avg true_conf=0.000)
+    crops\GREG\483_1398.jpg  pred_conf=0.5025  true_conf=0.0003

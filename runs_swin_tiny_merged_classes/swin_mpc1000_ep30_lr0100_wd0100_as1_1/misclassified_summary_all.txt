@@ -1,0 +1,16 @@
+Total misclassified: 53
+
+Breakdown by true label (13 classes with errors):
+  GREG_MEGRT_SNEG_WHIB:  13 misclassified -> REEGWM(5), CAEG(2), ROSP(2), OTHR(2), GBHE(1), MTRN_ROTE(1)
+          BRPE:   6 misclassified -> GREG_MEGRT_SNEG_WHIB(2), GBHE(2), REEGWM(1), OTHERS(1)
+     MTRN_ROTE:   6 misclassified -> SATE(6)
+          TRHE:   5 misclassified -> LAGU(2), OTHERS(1), REEG(1), BCNH(1)
+          OTHR:   5 misclassified -> LAGU(2), OTHERS(2), ROSP(1)
+          BCNH:   4 misclassified -> REEG(2), GBHE(1), WHIBC(1)
+          REEG:   4 misclassified -> TRHE(1), GBHE(1), BCNH(1), OTHERS(1)
+        OTHERS:   2 misclassified -> GREG_MEGRT_SNEG_WHIB(1), OTHR(1)
+         BRPEC:   2 misclassified -> BRPE(1), GREG_MEGRT_SNEG_WHIB(1)
+          GBHE:   2 misclassified -> BCNH(1), OTHERS(1)
+        REEGWM:   2 misclassified -> CAEG(1), GREG_MEGRT_SNEG_WHIB(1)
+          CAEG:   1 misclassified -> OTHERS(1)
+          SATE:   1 misclassified -> MTRN_ROTE(1)

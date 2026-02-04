@@ -1,0 +1,11 @@
+Total misclassified: 5
+True label: OTHR
+Confused into 3 different classes:
+          LAGU:   2  (avg pred_conf=1.000, avg true_conf=0.000)
+    crops\OTHR\10013_69837.jpg  pred_conf=1.0000  true_conf=0.0000
+    crops\OTHR\5196_38892.jpg  pred_conf=0.9991  true_conf=0.0000
+        OTHERS:   2  (avg pred_conf=0.883, avg true_conf=0.116)
+    crops\OTHR\8341_59027.jpg  pred_conf=0.9973  true_conf=0.0026
+    crops\OTHR\16310_87652.jpg  pred_conf=0.7693  true_conf=0.2301
+          ROSP:   1  (avg pred_conf=0.794, avg true_conf=0.000)
+    crops\OTHR\2701_33185.jpg  pred_conf=0.7937  true_conf=0.0001

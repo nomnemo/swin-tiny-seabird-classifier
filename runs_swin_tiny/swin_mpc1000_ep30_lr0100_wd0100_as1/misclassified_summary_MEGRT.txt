@@ -1,0 +1,15 @@
+Total misclassified: 7
+True label: MEGRT
+Confused into 5 different classes:
+          GREG:   3  (avg pred_conf=0.921, avg true_conf=0.079)
+    crops\MEGRT\4367_37425.jpg  pred_conf=0.9978  true_conf=0.0021
+    crops\MEGRT\4408_37504.jpg  pred_conf=0.7648  true_conf=0.2351
+    crops\MEGRT\4279_37266.jpg  pred_conf=0.9992  true_conf=0.0008
+         WHIBC:   1  (avg pred_conf=0.499, avg true_conf=0.000)
+    crops\MEGRT\4408_37505.jpg  pred_conf=0.4994  true_conf=0.0000
+          LAGU:   1  (avg pred_conf=0.439, avg true_conf=0.000)
+    crops\MEGRT\4409_37507.jpg  pred_conf=0.4385  true_conf=0.0000
+        OTHERS:   1  (avg pred_conf=0.925, avg true_conf=0.038)
+    crops\MEGRT\4694_37959.jpg  pred_conf=0.9254  true_conf=0.0385
+          WHIB:   1  (avg pred_conf=0.995, avg true_conf=0.000)
+    crops\MEGRT\4360_37407.jpg  pred_conf=0.9952  true_conf=0.0004

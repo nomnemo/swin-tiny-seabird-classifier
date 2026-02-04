@@ -1,0 +1,7 @@
+Total misclassified: 3
+True label: SATE
+Confused into 1 different classes:
+          ROTE:   3  (avg pred_conf=0.927, avg true_conf=0.040)
+    crops\SATE\16547_91192.jpg  pred_conf=0.9974  true_conf=0.0002
+    crops\SATE\16547_91193.jpg  pred_conf=0.8816  true_conf=0.1175
+    crops\SATE\16547_91186.jpg  pred_conf=0.9028  true_conf=0.0013
