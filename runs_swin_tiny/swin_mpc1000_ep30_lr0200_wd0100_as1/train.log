@@ -110,3 +110,30 @@ Test report macro-F1: 0.911
 Test report mAP (macro, one-vs-rest): 0.956
 Test report per-class AP written to test_ap_per_class.json
 [info] saved val_test_cms.pdf
+[info] run directory: runs_swin_tiny/swin_mpc1000_ep30_lr0200_wd0100_as1
+============================================================
+TRAINING CONFIGURATION
+============================================================
+  model:            swin_tiny_patch4_window7_224
+  loss:             CrossEntropy
+  epochs:           30
+  warmup_epochs:    10
+  lr:               0.0002
+  weight_decay:     0.01
+  accum_steps:      1
+  AMP:              True
+  device:           cuda
+  input_size:       224
+  batch_train:      64
+  batch_eval:       128
+  use_sampler:      True
+  num_workers:      16
+  max_per_class:    1000
+  num_classes:      21
+  train_size:       14212
+  val_size:         2185
+  test_size:        2254
+============================================================
+[info] saved split_composition.json
+ep 01 | train acc 0.663 loss 1.204 | val acc 0.774 loss 0.644 | macroF1 0.718 | lr 2.00e-05 | val_time 5.1s | ep_time 28.4s
+[info] new best val macro-F1 0.718 at epoch 01
