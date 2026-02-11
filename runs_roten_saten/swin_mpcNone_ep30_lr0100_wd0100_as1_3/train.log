@@ -1,0 +1,97 @@
+[info] run directory: runs_roten_saten/swin_mpcNone_ep30_lr0100_wd0100_as1_3
+============================================================
+TRAINING CONFIGURATION  (ROTEN vs SATEN)
+============================================================
+  model:            swin_tiny_patch4_window7_224
+  loss:             CrossEntropy
+  epochs:           30
+  warmup_epochs:    10
+  lr:               0.0001
+  weight_decay:     0.01
+  accum_steps:      1
+  AMP:              True
+  device:           cuda
+  hardware:         1x NVIDIA A10 (Lambda)
+  image_root:       data/Images-256
+  input_size:       224
+  batch_train:      32
+  batch_eval:       128
+  use_sampler:      True
+  num_workers:      16
+  max_per_class:    None
+  merge_groups:     None
+  num_classes:      2
+  classes:          ['ROTEN', 'SATEN']
+  train_size:       1016
+  val_size:         127
+  test_size:        127
+============================================================
+[info] saved split_composition.json
+ep 01 | train acc 0.759 loss 0.521 | val acc 0.819 loss 0.382 | macroF1 0.817 | lr 1.00e-05 | val_time 1.4s | ep_time 6.9s
+[info] new best val macro-F1 0.817 at epoch 01
+ep 02 | train acc 0.882 loss 0.297 | val acc 0.882 loss 0.291 | macroF1 0.881 | lr 2.00e-05 | val_time 0.7s | ep_time 2.6s
+[info] new best val macro-F1 0.881 at epoch 02
+ep 03 | train acc 0.930 loss 0.172 | val acc 0.921 loss 0.207 | macroF1 0.921 | lr 3.00e-05 | val_time 0.6s | ep_time 2.4s
+[info] new best val macro-F1 0.921 at epoch 03
+ep 04 | train acc 0.914 loss 0.224 | val acc 0.843 loss 0.344 | macroF1 0.839 | lr 4.00e-05 | val_time 0.6s | ep_time 2.4s
+ep 05 | train acc 0.923 loss 0.194 | val acc 0.811 loss 0.531 | macroF1 0.806 | lr 5.00e-05 | val_time 0.6s | ep_time 2.3s
+ep 06 | train acc 0.950 loss 0.141 | val acc 0.874 loss 0.270 | macroF1 0.873 | lr 6.00e-05 | val_time 0.6s | ep_time 2.4s
+ep 07 | train acc 0.959 loss 0.142 | val acc 0.913 loss 0.258 | macroF1 0.913 | lr 7.00e-05 | val_time 0.6s | ep_time 2.4s
+ep 08 | train acc 0.954 loss 0.134 | val acc 0.921 loss 0.235 | macroF1 0.921 | lr 8.00e-05 | val_time 0.6s | ep_time 2.4s
+[info] new best val macro-F1 0.921 at epoch 08
+ep 09 | train acc 0.969 loss 0.088 | val acc 0.929 loss 0.288 | macroF1 0.929 | lr 9.00e-05 | val_time 0.6s | ep_time 2.3s
+[info] new best val macro-F1 0.929 at epoch 09
+ep 10 | train acc 0.953 loss 0.133 | val acc 0.913 loss 0.215 | macroF1 0.913 | lr 1.00e-04 | val_time 0.6s | ep_time 2.4s
+ep 11 | train acc 0.944 loss 0.141 | val acc 0.898 loss 0.265 | macroF1 0.898 | lr 9.94e-05 | val_time 0.6s | ep_time 2.4s
+ep 12 | train acc 0.967 loss 0.109 | val acc 0.921 loss 0.229 | macroF1 0.921 | lr 9.76e-05 | val_time 0.6s | ep_time 2.3s
+ep 13 | train acc 0.968 loss 0.084 | val acc 0.929 loss 0.258 | macroF1 0.929 | lr 9.46e-05 | val_time 0.6s | ep_time 2.4s
+ep 14 | train acc 0.970 loss 0.084 | val acc 0.906 loss 0.347 | macroF1 0.905 | lr 9.05e-05 | val_time 0.6s | ep_time 2.3s
+ep 15 | train acc 0.975 loss 0.067 | val acc 0.921 loss 0.335 | macroF1 0.921 | lr 8.54e-05 | val_time 0.6s | ep_time 2.3s
+ep 16 | train acc 0.977 loss 0.077 | val acc 0.913 loss 0.227 | macroF1 0.913 | lr 7.94e-05 | val_time 0.6s | ep_time 2.4s
+ep 17 | train acc 0.974 loss 0.076 | val acc 0.890 loss 0.310 | macroF1 0.889 | lr 7.27e-05 | val_time 0.6s | ep_time 2.4s
+ep 18 | train acc 0.980 loss 0.050 | val acc 0.898 loss 0.325 | macroF1 0.897 | lr 6.55e-05 | val_time 0.6s | ep_time 2.4s
+ep 19 | train acc 0.992 loss 0.033 | val acc 0.913 loss 0.316 | macroF1 0.913 | lr 5.78e-05 | val_time 0.6s | ep_time 2.3s
+ep 20 | train acc 0.988 loss 0.035 | val acc 0.929 loss 0.301 | macroF1 0.929 | lr 5.00e-05 | val_time 0.6s | ep_time 2.3s
+ep 21 | train acc 0.990 loss 0.035 | val acc 0.929 loss 0.285 | macroF1 0.929 | lr 4.22e-05 | val_time 0.6s | ep_time 2.3s
+ep 22 | train acc 0.993 loss 0.027 | val acc 0.921 loss 0.261 | macroF1 0.921 | lr 3.45e-05 | val_time 0.6s | ep_time 2.4s
+ep 23 | train acc 0.992 loss 0.028 | val acc 0.921 loss 0.293 | macroF1 0.921 | lr 2.73e-05 | val_time 0.6s | ep_time 2.4s
+ep 24 | train acc 0.993 loss 0.019 | val acc 0.913 loss 0.292 | macroF1 0.913 | lr 2.06e-05 | val_time 0.6s | ep_time 2.4s
+ep 25 | train acc 0.995 loss 0.019 | val acc 0.913 loss 0.339 | macroF1 0.913 | lr 1.46e-05 | val_time 0.6s | ep_time 2.4s
+ep 26 | train acc 0.993 loss 0.027 | val acc 0.913 loss 0.358 | macroF1 0.913 | lr 9.55e-06 | val_time 0.6s | ep_time 2.4s
+ep 27 | train acc 0.993 loss 0.019 | val acc 0.913 loss 0.368 | macroF1 0.913 | lr 5.45e-06 | val_time 0.6s | ep_time 2.4s
+ep 28 | train acc 0.988 loss 0.029 | val acc 0.921 loss 0.341 | macroF1 0.921 | lr 2.45e-06 | val_time 0.6s | ep_time 2.4s
+ep 29 | train acc 0.995 loss 0.012 | val acc 0.921 loss 0.340 | macroF1 0.921 | lr 6.16e-07 | val_time 0.6s | ep_time 2.4s
+ep 30 | train acc 0.992 loss 0.018 | val acc 0.921 loss 0.340 | macroF1 0.921 | lr 0.00e+00 | val_time 0.6s | ep_time 2.3s
+[info] saved curves.pdf
+
+Validation report:
+              precision    recall  f1-score   support
+
+       ROTEN      0.922     0.937     0.929        63
+       SATEN      0.937     0.922     0.929        64
+
+    accuracy                          0.929       127
+   macro avg      0.929     0.929     0.929       127
+weighted avg      0.929     0.929     0.929       127
+
+Validation report macro-F1: 0.929
+Validation report mAP (macro, one-vs-rest): 0.977
+Validation report per-class AP written to val_ap_per_class.json
+Validation report: 9 misclassified images saved to val_misclassified.json
+
+Test report:
+              precision    recall  f1-score   support
+
+       ROTEN      0.912     0.969     0.939        64
+       SATEN      0.966     0.905     0.934        63
+
+    accuracy                          0.937       127
+   macro avg      0.939     0.937     0.937       127
+weighted avg      0.939     0.937     0.937       127
+
+Test report macro-F1: 0.937
+Test report mAP (macro, one-vs-rest): 0.980
+Test report per-class AP written to test_ap_per_class.json
+Test report: 8 misclassified images saved to test_misclassified.json
+[info] saved val_test_cms.pdf
+[info] total run time: 0:01:27

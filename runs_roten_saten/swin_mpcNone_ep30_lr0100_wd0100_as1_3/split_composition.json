@@ -1,0 +1,14 @@
+{
+  "train": {
+    "ROTEN": 508,
+    "SATEN": 508
+  },
+  "val": {
+    "ROTEN": 63,
+    "SATEN": 64
+  },
+  "test": {
+    "ROTEN": 64,
+    "SATEN": 63
+  }
+}
