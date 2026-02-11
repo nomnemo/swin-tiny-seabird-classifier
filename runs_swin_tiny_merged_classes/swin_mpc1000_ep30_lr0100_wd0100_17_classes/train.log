@@ -61,3 +61,63 @@ ep 24 | train acc 0.998 loss 0.007 | val acc 0.979 loss 0.108 | macroF1 0.969 | 
 ep 25 | train acc 0.997 loss 0.009 | val acc 0.982 loss 0.093 | macroF1 0.975 | lr 1.46e-05 | val_time 1.4s | ep_time 18.7s
 ep 26 | train acc 0.998 loss 0.005 | val acc 0.982 loss 0.093 | macroF1 0.975 | lr 9.55e-06 | val_time 1.5s | ep_time 19.0s
 ep 27 | train acc 0.999 loss 0.005 | val acc 0.983 loss 0.088 | macroF1 0.975 | lr 5.45e-06 | val_time 1.5s | ep_time 19.1s
+ep 28 | train acc 0.999 loss 0.004 | val acc 0.982 loss 0.096 | macroF1 0.973 | lr 2.45e-06 | val_time 1.5s | ep_time 18.8s
+ep 29 | train acc 0.999 loss 0.003 | val acc 0.982 loss 0.096 | macroF1 0.973 | lr 6.16e-07 | val_time 1.5s | ep_time 19.0s
+ep 30 | train acc 0.999 loss 0.003 | val acc 0.982 loss 0.096 | macroF1 0.973 | lr 0.00e+00 | val_time 1.4s | ep_time 18.9s
+[info] saved curves.pdf
+
+Validation report:
+                precision    recall  f1-score   support
+
+          BCNH      0.989     1.000     0.994        89
+          BLSK      1.000     0.995     0.997       182
+          BRPE      0.995     0.985     0.990       200
+         BRPEC      0.963     0.963     0.963        54
+          CAEG      1.000     1.000     1.000       122
+          GBHE      0.985     0.963     0.974       136
+GREG_SNEG_WHIB      0.984     0.925     0.954       134
+          LAGU      0.985     0.985     0.985       200
+          REEG      0.970     1.000     0.985       163
+        REEGWM      0.865     1.000     0.928        32
+          ROSP      0.966     0.966     0.966        87
+     ROTE_SATE      0.990     0.995     0.993       200
+          TRHE      0.971     0.986     0.978       138
+         WHIBC      1.000     1.000     1.000        16
+
+      accuracy                          0.983      1753
+     macro avg      0.976     0.983     0.979      1753
+  weighted avg      0.983     0.983     0.983      1753
+
+Validation report macro-F1: 0.979
+Validation report mAP (macro, one-vs-rest): 0.993
+Validation report per-class AP written to val_ap_per_class.json
+Validation report: 30 misclassified images saved to val_misclassified.json
+
+Test report:
+                precision    recall  f1-score   support
+
+          BCNH      0.940     1.000     0.969       110
+          BLSK      1.000     1.000     1.000       186
+          BRPE      0.990     0.975     0.982       200
+         BRPEC      0.902     0.925     0.914        40
+          CAEG      1.000     1.000     1.000       120
+          GBHE      0.993     0.931     0.961       144
+GREG_SNEG_WHIB      0.955     0.934     0.945       137
+          LAGU      0.990     0.975     0.982       200
+          REEG      0.944     0.981     0.962       154
+        REEGWM      0.878     0.947     0.911        38
+          ROSP      0.976     0.968     0.972       125
+     ROTE_SATE      0.986     1.000     0.993       137
+          TRHE      0.983     0.974     0.979       117
+         WHIBC      0.952     1.000     0.976        20
+
+      accuracy                          0.975      1728
+     macro avg      0.963     0.972     0.967      1728
+  weighted avg      0.975     0.975     0.975      1728
+
+Test report macro-F1: 0.967
+Test report mAP (macro, one-vs-rest): 0.989
+Test report per-class AP written to test_ap_per_class.json
+Test report: 44 misclassified images saved to test_misclassified.json
+[info] saved val_test_cms.pdf
+[info] total run time: 0:10:45
