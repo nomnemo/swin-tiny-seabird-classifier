@@ -1,0 +1,11 @@
+=== TEST — 8 misclassified ===
+         SATEN:   6 misclassified -> ROTEN(6)
+         ROTEN:   2 misclassified -> SATEN(2)
+    20250510 10k-05-10 000356.jpg  true=SATEN  pred=ROTEN  pred_conf=0.7973  true_conf=0.2027
+    20250510 10k-05-10 000303.jpg  true=SATEN  pred=ROTEN  pred_conf=0.8969  true_conf=0.1031
+    20250510 10k-05-10 000444.jpg  true=SATEN  pred=ROTEN  pred_conf=0.9987  true_conf=0.0013
+    20250510 10k-05-10 000809.jpg  true=ROTEN  pred=SATEN  pred_conf=0.5288  true_conf=0.4712
+    20250510 10k-05-10 000267.jpg  true=SATEN  pred=ROTEN  pred_conf=0.9990  true_conf=0.0010
+    20250510 10k-03-11 000945.jpg  true=ROTEN  pred=SATEN  pred_conf=0.9987  true_conf=0.0013
+    20250510 10k-03-11 000465.jpg  true=SATEN  pred=ROTEN  pred_conf=0.9694  true_conf=0.0306
+    20250510 10k-05-10 000549.jpg  true=SATEN  pred=ROTEN  pred_conf=0.7977  true_conf=0.2023

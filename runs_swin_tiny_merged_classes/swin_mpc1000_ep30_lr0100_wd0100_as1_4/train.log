@@ -1,0 +1,63 @@
+[info] run directory: runs_swin_tiny_merged_classes/swin_mpc1000_ep30_lr0100_wd0100_as1_4
+============================================================
+TRAINING CONFIGURATION
+============================================================
+  model:            swin_tiny_patch4_window7_224
+  loss:             CrossEntropy
+  epochs:           30
+  warmup_epochs:    10
+  lr:               0.0001
+  weight_decay:     0.01
+  accum_steps:      1
+  AMP:              True
+  device:           cuda
+  hardware:         1x NVIDIA A10 (Lambda)
+  input_size:       224
+  batch_train:      32
+  batch_eval:       128
+  use_sampler:      True
+  num_workers:      16
+  max_per_class:    1000
+  merge_groups:     [['GREG', 'WHIB', 'SNEG'], ['ROTE', 'SATE']]
+    GREG, WHIB, SNEG -> GREG_SNEG_WHIB
+    ROTE, SATE -> ROTE_SATE
+  num_classes:      14
+  train_size:       11108
+  val_size:         1753
+  test_size:        1728
+============================================================
+[info] saved split_composition.json
+ep 01 | train acc 0.758 loss 0.908 | val acc 0.918 loss 0.254 | macroF1 0.879 | lr 1.00e-05 | val_time 3.6s | ep_time 24.1s
+[info] new best val macro-F1 0.879 at epoch 01
+ep 02 | train acc 0.939 loss 0.212 | val acc 0.952 loss 0.159 | macroF1 0.929 | lr 2.00e-05 | val_time 1.4s | ep_time 18.8s
+[info] new best val macro-F1 0.929 at epoch 02
+ep 03 | train acc 0.959 loss 0.141 | val acc 0.956 loss 0.160 | macroF1 0.926 | lr 3.00e-05 | val_time 1.5s | ep_time 19.0s
+ep 04 | train acc 0.967 loss 0.108 | val acc 0.965 loss 0.143 | macroF1 0.954 | lr 4.00e-05 | val_time 1.4s | ep_time 30.6s
+[info] new best val macro-F1 0.954 at epoch 04
+ep 05 | train acc 0.969 loss 0.101 | val acc 0.968 loss 0.113 | macroF1 0.946 | lr 5.00e-05 | val_time 1.5s | ep_time 18.6s
+ep 06 | train acc 0.972 loss 0.091 | val acc 0.964 loss 0.130 | macroF1 0.946 | lr 6.00e-05 | val_time 1.5s | ep_time 19.5s
+ep 07 | train acc 0.971 loss 0.093 | val acc 0.963 loss 0.136 | macroF1 0.950 | lr 7.00e-05 | val_time 1.8s | ep_time 19.2s
+ep 08 | train acc 0.973 loss 0.082 | val acc 0.917 loss 0.265 | macroF1 0.888 | lr 8.00e-05 | val_time 1.6s | ep_time 18.8s
+ep 09 | train acc 0.977 loss 0.076 | val acc 0.975 loss 0.098 | macroF1 0.964 | lr 9.00e-05 | val_time 1.6s | ep_time 19.2s
+[info] new best val macro-F1 0.964 at epoch 09
+ep 10 | train acc 0.971 loss 0.093 | val acc 0.954 loss 0.164 | macroF1 0.942 | lr 1.00e-04 | val_time 1.4s | ep_time 18.9s
+ep 11 | train acc 0.977 loss 0.072 | val acc 0.963 loss 0.148 | macroF1 0.941 | lr 9.94e-05 | val_time 1.6s | ep_time 18.9s
+ep 12 | train acc 0.980 loss 0.060 | val acc 0.972 loss 0.096 | macroF1 0.961 | lr 9.76e-05 | val_time 1.7s | ep_time 19.3s
+ep 13 | train acc 0.985 loss 0.049 | val acc 0.972 loss 0.119 | macroF1 0.965 | lr 9.46e-05 | val_time 1.6s | ep_time 22.4s
+[info] new best val macro-F1 0.965 at epoch 13
+ep 14 | train acc 0.985 loss 0.044 | val acc 0.970 loss 0.131 | macroF1 0.957 | lr 9.05e-05 | val_time 2.6s | ep_time 30.4s
+ep 15 | train acc 0.985 loss 0.050 | val acc 0.981 loss 0.099 | macroF1 0.975 | lr 8.54e-05 | val_time 1.7s | ep_time 29.2s
+[info] new best val macro-F1 0.975 at epoch 15
+ep 16 | train acc 0.990 loss 0.028 | val acc 0.979 loss 0.096 | macroF1 0.971 | lr 7.94e-05 | val_time 2.1s | ep_time 29.9s
+ep 17 | train acc 0.992 loss 0.029 | val acc 0.975 loss 0.122 | macroF1 0.960 | lr 7.27e-05 | val_time 1.6s | ep_time 26.9s
+ep 18 | train acc 0.992 loss 0.027 | val acc 0.971 loss 0.119 | macroF1 0.958 | lr 6.55e-05 | val_time 1.6s | ep_time 18.7s
+ep 19 | train acc 0.992 loss 0.024 | val acc 0.983 loss 0.075 | macroF1 0.979 | lr 5.78e-05 | val_time 1.4s | ep_time 19.0s
+[info] new best val macro-F1 0.979 at epoch 19
+ep 20 | train acc 0.994 loss 0.018 | val acc 0.983 loss 0.089 | macroF1 0.975 | lr 5.00e-05 | val_time 1.5s | ep_time 19.0s
+ep 21 | train acc 0.996 loss 0.014 | val acc 0.979 loss 0.106 | macroF1 0.966 | lr 4.22e-05 | val_time 1.6s | ep_time 19.1s
+ep 22 | train acc 0.998 loss 0.009 | val acc 0.983 loss 0.092 | macroF1 0.974 | lr 3.45e-05 | val_time 1.7s | ep_time 19.1s
+ep 23 | train acc 0.997 loss 0.010 | val acc 0.969 loss 0.152 | macroF1 0.954 | lr 2.73e-05 | val_time 1.4s | ep_time 19.0s
+ep 24 | train acc 0.998 loss 0.007 | val acc 0.979 loss 0.108 | macroF1 0.969 | lr 2.06e-05 | val_time 1.5s | ep_time 18.9s
+ep 25 | train acc 0.997 loss 0.009 | val acc 0.982 loss 0.093 | macroF1 0.975 | lr 1.46e-05 | val_time 1.4s | ep_time 18.7s
+ep 26 | train acc 0.998 loss 0.005 | val acc 0.982 loss 0.093 | macroF1 0.975 | lr 9.55e-06 | val_time 1.5s | ep_time 19.0s
+ep 27 | train acc 0.999 loss 0.005 | val acc 0.983 loss 0.088 | macroF1 0.975 | lr 5.45e-06 | val_time 1.5s | ep_time 19.1s

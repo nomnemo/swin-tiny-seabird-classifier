@@ -1,0 +1,79 @@
+[
+  {
+    "crop_path": "20250510 10k-05-10 000793.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0031,
+    "predicted_class_conf": 0.9969
+  },
+  {
+    "crop_path": "20250510 10k-03-11 000171.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0022,
+    "predicted_class_conf": 0.9978
+  },
+  {
+    "crop_path": "20250510 10k-16-01 000182.jpg",
+    "true_label": "SATEN",
+    "predicted_label": "ROTEN",
+    "true_class_conf": 0.0016,
+    "predicted_class_conf": 0.9984
+  },
+  {
+    "crop_path": "20250510 10k-03-11 000505.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0016,
+    "predicted_class_conf": 0.9984
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000086.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0392,
+    "predicted_class_conf": 0.9608
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000508.jpg",
+    "true_label": "SATEN",
+    "predicted_label": "ROTEN",
+    "true_class_conf": 0.0004,
+    "predicted_class_conf": 0.9996
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000855.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0005,
+    "predicted_class_conf": 0.9995
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000107.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0007,
+    "predicted_class_conf": 0.9993
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000290.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9998
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000537.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9999
+  },
+  {
+    "crop_path": "20250510 10k-05-10 000521.jpg",
+    "true_label": "ROTEN",
+    "predicted_label": "SATEN",
+    "true_class_conf": 0.0231,
+    "predicted_class_conf": 0.9769
+  }
+]
