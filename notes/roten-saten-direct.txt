@@ -1,0 +1,73 @@
+
+  Top-line metrics
+  ┌───────────┬────────────┬───────┐
+  │  Metric   │ Validation │ Test  │
+  ├───────────┼────────────┼───────┤
+  │ Accuracy  │ 92.9%      │ 93.7% │
+  ├───────────┼────────────┼───────┤
+  │ Macro F1  │ 0.929      │ 0.937 │
+  ├───────────┼────────────┼───────┤
+  │ mAP (OvR) │ 0.977      │ 0.980 │
+  └───────────┴────────────┴───────┘
+  The model generalizes well — test performance slightly exceeds validation, which is a good sign there's no overfitting-driven selection bias from
+  the best-checkpoint strategy.
+
+  Per-class breakdown
+  ┌──────────────┬───────────┬────────┬───────┐
+  │              │ Precision │ Recall │  F1   │
+  ├──────────────┼───────────┼────────┼───────┤
+  │ ROTEN (val)  │ 0.922     │ 0.937  │ 0.929 │
+  ├──────────────┼───────────┼────────┼───────┤
+  │ SATEN (val)  │ 0.937     │ 0.922  │ 0.929 │
+  ├──────────────┼───────────┼────────┼───────┤
+  │ ROTEN (test) │ 0.912     │ 0.969  │ 0.939 │
+  ├──────────────┼───────────┼────────┼───────┤
+  │ SATEN (test) │ 0.966     │ 0.905  │ 0.934 │
+  └──────────────┴───────────┴────────┴───────┘
+  Both classes are nearly symmetrical. The slight asymmetry on test (ROTEN has higher recall, SATEN has higher precision) means the model is slightly
+   biased toward predicting ROTEN — so a few real SATEN get mislabeled as ROTEN (6 out of 63). This is a mild tendency, not a concern.
+
+  Confusion matrices
+
+  - Val: ROTEN 93.7%/6.3%, SATEN 7.8%/92.2% — balanced errors in both directions
+  - Test: ROTEN 96.9%/3.1%, SATEN 9.5%/90.5% — ROTEN recall is excellent; SATEN has slightly more misses
+
+  Training curves
+
+  - Convergence: The model learns fast — 93% val accuracy by epoch 3. Best checkpoint saved at epoch 9 (macro-F1 = 0.929).
+  - Overfitting: Visible after ~epoch 12. Train loss drops to ~0.02 while val loss plateaus at ~0.30-0.35. Train accuracy reaches 99.5% vs val ~92%.
+  This is typical for small datasets (1,016 training images). The early-stopping checkpoint at epoch 9 captures the sweet spot before overfitting
+  worsens.
+  - Warmup: The 10-epoch linear warmup works well — the spiky val loss at epochs 4-5 settles down by epoch 8-9.
+
+  Error analysis
+
+  17 total misclassified images (9 val + 8 test). Notable patterns:
+
+  - High-confidence wrong predictions: Several errors have >95% confidence in the wrong class (e.g., 10k-05-10 000444.jpg — SATEN predicted ROTEN at
+  99.9%). These are likely genuinely ambiguous birds or possible labeling errors worth reviewing.
+  - Source image concentration: 12 of 17 errors come from the 10k-05-10 aerial photo. This parent image may have harder viewing angles or more mixed
+  flocks.
+  - Error direction: 11/17 errors are SATEN misclassified as ROTEN, vs 6/17 the other way — consistent with the slight ROTEN-prediction bias noted
+  above.
+
+  Bottom line
+
+  93.7% test accuracy / 0.937 F1 on a binary tern classifier trained on only 1,016 images is a strong result. The model reliably distinguishes Royal
+  Terns from Sandwich Terns. The ~6% error rate is concentrated in a few high-confidence misclassifications that may warrant manual review of the
+  source labels. If you wanted to push further, the main lever would be more training data (more aerial photos to increase parent-group diversity
+  from the current 4).
+
+
+  Cropping to the bounding box (with some padding) would be better here because:
+
+  1. The model is forced to learn from the bird itself — plumage color, bill shape, body proportions — which are the actual distinguishing features
+  between Royal and Sandwich Terns
+  2. It removes confounding context (vegetation type, colony density, mask patterns) that varies by photo, not by species
+  3. It's standard practice for fine-grained classification — you detect first, then classify the crop
+
+  When context is useful: In some tasks (e.g., habitat classification, behavior recognition), surrounding context matters. But for species ID between
+   two very similar terns, you want the model focused on the bird.
+
+  Recommendation: Crop each image to the bounding box from detections[0].bbox, add ~20-30% padding on each side (clamped to image bounds), then
+  resize to 224x224 for Swin. This would be a straightforward preprocessing step before re-training. Want me to implement that?

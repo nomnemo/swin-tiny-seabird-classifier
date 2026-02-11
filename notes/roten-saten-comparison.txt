@@ -1,0 +1,36 @@
+  ┌────────────────────┬───────────────────────┬──────────────────┐
+  │       Metric       │ Full 256x256 (masked) │ Cropped to bbox  │
+  ├────────────────────┼───────────────────────┼──────────────────┤
+  │ Best val macro-F1  │ 0.929 (epoch 9)       │ 0.913 (epoch 24) │
+  ├────────────────────┼───────────────────────┼──────────────────┤
+  │ Test macro-F1      │ 0.937                 │ 0.882            │
+  ├────────────────────┼───────────────────────┼──────────────────┤
+  │ Test accuracy      │ 93.7%                 │ 88.2%            │
+  ├────────────────────┼───────────────────────┼──────────────────┤
+  │ Test mAP           │ 0.980                 │ 0.922            │
+  ├────────────────────┼───────────────────────┼──────────────────┤
+  │ Val misclassified  │ 9                     │ 11               │
+  ├────────────────────┼───────────────────────┼──────────────────┤
+  │ Test misclassified │ 8                     │ 15               │
+  └────────────────────┴───────────────────────┴──────────────────┘
+  So yes — the cropped version is worse across the board and learned slower. Here's why:
+
+  1. The "context leak" was actually helping, not hurting. With only 4 source aerial photos and 1,270 total images, the model had very limited data.
+  The full 256x256 images gave it extra signal — background texture, neighboring bird density, vegetation patterns — that happened to correlate with
+  species in this small dataset. Removing that context took away useful (if spurious) features, leaving the model with less to work with.
+
+  2. The birds are very small and low-resolution. The median bbox is only ~65x46 pixels. After cropping with 25% padding, you're stretching a ~80x58
+  pixel patch up to 224x224. That's heavy upscaling of already-blurry aerial imagery, which destroys fine-grained detail rather than revealing it.
+  The original 256x256 images at least preserved the native resolution.
+
+  3. More variance, same data size. The cropped images vary more in what the model sees (just the bird from different angles/poses), making the task
+  genuinely harder per-sample. With only ~500 training images per class, there isn't enough data to learn the bird-only features robustly — hence the
+   much noisier validation curve (bouncing between 0.70-0.91) compared to the smoother original run.
+
+  4. ROTEN recall dropped the most (96.9% → 84.4% on test). Royal Terns are larger birds, so they likely benefited more from the surrounding context
+  in the full images. Once cropped, the model loses that size-in-context cue.
+
+  Bottom line: Cropping is the right approach in principle for fine-grained classification, but it needs higher-resolution source imagery to work.
+  With these aerial photos where the birds are only ~50-70px across, the bbox crops are too low-res after upscaling. The full masked images, despite
+  the confounding context, give the model more usable pixel information. For this dataset, the original approach (full 256x256 masked) is the better
+  choice.
