@@ -49,7 +49,7 @@ MAX_PER_CLASS = None   # already balanced at 635 each
 MERGE_GROUPS  = None   # no merging needed
 
 # Data paths (256x256 masked images)
-IMAGE_ROOT = Path("data/Images-256")
+IMAGE_ROOT = Path("data/Images-256-cropped")
 DATA_DIR   = Path("data/roten_saten")
 TRAIN_CSV  = DATA_DIR / "split_train.csv"
 VAL_CSV    = DATA_DIR / "split_val.csv"
