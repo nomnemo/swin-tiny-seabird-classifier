@@ -13,3 +13,4 @@ __pycache__/
 *.pth
 checkpoints/
 data/crops
+data/Images-256-cropped
