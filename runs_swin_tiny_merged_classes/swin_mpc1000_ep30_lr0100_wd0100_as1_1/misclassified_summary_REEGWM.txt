@@ -1,0 +1,7 @@
+Total misclassified: 2
+True label: REEGWM
+Confused into 2 different classes:
+          CAEG:   1  (avg pred_conf=0.999, avg true_conf=0.001)
+    crops\REEGWM\12691_76502.jpg  pred_conf=0.9994  true_conf=0.0006
+  GREG_MEGRT_SNEG_WHIB:   1  (avg pred_conf=0.986, avg true_conf=0.000)
+    crops\REEGWM\12093_74261.jpg  pred_conf=0.9855  true_conf=0.0000
