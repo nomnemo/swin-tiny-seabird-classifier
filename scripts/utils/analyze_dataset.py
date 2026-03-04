@@ -3,10 +3,14 @@
 COCO-format dataset annotation analyzer with plots.
 
 Usage:
-    python scripts/utils/analyze_dataset.py [path_to_json] [--output-dir DIR]
+    python scripts/utils/analyze_dataset.py [path_to_json] [--output-dir DIR] [--metadata PATH]
 
 Defaults to data/classification_original_training.json if no argument given.
 Plots are saved to --output-dir (default: plots/).
+
+The COCO JSON may have incomplete categories. Use --metadata to point to a
+metadata JSON (e.g. metadata_balanced_t100.json) that contains species_id and
+species_name fields to resolve all category names.
 """
 
 import argparse
@@ -34,8 +38,43 @@ def load_coco_json(path: str) -> dict:
     return data
 
 
-def _cat_map(data: dict) -> dict:
-    return {c["id"]: c["name"] for c in data["categories"]}
+def _build_cat_map(data: dict, metadata_path: str | None = None) -> dict:
+    """Build category_id -> species_name map.
+
+    First tries the metadata JSON (which has species_id/species_name per
+    annotation), then falls back to the COCO categories list.
+    """
+    cm = {}
+
+    # Try loading species names from metadata file
+    if metadata_path and Path(metadata_path).exists():
+        with open(metadata_path) as f:
+            meta = json.load(f)
+        if isinstance(meta, list) and meta and "species_id" in meta[0]:
+            for entry in meta:
+                sid = entry["species_id"]
+                sname = entry.get("species_name", "")
+                if sid not in cm and sname:
+                    cm[sid] = sname
+            print(f"  (loaded {len(cm)} species names from {metadata_path})")
+    else:
+        # Auto-discover metadata in the same directory as the COCO JSON
+        data_dir = Path(data.get("_source_path", "")).parent if "_source_path" in data else None
+        if data_dir is None:
+            # try common locations
+            for candidate in [
+                "data/metadata_balanced_t100.json",
+                "data/metadata_17classes.json",
+            ]:
+                if Path(candidate).exists():
+                    return _build_cat_map(data, candidate)
+
+    # Fill in any remaining IDs from the COCO categories list
+    for c in data["categories"]:
+        if c["id"] not in cm:
+            cm[c["id"]] = c["name"]
+
+    return cm
 
 
 # ---------------------------------------------------------------------------
@@ -58,8 +97,7 @@ def basic_stats(data: dict) -> None:
     print()
 
 
-def species_distribution(data: dict) -> Counter:
-    cm = _cat_map(data)
+def species_distribution(data: dict, cm: dict) -> Counter:
     counts = Counter(a["category_id"] for a in data["annotations"])
     total = sum(counts.values())
 
@@ -135,8 +173,7 @@ def top_images(data: dict, birds_per_image: Counter, top_n: int = 10) -> None:
     print()
 
 
-def dataset_imbalance(species_counts: Counter, data: dict) -> None:
-    cm = _cat_map(data)
+def dataset_imbalance(species_counts: Counter, cm: dict) -> None:
 
     if not species_counts:
         print("  No annotations to analyze.\n")
@@ -168,9 +205,8 @@ def dataset_imbalance(species_counts: Counter, data: dict) -> None:
     print()
 
 
-def sanity_checks(data: dict) -> None:
+def sanity_checks(data: dict, cm: dict) -> None:
     image_ids = {img["id"] for img in data["images"]}
-    cm = _cat_map(data)
 
     bad_image_refs = []
     for a in data["annotations"]:
@@ -214,8 +250,7 @@ def _species_label(cat_id: int, cm: dict) -> str:
     return f"{name} ({cat_id})"
 
 
-def plot_species_distribution(species_counts: Counter, data: dict, out_dir: Path) -> None:
-    cm = _cat_map(data)
+def plot_species_distribution(species_counts: Counter, cm: dict, out_dir: Path) -> None:
     ordered = species_counts.most_common()
     labels = [_species_label(cid, cm) for cid, _ in ordered]
     values = [cnt for _, cnt in ordered]
@@ -249,8 +284,7 @@ def plot_species_distribution(species_counts: Counter, data: dict, out_dir: Path
     print(f"  Saved: {path}")
 
 
-def plot_species_pie(species_counts: Counter, data: dict, out_dir: Path) -> None:
-    cm = _cat_map(data)
+def plot_species_pie(species_counts: Counter, cm: dict, out_dir: Path) -> None:
     ordered = species_counts.most_common()
     total = sum(species_counts.values())
 
@@ -336,8 +370,7 @@ def plot_top_images(data: dict, birds_per_image: Counter, out_dir: Path, top_n: 
     print(f"  Saved: {path}")
 
 
-def plot_class_imbalance(species_counts: Counter, data: dict, out_dir: Path) -> None:
-    cm = _cat_map(data)
+def plot_class_imbalance(species_counts: Counter, cm: dict, out_dir: Path) -> None:
     ordered = species_counts.most_common()
     labels = [_species_label(cid, cm) for cid, _ in ordered]
     values = [cnt for _, cnt in ordered]
@@ -366,7 +399,7 @@ def plot_class_imbalance(species_counts: Counter, data: dict, out_dir: Path) -> 
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def analyze(path: str, output_dir: str = "plots") -> None:
+def analyze(path: str, output_dir: str = "plots", metadata_path: str | None = None) -> None:
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -374,24 +407,25 @@ def analyze(path: str, output_dir: str = "plots") -> None:
     print(f"Plots:   {out_dir.resolve()}\n")
 
     data = load_coco_json(path)
+    cm = _build_cat_map(data, metadata_path)
 
     # Console report
     basic_stats(data)
-    species_counts = species_distribution(data)
+    species_counts = species_distribution(data, cm)
     bpi = bird_density(data)
     top_images(data, bpi)
-    dataset_imbalance(species_counts, data)
-    sanity_checks(data)
+    dataset_imbalance(species_counts, cm)
+    sanity_checks(data, cm)
 
     # Generate plots
     print("=" * 60)
     print("GENERATING PLOTS")
     print("=" * 60)
-    plot_species_distribution(species_counts, data, out_dir)
-    plot_species_pie(species_counts, data, out_dir)
+    plot_species_distribution(species_counts, cm, out_dir)
+    plot_species_pie(species_counts, cm, out_dir)
     plot_bird_density_histogram(bpi, out_dir)
     plot_top_images(data, bpi, out_dir)
-    plot_class_imbalance(species_counts, data, out_dir)
+    plot_class_imbalance(species_counts, cm, out_dir)
     print()
     print(f"All plots saved to {out_dir.resolve()}")
     print()
@@ -410,6 +444,12 @@ def parse_args() -> argparse.Namespace:
         default="plots",
         help="Directory to save plots (default: plots/)",
     )
+    parser.add_argument(
+        "--metadata", "-m",
+        default=None,
+        help="Path to metadata JSON with species_id/species_name fields "
+             "(e.g. data/metadata_balanced_t100.json). Auto-detected if not given.",
+    )
     return parser.parse_args()
 
 
@@ -418,4 +458,4 @@ if __name__ == "__main__":
     if not Path(args.json_path).exists():
         print(f"Error: file not found: {args.json_path}")
         sys.exit(1)
-    analyze(args.json_path, args.output_dir)
+    analyze(args.json_path, args.output_dir, args.metadata)
