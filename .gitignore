@@ -14,3 +14,4 @@ __pycache__/
 checkpoints/
 data/crops
 data/Images-256-cropped
+data/hank_tiles
