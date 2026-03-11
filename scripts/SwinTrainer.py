@@ -32,7 +32,7 @@ ACCUM_STEPS  = 1
 DEVICE       = "cuda" if torch.cuda.is_available() else "cpu"
 AMP          = True
 CKPT_PATH    = "best_swin.pt"
-MAX_PER_CLASS = 1000
+MAX_PER_CLASS = 3000
 OUT_DIR      = Path("runs_swin_tiny_merged_classes")
 OUT_DIR.mkdir(exist_ok=True)
 # Optional log file path and checkpoint path; set inside main()
@@ -47,7 +47,11 @@ HARDWARE = "1x NVIDIA A10 (Lambda)"
 
 # Class merging (set to None to disable, or list of lists to merge confused classes)
 # e.g. [["GREG", "WHIB", "MEGRT"]] or [["GREG", "WHIB", "MEGRT"], ["ROTE", "MTRN"]]
-MERGE_GROUPS = [['GREG', 'WHIB', 'MEGRT', 'SNEG'], ['ROTE', 'MTRN', 'SATE']]
+MERGE_GROUPS = [
+    ['GREG', 'SNEG', 'WHIB', 'REEGWM'],   # white birds
+    ['ROTE', 'MTRN', 'SATE'],              # mixed terns
+    ['MEGRT', 'OTHR', 'OTHERS'],            # don't care
+]
 # ==================
 
 
@@ -92,7 +96,7 @@ def make_run_dir_name(model_name: str, max_per_class: int, epochs: int, lr: floa
     wd_int = int(round(weight_decay * 10000))
     wd_str = f"{wd_int:04d}"
     
-    run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}_3"
+    run_name = f"{model_short}_mpc{max_per_class}_ep{epochs}_lr{lr_str}_wd{wd_str}_as{accum_steps}_14cls"
     return run_name
 
 def plot_curves(history, path):

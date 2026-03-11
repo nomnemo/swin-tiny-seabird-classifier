@@ -1,0 +1,296 @@
+[
+  {
+    "crop_path": "crops\\MTRN\\7217_54715.jpg",
+    "true_label": "MTRN_ROTE_SATE",
+    "predicted_label": "LAGU",
+    "true_class_conf": 0.0065,
+    "predicted_class_conf": 0.9891
+  },
+  {
+    "crop_path": "crops\\TCHE\\8224_58477.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "TRHE",
+    "true_class_conf": 0.0056,
+    "predicted_class_conf": 0.9944
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4410_37508.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.0008,
+    "predicted_class_conf": 0.9991
+  },
+  {
+    "crop_path": "crops\\OTHR\\4140_36954.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "BLSK",
+    "true_class_conf": 0.0086,
+    "predicted_class_conf": 0.9913
+  },
+  {
+    "crop_path": "crops\\GREG\\16085_86091.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0304,
+    "predicted_class_conf": 0.9694
+  },
+  {
+    "crop_path": "crops\\BCNH\\564_1511.jpg",
+    "true_label": "BCNH",
+    "predicted_label": "GBHE",
+    "true_class_conf": 0.2765,
+    "predicted_class_conf": 0.7228
+  },
+  {
+    "crop_path": "crops\\WHIB\\10951_71587.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.1202,
+    "predicted_class_conf": 0.6551
+  },
+  {
+    "crop_path": "crops\\BCNH\\15228_84061.jpg",
+    "true_label": "BCNH",
+    "predicted_label": "REEG",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9997
+  },
+  {
+    "crop_path": "crops\\GREG\\12202_74653.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "GBHE",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4421_37531.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.3346,
+    "predicted_class_conf": 0.6654
+  },
+  {
+    "crop_path": "crops\\GBHE\\15219_84045.jpg",
+    "true_label": "GBHE",
+    "predicted_label": "BCNH",
+    "true_class_conf": 0.184,
+    "predicted_class_conf": 0.7248
+  },
+  {
+    "crop_path": "crops\\TCHE\\9318_67143.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "LAGU",
+    "true_class_conf": 0.3519,
+    "predicted_class_conf": 0.6472
+  },
+  {
+    "crop_path": "crops\\BCNH\\2155_29368.jpg",
+    "true_label": "BCNH",
+    "predicted_label": "LAGU",
+    "true_class_conf": 0.0337,
+    "predicted_class_conf": 0.3923
+  },
+  {
+    "crop_path": "crops\\LAGU\\11192_72098.jpg",
+    "true_label": "LAGU",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0156,
+    "predicted_class_conf": 0.9722
+  },
+  {
+    "crop_path": "crops\\BRPEC\\11045_71727.jpg",
+    "true_label": "BRPEC",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.0465,
+    "predicted_class_conf": 0.9531
+  },
+  {
+    "crop_path": "crops\\ROSP\\17253_96859.jpg",
+    "true_label": "ROSP",
+    "predicted_label": "REEG",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "crops\\WHIB\\11140_71989.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "BRPEC",
+    "true_class_conf": 0.4262,
+    "predicted_class_conf": 0.5221
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4418_37525.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.0086,
+    "predicted_class_conf": 0.991
+  },
+  {
+    "crop_path": "crops\\WHIB\\4255_37215.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0637,
+    "predicted_class_conf": 0.9363
+  },
+  {
+    "crop_path": "crops\\MEGRT\\5201_38900.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "MTRN_ROTE_SATE",
+    "true_class_conf": 0.3735,
+    "predicted_class_conf": 0.4685
+  },
+  {
+    "crop_path": "crops\\WHIB\\4245_37191.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0106,
+    "predicted_class_conf": 0.9894
+  },
+  {
+    "crop_path": "crops\\ROSP\\17084_96408.jpg",
+    "true_label": "ROSP",
+    "predicted_label": "REEG",
+    "true_class_conf": 0.0004,
+    "predicted_class_conf": 0.9334
+  },
+  {
+    "crop_path": "crops\\BCNH\\15228_84062.jpg",
+    "true_label": "BCNH",
+    "predicted_label": "REEG",
+    "true_class_conf": 0.0003,
+    "predicted_class_conf": 0.9996
+  },
+  {
+    "crop_path": "crops\\GREG\\16073_86076.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0019,
+    "predicted_class_conf": 0.9981
+  },
+  {
+    "crop_path": "crops\\GBHE\\15221_84050.jpg",
+    "true_label": "GBHE",
+    "predicted_label": "WHIBC",
+    "true_class_conf": 0.0251,
+    "predicted_class_conf": 0.9745
+  },
+  {
+    "crop_path": "crops\\SNEG\\13014_77513.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "CAEG",
+    "true_class_conf": 0.0103,
+    "predicted_class_conf": 0.9894
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4790_38110.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.432,
+    "predicted_class_conf": 0.5679
+  },
+  {
+    "crop_path": "crops\\MEGRT\\5201_38901.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.0251,
+    "predicted_class_conf": 0.9671
+  },
+  {
+    "crop_path": "crops\\GREG\\10762_71301.jpg",
+    "true_label": "GREG_REEGWM_SNEG_WHIB",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0726,
+    "predicted_class_conf": 0.9272
+  },
+  {
+    "crop_path": "crops\\TRHE\\13998_80354.jpg",
+    "true_label": "TRHE",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0156,
+    "predicted_class_conf": 0.4431
+  },
+  {
+    "crop_path": "crops\\BRPEC\\11220_72168.jpg",
+    "true_label": "BRPEC",
+    "predicted_label": "CAEG",
+    "true_class_conf": 0.0404,
+    "predicted_class_conf": 0.6318
+  },
+  {
+    "crop_path": "crops\\TRHE\\14359_81219.jpg",
+    "true_label": "TRHE",
+    "predicted_label": "LAGU",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9999
+  },
+  {
+    "crop_path": "crops\\OTHR\\4101_36815.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "BLSK",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9999
+  },
+  {
+    "crop_path": "crops\\BRPEC\\14849_82824.jpg",
+    "true_label": "BRPEC",
+    "predicted_label": "GBHE",
+    "true_class_conf": 0.2958,
+    "predicted_class_conf": 0.7041
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4458_37593.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.4703,
+    "predicted_class_conf": 0.5288
+  },
+  {
+    "crop_path": "crops\\REEG\\11045_71728.jpg",
+    "true_label": "REEG",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0004,
+    "predicted_class_conf": 0.9797
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4395_37486.jpg",
+    "true_label": "MEGRT_OTHERS_OTHR",
+    "predicted_label": "GREG_REEGWM_SNEG_WHIB",
+    "true_class_conf": 0.0016,
+    "predicted_class_conf": 0.9984
+  },
+  {
+    "crop_path": "crops\\REEG\\2407_32406.jpg",
+    "true_label": "REEG",
+    "predicted_label": "BCNH",
+    "true_class_conf": 0.2689,
+    "predicted_class_conf": 0.7308
+  },
+  {
+    "crop_path": "crops\\CAEG\\12775_76744.jpg",
+    "true_label": "CAEG",
+    "predicted_label": "MEGRT_OTHERS_OTHR",
+    "true_class_conf": 0.0625,
+    "predicted_class_conf": 0.9367
+  },
+  {
+    "crop_path": "crops\\TRHE\\2534_32778.jpg",
+    "true_label": "TRHE",
+    "predicted_label": "LAGU",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "crops\\MTRN\\7449_57472.jpg",
+    "true_label": "MTRN_ROTE_SATE",
+    "predicted_label": "GBHE",
+    "true_class_conf": 0.0253,
+    "predicted_class_conf": 0.9737
+  },
+  {
+    "crop_path": "crops\\BCNH\\15252_84140.jpg",
+    "true_label": "BCNH",
+    "predicted_label": "WHIBC",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9999
+  }
+]
