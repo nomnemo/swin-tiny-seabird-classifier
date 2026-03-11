@@ -1,0 +1,50 @@
+{
+  "train": {
+    "BCNH": 881,
+    "BLSK": 1385,
+    "BRPE": 2799,
+    "BRPEC": 334,
+    "CAEG": 911,
+    "GBHE": 1193,
+    "GREG_REEGWM_SNEG_WHIB": 1612,
+    "LAGU": 3000,
+    "MEGRT_OTHERS_OTHR": 779,
+    "MTRN_ROTE_SATE": 2519,
+    "REEG": 1260,
+    "ROSP": 829,
+    "TRHE": 981,
+    "WHIBC": 116
+  },
+  "val": {
+    "BCNH": 117,
+    "BLSK": 67,
+    "BRPE": 335,
+    "BRPEC": 38,
+    "CAEG": 117,
+    "GBHE": 197,
+    "GREG_REEGWM_SNEG_WHIB": 241,
+    "LAGU": 600,
+    "MEGRT_OTHERS_OTHR": 76,
+    "MTRN_ROTE_SATE": 475,
+    "REEG": 153,
+    "ROSP": 110,
+    "TRHE": 119,
+    "WHIBC": 25
+  },
+  "test": {
+    "BCNH": 121,
+    "BLSK": 223,
+    "BRPE": 353,
+    "BRPEC": 39,
+    "CAEG": 95,
+    "GBHE": 135,
+    "GREG_REEGWM_SNEG_WHIB": 270,
+    "LAGU": 600,
+    "MEGRT_OTHERS_OTHR": 93,
+    "MTRN_ROTE_SATE": 459,
+    "REEG": 168,
+    "ROSP": 64,
+    "TRHE": 150,
+    "WHIBC": 10
+  }
+}
