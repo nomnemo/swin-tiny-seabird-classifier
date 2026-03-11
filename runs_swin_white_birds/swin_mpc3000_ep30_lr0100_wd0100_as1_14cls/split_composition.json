@@ -1,0 +1,20 @@
+{
+  "train": {
+    "GREG": 438,
+    "MEGRT": 389,
+    "SNEG": 168,
+    "WHIB": 1956
+  },
+  "val": {
+    "GREG": 45,
+    "MEGRT": 38,
+    "SNEG": 17,
+    "WHIB": 214
+  },
+  "test": {
+    "GREG": 62,
+    "MEGRT": 40,
+    "SNEG": 23,
+    "WHIB": 233
+  }
+}
