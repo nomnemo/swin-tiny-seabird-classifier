@@ -109,6 +109,16 @@ Environment Setup
 
 The project assumes Python 3.9+ and a GPU‑enabled PyTorch installation. The exact versions are listed in `requirements.txt`.
 
+### Option A: Quick setup (recommended)
+
+Run the provided setup script from the project root. It creates a virtual environment, installs all Python dependencies, and installs the Claude Code CLI:
+
+```bash
+source scripts/setup.sh
+```
+
+### Option B: Step by step
+
 1. **Create and activate a virtual environment**
 
    Using `venv`:
@@ -128,16 +138,22 @@ The project assumes Python 3.9+ and a GPU‑enabled PyTorch installation. The ex
 
 2. **Install dependencies**
 
-  For GPU training, install the matching PyTorch build first (see
-  [https://pytorch.org](https://pytorch.org) for the recommended command), then
-  install the remaining dependencies:
+   For GPU training, install the matching PyTorch build first (see
+   [https://pytorch.org](https://pytorch.org) for the recommended command), then
+   install the remaining dependencies:
 
-  ```bash
-  pip install --upgrade pip
-  pip install -r requirements.txt
-  ```
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
 
-  If you only need CPU, the command above is sufficient as-is.
+   If you only need CPU, the command above is sufficient as-is.
+
+3. **Install Claude Code CLI**
+
+   ```bash
+   curl -fsSL https://claude.ai/install.sh | bash
+   ```
 
 
 Running the Pipeline
