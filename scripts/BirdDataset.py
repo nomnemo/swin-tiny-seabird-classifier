@@ -14,7 +14,7 @@ class BirdDataset(Dataset):
     Each item corresponds to one cropped bird image and its species label.
     CSV rows must contain at least:
       - `crop_path`: path to the crop image (relative to `img_root` or absolute)
-      - `species_name`: class label as a string
+      - a label column (configurable, default: `species_name`)
     Additional fields (e.g., `source_image`, `bbox_original`) are preserved in
     `rows` but not used directly here.
     """
@@ -26,6 +26,7 @@ class BirdDataset(Dataset):
         img_root: Path,
         transform: A.Compose,
         missing_size: int = 224,
+        label_key: str = "species_name",
     ) -> None:
         """
         Initialize the dataset.
@@ -34,10 +35,10 @@ class BirdDataset(Dataset):
             rows:
                 List of record dicts, typically produced from a split CSV
                 via `DataFrame.to_dict(orient="records")`. Each row must
-                include at least `crop_path` and `species_name`.
+                include at least `crop_path` and the label column.
             cls2id:
-                Mapping from species name (string) to integer class index.
-                This is used to convert `species_name` into a label tensor.
+                Mapping from label name (string) to integer class index.
+                This is used to convert the label into a tensor.
             img_root:
                 Root directory under which `crop_path` is resolved. If
                 `crop_path` is absolute, `img_root` is ignored.
@@ -47,12 +48,16 @@ class BirdDataset(Dataset):
             missing_size:
                 Spatial size (pixels) of the fallback black image used when an
                 image file cannot be read. Defaults to 224.
+            label_key:
+                Column name to use for class labels. Default: "species_name".
+                For 2025 dataset with remapped labels, use "remapped_label".
         """
         self.rows: List[Dict] = rows
         self.cls2id: Dict[str, int] = cls2id
         self.img_root: Path = img_root
         self.tf: A.Compose = transform
         self.missing_size: int = missing_size
+        self.label_key: str = label_key
 
     def __len__(self) -> int:
         """Return the total number of samples."""
@@ -75,8 +80,8 @@ class BirdDataset(Dataset):
         """
         row = self.rows[idx]
 
-        # Convert species_name string into an integer class index.
-        y_idx = self.cls2id[row["species_name"]]
+        # Convert label string into an integer class index.
+        y_idx = self.cls2id[row[self.label_key]]
 
         # Normalize path separators and build a Path object.
         p_raw = row["crop_path"].replace("\\", "/")
