@@ -316,7 +316,7 @@ def train(
 
     # Set up output directory
     if out_dir is None:
-        out_dir = Path(f"runs_2025_{experiment}")
+        out_dir = Path(f"runs_2025_{experiment}_cropsplit")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Create run subdirectory with hyperparameters
