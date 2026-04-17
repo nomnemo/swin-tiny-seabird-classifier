@@ -316,14 +316,14 @@ def train(
 
     # Set up output directory
     if out_dir is None:
-        out_dir = Path(f"runs_2025_{experiment}_cropsplit")
+        out_dir = Path(f"runs_2025_{experiment}")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Create run subdirectory with hyperparameters
     lr_str = f"{int(round(lr * 1e6)):04d}"
     wd_str = f"{int(round(weight_decay * 10000)):04d}"
     mpc_str = f"mpc{max_per_class}" if max_per_class else "mpcNone"
-    run_name = f"swin_{mpc_str}_ep{epochs}_lr{lr_str}_wd{wd_str}"
+    run_name = f"swin_cropsplit_{mpc_str}_ep{epochs}_lr{lr_str}_wd{wd_str}"
     run_dir = out_dir / run_name
     run_dir.mkdir(parents=True, exist_ok=True)
 
