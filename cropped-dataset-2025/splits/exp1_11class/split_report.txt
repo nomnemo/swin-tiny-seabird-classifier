@@ -1,0 +1,73 @@
+======================================================================
+SPLIT REPORT: exp1_11class
+======================================================================
+
+## Orthomosaic Split
+  train: 17 orthomosaics - ['OM_002', 'OM_003', 'OM_005', 'OM_006', 'OM_007', 'OM_010', 'OM_011', 'OM_012', 'OM_013', 'OM_014', 'OM_015', 'OM_016', 'OM_017', 'OM_018', 'OM_019', 'OM_020', 'OM_022']
+  val: 2 orthomosaics - ['OM_008', 'OM_009']
+  test: 3 orthomosaics - ['OM_001', 'OM_004', 'OM_021']
+
+## Label Mapping (original -> remapped)
+  BRPEA <- ['BRPEA']
+  BRPEC <- ['BRPEC']
+  GBHEC <- ['GBHEC']
+  GREGA <- ['GREGA']
+  GREGC <- ['GREGC']
+  LAGUA <- ['LAGUA']
+  LWBBA <- ['LWBBA']
+  OTHERS <- ['AMAVA', 'BNSTA', 'BRPEF', 'CATEA', 'DCCOA', 'DCCOF', 'GBHEA', 'GREGF', 'LAGUF', 'MTRNS', 'NECOA', 'OTHRA', 'REEGA', 'REEGF', 'REEGWMA', 'ROSPA', 'ROSPC', 'ROTEF', 'RUTUA', 'RUTUF', 'SATEF', 'SNEGA', 'UNSURE', 'WHIBA', 'WHIBF']
+  ROTEA <- ['ROTEA']
+  SATEA <- ['SATEA']
+  TRHEA <- ['TRHEA']
+
+## Overall Class Distribution (after remapping)
+  ROTEA: 9100
+  SATEA: 2751
+  BRPEC: 2490
+  LAGUA: 1433
+  BRPEA: 819
+  OTHERS: 372
+  TRHEA: 172
+  GREGC: 107
+  GREGA: 106
+  LWBBA: 69
+  GBHEC: 60
+  TOTAL: 17479
+  NUM CLASSES: 11
+
+## Per-Split Class Distribution
+
+### TRAIN (12649 samples)
+    ROTEA: 6148 (48.6%)
+    BRPEC: 1995 (15.8%)
+    SATEA: 1943 (15.4%)
+    LAGUA: 1130 (8.9%)
+    BRPEA: 649 (5.1%)
+    OTHERS: 316 (2.5%)
+    TRHEA: 126 (1.0%)
+    GREGC: 107 (0.8%)
+    GREGA: 106 (0.8%)
+    LWBBA: 69 (0.5%)
+    GBHEC: 60 (0.5%)
+
+### VAL (2465 samples)
+    ROTEA: 1591 (64.5%)
+    BRPEC: 294 (11.9%)
+    SATEA: 276 (11.2%)
+    LAGUA: 168 (6.8%)
+    BRPEA: 81 (3.3%)
+    TRHEA: 41 (1.7%)
+    OTHERS: 14 (0.6%)
+
+### TEST (2365 samples)
+    ROTEA: 1361 (57.5%)
+    SATEA: 532 (22.5%)
+    BRPEC: 201 (8.5%)
+    LAGUA: 135 (5.7%)
+    BRPEA: 89 (3.8%)
+    OTHERS: 42 (1.8%)
+    TRHEA: 5 (0.2%)
+
+## Missing Classes Check
+  WARNING: val is missing classes: ['GBHEC', 'GREGA', 'GREGC', 'LWBBA']
+  WARNING: test is missing classes: ['GBHEC', 'GREGA', 'GREGC', 'LWBBA']

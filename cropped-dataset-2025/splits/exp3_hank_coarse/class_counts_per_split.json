@@ -1,0 +1,27 @@
+{
+  "train": {
+    "TERNS": 8160,
+    "PELICAN_CHICK": 1995,
+    "LAUGHING_GULL": 1140,
+    "PELICAN_ADULT": 664,
+    "LARGE_WHITE_BIRDS": 345,
+    "OTHERS": 261,
+    "GBHE_CHICK": 60,
+    "GBHE_ADULT": 24
+  },
+  "val": {
+    "TERNS": 1878,
+    "PELICAN_CHICK": 294,
+    "LAUGHING_GULL": 168,
+    "PELICAN_ADULT": 81,
+    "OTHERS": 44
+  },
+  "test": {
+    "TERNS": 1917,
+    "PELICAN_CHICK": 201,
+    "LAUGHING_GULL": 136,
+    "PELICAN_ADULT": 89,
+    "OTHERS": 21,
+    "GBHE_ADULT": 1
+  }
+}

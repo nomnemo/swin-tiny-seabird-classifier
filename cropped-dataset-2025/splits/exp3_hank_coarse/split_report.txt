@@ -1,0 +1,61 @@
+======================================================================
+SPLIT REPORT: exp3_hank_coarse
+======================================================================
+
+## Orthomosaic Split
+  train: 17 orthomosaics - ['OM_002', 'OM_003', 'OM_005', 'OM_006', 'OM_007', 'OM_010', 'OM_011', 'OM_012', 'OM_013', 'OM_014', 'OM_015', 'OM_016', 'OM_017', 'OM_018', 'OM_019', 'OM_020', 'OM_022']
+  val: 2 orthomosaics - ['OM_008', 'OM_009']
+  test: 3 orthomosaics - ['OM_001', 'OM_004', 'OM_021']
+
+## Label Mapping (original -> remapped)
+  GBHE_ADULT <- ['GBHEA']
+  GBHE_CHICK <- ['GBHEC']
+  LARGE_WHITE_BIRDS <- ['GREGA', 'GREGC', 'GREGF', 'LWBBA', 'LWBBC', 'REEGA', 'REEGF', 'REEGWMA', 'SNEGA', 'WHIBA', 'WHIBF']
+  LAUGHING_GULL <- ['LAGUA', 'LAGUF']
+  OTHERS <- ['AMAVA', 'BNSTA', 'DCCOA', 'DCCOF', 'NECOA', 'OTHRA', 'ROSPA', 'ROSPC', 'RUTUA', 'RUTUF', 'TRHEA', 'UNSURE']
+  PELICAN_ADULT <- ['BRPEA', 'BRPEF']
+  PELICAN_CHICK <- ['BRPEC']
+  TERNS <- ['CATEA', 'MTRNS', 'ROTEA', 'ROTEF', 'SATEA', 'SATEF']
+
+## Overall Class Distribution (after remapping)
+  TERNS: 11955
+  PELICAN_CHICK: 2490
+  LAUGHING_GULL: 1444
+  PELICAN_ADULT: 834
+  LARGE_WHITE_BIRDS: 345
+  OTHERS: 326
+  GBHE_CHICK: 60
+  GBHE_ADULT: 25
+  TOTAL: 17479
+  NUM CLASSES: 8
+
+## Per-Split Class Distribution
+
+### TRAIN (12649 samples)
+    TERNS: 8160 (64.5%)
+    PELICAN_CHICK: 1995 (15.8%)
+    LAUGHING_GULL: 1140 (9.0%)
+    PELICAN_ADULT: 664 (5.2%)
+    LARGE_WHITE_BIRDS: 345 (2.7%)
+    OTHERS: 261 (2.1%)
+    GBHE_CHICK: 60 (0.5%)
+    GBHE_ADULT: 24 (0.2%)
+
+### VAL (2465 samples)
+    TERNS: 1878 (76.2%)
+    PELICAN_CHICK: 294 (11.9%)
+    LAUGHING_GULL: 168 (6.8%)
+    PELICAN_ADULT: 81 (3.3%)
+    OTHERS: 44 (1.8%)
+
+### TEST (2365 samples)
+    TERNS: 1917 (81.1%)
+    PELICAN_CHICK: 201 (8.5%)
+    LAUGHING_GULL: 136 (5.8%)
+    PELICAN_ADULT: 89 (3.8%)
+    OTHERS: 21 (0.9%)
+    GBHE_ADULT: 1 (0.0%)
+
+## Missing Classes Check
+  WARNING: val is missing classes: ['GBHE_ADULT', 'GBHE_CHICK', 'LARGE_WHITE_BIRDS']
+  WARNING: test is missing classes: ['GBHE_CHICK', 'LARGE_WHITE_BIRDS']

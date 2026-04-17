@@ -1,0 +1,30 @@
+{
+  "train": {
+    "TERNS": 8155,
+    "BRPEC": 1995,
+    "LAGUA": 1130,
+    "BRPEA": 649,
+    "OTHERS": 252,
+    "TRHEA": 126,
+    "GREGC": 107,
+    "GREGA": 106,
+    "LWBBA": 69,
+    "GBHEC": 60
+  },
+  "val": {
+    "TERNS": 1878,
+    "BRPEC": 294,
+    "LAGUA": 168,
+    "BRPEA": 81,
+    "TRHEA": 41,
+    "OTHERS": 3
+  },
+  "test": {
+    "TERNS": 1917,
+    "BRPEC": 201,
+    "LAGUA": 135,
+    "BRPEA": 89,
+    "OTHERS": 18,
+    "TRHEA": 5
+  }
+}
