@@ -1,0 +1,32 @@
+[info] Experiment: exp3_hank_coarse
+[info] Description: 8-class Hank coarse grouping
+[info] Run directory: runs_2025_exp3_hank_coarse/swin_mpc3000_ep30_lr0100_wd0100
+============================================================
+TRAINING CONFIGURATION
+============================================================
+  experiment:       exp3_hank_coarse
+  model:            swin_tiny_patch4_window7_224
+  loss:             CrossEntropy
+  epochs:           30
+  warmup_epochs:    10
+  lr:               0.0001
+  weight_decay:     0.01
+  accum_steps:      1
+  AMP:              True
+  device:           cuda
+  hardware:         1x NVIDIA A10 (Lambda)
+  input_size:       224
+  batch_train:      32
+  batch_eval:       128
+  use_sampler:      True
+  num_workers:      16
+  max_per_class:    3000
+  image_root:       cropped-dataset-2025/crops
+  label_key:        remapped_label
+  num_classes:      8
+  classes:          ['GBHE_ADULT', 'GBHE_CHICK', 'LARGE_WHITE_BIRDS', 'LAUGHING_GULL', 'OTHERS', 'PELICAN_ADULT', 'PELICAN_CHICK', 'TERNS']
+  train_size:       7489
+  val_size:         1187
+  test_size:        1048
+============================================================
+[info] saved split_composition.json

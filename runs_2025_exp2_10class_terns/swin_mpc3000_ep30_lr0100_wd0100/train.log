@@ -71,3 +71,54 @@ ep 25 | train acc 0.995 loss 0.017 | val acc 0.943 loss 0.257 | macroF1 0.480 | 
 ep 26 | train acc 0.995 loss 0.014 | val acc 0.940 loss 0.277 | macroF1 0.476 | lr 9.55e-06 | val_time 1.2s | ep_time 13.0s
 ep 27 | train acc 0.997 loss 0.012 | val acc 0.943 loss 0.267 | macroF1 0.479 | lr 5.45e-06 | val_time 1.3s | ep_time 13.3s
 ep 28 | train acc 0.996 loss 0.012 | val acc 0.940 loss 0.277 | macroF1 0.475 | lr 2.45e-06 | val_time 1.3s | ep_time 13.3s
+ep 29 | train acc 0.997 loss 0.012 | val acc 0.940 loss 0.276 | macroF1 0.475 | lr 6.16e-07 | val_time 1.2s | ep_time 13.4s
+ep 30 | train acc 0.996 loss 0.011 | val acc 0.940 loss 0.276 | macroF1 0.475 | lr 0.00e+00 | val_time 1.3s | ep_time 13.3s
+[info] saved curves.pdf
+
+Validation report:
+              precision    recall  f1-score   support
+
+       BRPEA      0.911     0.889     0.900        81
+       BRPEC      0.921     0.949     0.935       294
+       GBHEC      0.000     0.000     0.000         0
+       GREGA      0.000     0.000     0.000         0
+       GREGC      0.000     0.000     0.000         0
+       LAGUA      0.908     0.940     0.924       168
+       LWBBA      0.000     0.000     0.000         0
+      OTHERS      0.167     0.333     0.222         3
+       TERNS      0.986     0.960     0.973       600
+       TRHEA      0.892     0.805     0.846        41
+
+    accuracy                          0.943      1187
+   macro avg      0.479     0.488     0.480      1187
+weighted avg      0.949     0.943     0.945      1187
+
+Validation report macro-F1: 0.480
+Validation report mAP (macro, one-vs-rest): 0.516
+Validation report per-class AP written to val_ap_per_class.json
+Validation report: 68 misclassified saved to val_misclassified.json
+
+Test report:
+              precision    recall  f1-score   support
+
+       BRPEA      0.949     0.843     0.893        89
+       BRPEC      0.903     0.975     0.938       201
+       GBHEC      0.000     0.000     0.000         0
+       GREGA      0.000     0.000     0.000         0
+       GREGC      0.000     0.000     0.000         0
+       LAGUA      0.962     0.926     0.943       135
+       LWBBA      0.000     0.000     0.000         0
+      OTHERS      0.684     0.722     0.703        18
+       TERNS      0.978     0.967     0.972       600
+       TRHEA      0.667     0.800     0.727         5
+
+    accuracy                          0.948      1048
+   macro avg      0.514     0.523     0.518      1048
+weighted avg      0.953     0.948     0.949      1048
+
+Test report macro-F1: 0.518
+Test report mAP (macro, one-vs-rest): 0.546
+Test report per-class AP written to test_ap_per_class.json
+Test report: 55 misclassified saved to test_misclassified.json
+[info] saved val_test_cms.pdf
+[info] total run time: 0:06:55
