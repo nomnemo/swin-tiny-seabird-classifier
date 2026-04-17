@@ -1,27 +1,32 @@
 {
   "train": {
-    "TERNS": 8160,
-    "PELICAN_CHICK": 1995,
-    "LAUGHING_GULL": 1140,
-    "PELICAN_ADULT": 664,
-    "LARGE_WHITE_BIRDS": 345,
-    "OTHERS": 261,
-    "GBHE_CHICK": 60,
-    "GBHE_ADULT": 24
+    "TERNS": 9564,
+    "PELICAN_CHICK": 1992,
+    "LAUGHING_GULL": 1155,
+    "PELICAN_ADULT": 667,
+    "LARGE_WHITE_BIRDS": 276,
+    "OTHERS": 260,
+    "GBHE_CHICK": 48,
+    "GBHE_ADULT": 20
   },
   "val": {
-    "TERNS": 1878,
-    "PELICAN_CHICK": 294,
-    "LAUGHING_GULL": 168,
-    "PELICAN_ADULT": 81,
-    "OTHERS": 44
+    "TERNS": 1196,
+    "PELICAN_CHICK": 249,
+    "LAUGHING_GULL": 144,
+    "PELICAN_ADULT": 83,
+    "LARGE_WHITE_BIRDS": 34,
+    "OTHERS": 33,
+    "GBHE_CHICK": 6,
+    "GBHE_ADULT": 2
   },
   "test": {
-    "TERNS": 1917,
-    "PELICAN_CHICK": 201,
-    "LAUGHING_GULL": 136,
-    "PELICAN_ADULT": 89,
-    "OTHERS": 21,
-    "GBHE_ADULT": 1
+    "TERNS": 1195,
+    "PELICAN_CHICK": 249,
+    "LAUGHING_GULL": 145,
+    "PELICAN_ADULT": 84,
+    "LARGE_WHITE_BIRDS": 35,
+    "OTHERS": 33,
+    "GBHE_CHICK": 6,
+    "GBHE_ADULT": 3
   }
 }

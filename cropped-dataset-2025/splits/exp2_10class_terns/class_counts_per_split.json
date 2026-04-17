@@ -1,30 +1,38 @@
 {
   "train": {
-    "TERNS": 8155,
-    "BRPEC": 1995,
-    "LAGUA": 1130,
-    "BRPEA": 649,
-    "OTHERS": 252,
-    "TRHEA": 126,
-    "GREGC": 107,
-    "GREGA": 106,
-    "LWBBA": 69,
-    "GBHEC": 60
+    "TERNS": 9560,
+    "BRPEC": 1992,
+    "LAGUA": 1146,
+    "BRPEA": 655,
+    "OTHERS": 218,
+    "TRHEA": 137,
+    "GREGC": 85,
+    "GREGA": 84,
+    "LWBBA": 55,
+    "GBHEC": 48
   },
   "val": {
-    "TERNS": 1878,
-    "BRPEC": 294,
-    "LAGUA": 168,
-    "BRPEA": 81,
-    "TRHEA": 41,
-    "OTHERS": 3
+    "TERNS": 1195,
+    "BRPEC": 249,
+    "LAGUA": 143,
+    "BRPEA": 82,
+    "OTHERS": 27,
+    "TRHEA": 17,
+    "GREGA": 11,
+    "GREGC": 11,
+    "LWBBA": 7,
+    "GBHEC": 6
   },
   "test": {
-    "TERNS": 1917,
-    "BRPEC": 201,
-    "LAGUA": 135,
-    "BRPEA": 89,
-    "OTHERS": 18,
-    "TRHEA": 5
+    "TERNS": 1195,
+    "BRPEC": 249,
+    "LAGUA": 144,
+    "BRPEA": 82,
+    "OTHERS": 28,
+    "TRHEA": 18,
+    "GREGA": 11,
+    "GREGC": 11,
+    "LWBBA": 7,
+    "GBHEC": 6
   }
 }

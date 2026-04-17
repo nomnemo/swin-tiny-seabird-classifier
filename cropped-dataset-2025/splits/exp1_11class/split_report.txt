@@ -2,10 +2,7 @@
 SPLIT REPORT: exp1_11class
 ======================================================================
 
-## Orthomosaic Split
-  train: 17 orthomosaics - ['OM_002', 'OM_003', 'OM_005', 'OM_006', 'OM_007', 'OM_010', 'OM_011', 'OM_012', 'OM_013', 'OM_014', 'OM_015', 'OM_016', 'OM_017', 'OM_018', 'OM_019', 'OM_020', 'OM_022']
-  val: 2 orthomosaics - ['OM_008', 'OM_009']
-  test: 3 orthomosaics - ['OM_001', 'OM_004', 'OM_021']
+## Split Method: stratified per remapped class (crop-level)
 
 ## Label Mapping (original -> remapped)
   BRPEA <- ['BRPEA']
@@ -37,37 +34,45 @@ SPLIT REPORT: exp1_11class
 
 ## Per-Split Class Distribution
 
-### TRAIN (12649 samples)
-    ROTEA: 6148 (48.6%)
-    BRPEC: 1995 (15.8%)
-    SATEA: 1943 (15.4%)
-    LAGUA: 1130 (8.9%)
-    BRPEA: 649 (5.1%)
-    OTHERS: 316 (2.5%)
-    TRHEA: 126 (1.0%)
-    GREGC: 107 (0.8%)
-    GREGA: 106 (0.8%)
-    LWBBA: 69 (0.5%)
-    GBHEC: 60 (0.5%)
+### TRAIN (13979 samples)
+    ROTEA: 7280 (52.1%)
+    SATEA: 2200 (15.7%)
+    BRPEC: 1992 (14.2%)
+    LAGUA: 1146 (8.2%)
+    BRPEA: 655 (4.7%)
+    OTHERS: 297 (2.1%)
+    TRHEA: 137 (1.0%)
+    GREGC: 85 (0.6%)
+    GREGA: 84 (0.6%)
+    LWBBA: 55 (0.4%)
+    GBHEC: 48 (0.3%)
 
-### VAL (2465 samples)
-    ROTEA: 1591 (64.5%)
-    BRPEC: 294 (11.9%)
-    SATEA: 276 (11.2%)
-    LAGUA: 168 (6.8%)
-    BRPEA: 81 (3.3%)
-    TRHEA: 41 (1.7%)
-    OTHERS: 14 (0.6%)
+### VAL (1748 samples)
+    ROTEA: 910 (52.1%)
+    SATEA: 275 (15.7%)
+    BRPEC: 249 (14.2%)
+    LAGUA: 143 (8.2%)
+    BRPEA: 82 (4.7%)
+    OTHERS: 37 (2.1%)
+    TRHEA: 17 (1.0%)
+    GREGA: 11 (0.6%)
+    GREGC: 11 (0.6%)
+    LWBBA: 7 (0.4%)
+    GBHEC: 6 (0.3%)
 
-### TEST (2365 samples)
-    ROTEA: 1361 (57.5%)
-    SATEA: 532 (22.5%)
-    BRPEC: 201 (8.5%)
-    LAGUA: 135 (5.7%)
-    BRPEA: 89 (3.8%)
-    OTHERS: 42 (1.8%)
-    TRHEA: 5 (0.2%)
+### TEST (1752 samples)
+    ROTEA: 910 (51.9%)
+    SATEA: 276 (15.8%)
+    BRPEC: 249 (14.2%)
+    LAGUA: 144 (8.2%)
+    BRPEA: 82 (4.7%)
+    OTHERS: 38 (2.2%)
+    TRHEA: 18 (1.0%)
+    GREGA: 11 (0.6%)
+    GREGC: 11 (0.6%)
+    LWBBA: 7 (0.4%)
+    GBHEC: 6 (0.3%)
 
 ## Missing Classes Check
-  WARNING: val is missing classes: ['GBHEC', 'GREGA', 'GREGC', 'LWBBA']
-  WARNING: test is missing classes: ['GBHEC', 'GREGA', 'GREGC', 'LWBBA']
+  val: all 11 classes present
+  test: all 11 classes present

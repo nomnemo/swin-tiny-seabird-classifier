@@ -1,33 +1,41 @@
 {
   "train": {
-    "ROTEA": 6148,
-    "BRPEC": 1995,
-    "SATEA": 1943,
-    "LAGUA": 1130,
-    "BRPEA": 649,
-    "OTHERS": 316,
-    "TRHEA": 126,
-    "GREGC": 107,
-    "GREGA": 106,
-    "LWBBA": 69,
-    "GBHEC": 60
+    "ROTEA": 7280,
+    "SATEA": 2200,
+    "BRPEC": 1992,
+    "LAGUA": 1146,
+    "BRPEA": 655,
+    "OTHERS": 297,
+    "TRHEA": 137,
+    "GREGC": 85,
+    "GREGA": 84,
+    "LWBBA": 55,
+    "GBHEC": 48
   },
   "val": {
-    "ROTEA": 1591,
-    "BRPEC": 294,
-    "SATEA": 276,
-    "LAGUA": 168,
-    "BRPEA": 81,
-    "TRHEA": 41,
-    "OTHERS": 14
+    "ROTEA": 910,
+    "SATEA": 275,
+    "BRPEC": 249,
+    "LAGUA": 143,
+    "BRPEA": 82,
+    "OTHERS": 37,
+    "TRHEA": 17,
+    "GREGA": 11,
+    "GREGC": 11,
+    "LWBBA": 7,
+    "GBHEC": 6
   },
   "test": {
-    "ROTEA": 1361,
-    "SATEA": 532,
-    "BRPEC": 201,
-    "LAGUA": 135,
-    "BRPEA": 89,
-    "OTHERS": 42,
-    "TRHEA": 5
+    "ROTEA": 910,
+    "SATEA": 276,
+    "BRPEC": 249,
+    "LAGUA": 144,
+    "BRPEA": 82,
+    "OTHERS": 38,
+    "TRHEA": 18,
+    "GREGA": 11,
+    "GREGC": 11,
+    "LWBBA": 7,
+    "GBHEC": 6
   }
 }
