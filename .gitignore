@@ -15,4 +15,5 @@ checkpoints/
 data/crops
 data/Images-256-cropped
 data/hank_tiles
-cropped-dataset-2025/crops
+cropped-dataset-2025/*
+!cropped-dataset-2025/splits/
