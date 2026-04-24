@@ -1,10 +1,11 @@
 """
 Swin-Tiny trainer for the 2025 Chester Island seabird dataset.
 
-Supports 3 experiment presets:
+Supports 4 experiment presets:
   - exp1_11class:       11-class baseline (>=50 samples kept, rare -> OTHERS)
   - exp2_10class_terns: 10-class with terns merged into TERNS
   - exp3_hank_coarse:   8-class Hank coarse grouping
+  - exp4_fine_grained:  11-class fine-grained (split terns, split egret life stages)
 
 Usage:
     python scripts/SwinTrainer2025.py --experiment exp1_11class
@@ -74,6 +75,16 @@ EXPERIMENT_PRESETS = {
         "image_root": IMAGE_ROOT,
         "label_key": "remapped_label",
         "num_classes": 8,
+    },
+    "exp4_fine_grained": {
+        "name": "exp4_fine_grained",
+        "description": "11-class fine-grained: split terns, split egret life stages",
+        "train_csv": SPLITS_ROOT / "exp4_fine_grained" / "train.csv",
+        "val_csv": SPLITS_ROOT / "exp4_fine_grained" / "val.csv",
+        "test_csv": SPLITS_ROOT / "exp4_fine_grained" / "test.csv",
+        "image_root": IMAGE_ROOT,
+        "label_key": "remapped_label",
+        "num_classes": 11,
     },
 }
 

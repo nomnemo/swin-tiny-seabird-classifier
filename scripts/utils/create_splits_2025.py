@@ -9,6 +9,7 @@ Supports multiple experiment configurations with label remapping:
 - exp1_11class: Classes with >=50 samples kept, rare classes -> OTHERS
 - exp2_10class_terns: Same as exp1 but terns merged into TERNS
 - exp3_hank_coarse: Hank's 8-class coarse grouping
+- exp4_fine_grained: 11-class fine-grained grouping (split terns, split egret life stages)
 
 Usage:
     python scripts/utils/create_splits_2025.py \
@@ -64,10 +65,29 @@ EXP3_CONFIG = {
     "others_class": "OTHERS",
 }
 
+EXP4_CONFIG = {
+    "name": "exp4_fine_grained",
+    "description": "Fine-grained 11-class grouping: split tern species, split egret life stages",
+    "explicit_mapping": {
+        "ROSEATE_TERN":      ["ROTEA", "ROTEF"],
+        "SANDWICH_TERN":     ["SATEA", "SATEF"],
+        "PELICAN_ADULT":     ["BRPEA", "BRPEF"],
+        "PELICAN_CHICK":     ["BRPEC"],
+        "LAUGHING_GULL":     ["LAGUA", "LAGUF"],
+        "TRICOLORED_HERON":  ["TRHEA"],
+        "GREAT_EGRET_ADULT": ["GREGA", "GREGF"],
+        "GREAT_EGRET_CHICK": ["GREGC"],
+        "GBHE_CHICK":        ["GBHEC"],
+        "WHITE_IBIS":        ["WHIBA", "WHIBF"],
+    },
+    "others_class": "OTHERS",
+}
+
 EXPERIMENT_CONFIGS = {
     "exp1_11class": EXP1_CONFIG,
     "exp2_10class_terns": EXP2_CONFIG,
     "exp3_hank_coarse": EXP3_CONFIG,
+    "exp4_fine_grained": EXP4_CONFIG,
 }
 
 
@@ -265,7 +285,7 @@ def main():
                 species_counts, config["min_samples"],
                 config["tern_merge"], config["tern_target"],
             )
-        elif exp_name == "exp3_hank_coarse":
+        elif exp_name in ("exp3_hank_coarse", "exp4_fine_grained"):
             mapping = compute_label_mapping_exp3(
                 all_species, config["explicit_mapping"], config["others_class"],
             )

@@ -1,0 +1,78 @@
+======================================================================
+SPLIT REPORT: exp4_fine_grained
+======================================================================
+
+## Split Method: stratified per remapped class (crop-level)
+
+## Label Mapping (original -> remapped)
+  GBHE_CHICK <- ['GBHEC']
+  GREAT_EGRET_ADULT <- ['GREGA', 'GREGF']
+  GREAT_EGRET_CHICK <- ['GREGC']
+  LAUGHING_GULL <- ['LAGUA', 'LAGUF']
+  OTHERS <- ['AMAVA', 'BNSTA', 'CATEA', 'DCCOA', 'DCCOF', 'GBHEA', 'LWBBA', 'MTRNS', 'NECOA', 'OTHRA', 'REEGA', 'REEGF', 'REEGWMA', 'ROSPA', 'ROSPC', 'RUTUA', 'RUTUF', 'SNEGA', 'UNSURE']
+  PELICAN_ADULT <- ['BRPEA', 'BRPEF']
+  PELICAN_CHICK <- ['BRPEC']
+  ROSEATE_TERN <- ['ROTEA', 'ROTEF']
+  SANDWICH_TERN <- ['SATEA', 'SATEF']
+  TRICOLORED_HERON <- ['TRHEA']
+  WHITE_IBIS <- ['WHIBA', 'WHIBF']
+
+## Overall Class Distribution (after remapping)
+  ROSEATE_TERN: 9144
+  SANDWICH_TERN: 2762
+  PELICAN_CHICK: 2490
+  LAUGHING_GULL: 1444
+  PELICAN_ADULT: 834
+  OTHERS: 311
+  TRICOLORED_HERON: 172
+  GREAT_EGRET_ADULT: 108
+  GREAT_EGRET_CHICK: 107
+  GBHE_CHICK: 60
+  WHITE_IBIS: 47
+  TOTAL: 17479
+  NUM CLASSES: 11
+
+## Per-Split Class Distribution
+
+### TRAIN (13979 samples)
+    ROSEATE_TERN: 7315 (52.3%)
+    SANDWICH_TERN: 2209 (15.8%)
+    PELICAN_CHICK: 1992 (14.2%)
+    LAUGHING_GULL: 1155 (8.3%)
+    PELICAN_ADULT: 667 (4.8%)
+    OTHERS: 248 (1.8%)
+    TRICOLORED_HERON: 137 (1.0%)
+    GREAT_EGRET_ADULT: 86 (0.6%)
+    GREAT_EGRET_CHICK: 85 (0.6%)
+    GBHE_CHICK: 48 (0.3%)
+    WHITE_IBIS: 37 (0.3%)
+
+### VAL (1747 samples)
+    ROSEATE_TERN: 914 (52.3%)
+    SANDWICH_TERN: 276 (15.8%)
+    PELICAN_CHICK: 249 (14.3%)
+    LAUGHING_GULL: 144 (8.2%)
+    PELICAN_ADULT: 83 (4.8%)
+    OTHERS: 31 (1.8%)
+    TRICOLORED_HERON: 17 (1.0%)
+    GREAT_EGRET_ADULT: 11 (0.6%)
+    GREAT_EGRET_CHICK: 11 (0.6%)
+    GBHE_CHICK: 6 (0.3%)
+    WHITE_IBIS: 5 (0.3%)
+
+### TEST (1753 samples)
+    ROSEATE_TERN: 915 (52.2%)
+    SANDWICH_TERN: 277 (15.8%)
+    PELICAN_CHICK: 249 (14.2%)
+    LAUGHING_GULL: 145 (8.3%)
+    PELICAN_ADULT: 84 (4.8%)
+    OTHERS: 32 (1.8%)
+    TRICOLORED_HERON: 18 (1.0%)
+    GREAT_EGRET_ADULT: 11 (0.6%)
+    GREAT_EGRET_CHICK: 11 (0.6%)
+    GBHE_CHICK: 6 (0.3%)
+    WHITE_IBIS: 5 (0.3%)
+
+## Missing Classes Check
+  val: all 11 classes present
+  test: all 11 classes present
