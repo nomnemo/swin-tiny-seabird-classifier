@@ -138,6 +138,7 @@ def set_up_data_loaders(
     num_workers=NUM_WORKERS,
     max_per_class=None,
     merge_groups: Optional[List[List[str]]] = None,
+    sampler_power: float = 1.0,
 ) -> Tuple[DataLoader, DataLoader, DataLoader, dict]:
     """
     Build PyTorch DataLoaders for train/val/test splits.
@@ -169,6 +170,14 @@ def set_up_data_loaders(
         max_per_class: if not None, cap the number of training samples per class
                        to this value. Val/test are capped to roughly max_per_class / 5
                        per class to keep them smaller while preserving class coverage.
+        sampler_power: exponent applied to class counts when computing sampler weights:
+                       weight = 1 / count^sampler_power. Only matters when use_sampler=True.
+                       1.0 (default) = fully inverse-frequency (classic 1/count), balances
+                       classes per epoch but heavily over-repeats rare classes.
+                       0.5 = square-root reweighting, softer correction that still favours
+                       rare classes but preserves more of the natural distribution, useful
+                       when rare classes risk overfitting from extreme oversampling.
+                       0.0 = disables reweighting entirely (uniform sampling).
 
     Returns:
         dl_train: DataLoader for training.
@@ -239,7 +248,14 @@ def set_up_data_loaders(
         # If we just sample uniformly from the dataset, common classes will dominate in most batches,
         # and the model will not learn to recognize rare classes well. We want the model to see the
         # rare classes more often during training without actually duplicating any data.
-        weights = np.array([1.0 / class_counts[r[label_key]] for r in train_rows], dtype=np.float64)
+        # sampler_power controls how aggressive the reweighting is:
+        #   1.0 -> classic 1/count (fully balances classes per epoch)
+        #   0.5 -> 1/sqrt(count) (softer: rare classes still favoured, but less aggressively)
+        #   0.0 -> uniform (no reweighting)
+        weights = np.array(
+            [1.0 / (class_counts[r[label_key]] ** sampler_power) for r in train_rows],
+            dtype=np.float64,
+        )
         
         # WeightedRandomSampler draws length(weights) samples per epoch, essentially creating a new
         # balanced dataset each epoch by oversampling rare classes and undersampling common ones.
@@ -286,6 +302,7 @@ def set_up_data_loaders(
         "dataloader_config": {
             "input_size": input_size,
             "use_sampler": use_sampler,
+            "sampler_power": sampler_power,
             "batch_train": batch_train,
             "batch_eval": batch_eval,
             "num_workers": num_workers,

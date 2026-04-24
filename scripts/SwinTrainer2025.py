@@ -1,16 +1,18 @@
 """
 Swin-Tiny trainer for the 2025 Chester Island seabird dataset.
 
-Supports 4 experiment presets:
-  - exp1_11class:       11-class baseline (>=50 samples kept, rare -> OTHERS)
-  - exp2_10class_terns: 10-class with terns merged into TERNS
-  - exp3_hank_coarse:   8-class Hank coarse grouping
-  - exp4_fine_grained:  11-class fine-grained (split terns, split egret life stages)
+Supports 4 main + 2 sub-classifier experiment presets:
+  - exp1_11class:               11-class baseline (>=50 samples kept, rare -> OTHERS)
+  - exp2_10class_terns:         10-class with terns merged into TERNS
+  - exp3_hank_coarse:           8-class Hank coarse grouping
+  - exp4_fine_grained:          11-class fine-grained (split terns, split egret life stages)
+  - subclass_terns:             3-class sub-classifier under TERNS super-class
+  - subclass_large_white_birds: 3-class sub-classifier under LARGE_WHITE_BIRDS super-class
 
 Usage:
     python scripts/SwinTrainer2025.py --experiment exp1_11class
     python scripts/SwinTrainer2025.py --experiment exp2_10class_terns --epochs 50
-    python scripts/SwinTrainer2025.py --experiment exp3_hank_coarse --max-per-class 2000
+    python scripts/SwinTrainer2025.py --experiment exp4_fine_grained
 """
 
 import time
@@ -86,6 +88,26 @@ EXPERIMENT_PRESETS = {
         "label_key": "remapped_label",
         "num_classes": 11,
     },
+    "subclass_terns": {
+        "name": "subclass_terns",
+        "description": "3-class sub-classifier for TERNS: ROTEA_ROTEF, SATEA_SATEF, CATEA_MTRNS",
+        "train_csv": SPLITS_ROOT / "subclass_terns" / "train.csv",
+        "val_csv": SPLITS_ROOT / "subclass_terns" / "val.csv",
+        "test_csv": SPLITS_ROOT / "subclass_terns" / "test.csv",
+        "image_root": IMAGE_ROOT,
+        "label_key": "remapped_label",
+        "num_classes": 3,
+    },
+    "subclass_large_white_birds": {
+        "name": "subclass_large_white_birds",
+        "description": "3-class sub-classifier for LARGE_WHITE_BIRDS: GREGA_GREGF, GREGC, LWBBA",
+        "train_csv": SPLITS_ROOT / "subclass_large_white_birds" / "train.csv",
+        "val_csv": SPLITS_ROOT / "subclass_large_white_birds" / "val.csv",
+        "test_csv": SPLITS_ROOT / "subclass_large_white_birds" / "test.csv",
+        "image_root": IMAGE_ROOT,
+        "label_key": "remapped_label",
+        "num_classes": 3,
+    },
 }
 
 
@@ -99,12 +121,12 @@ LR = 1e-4
 WEIGHT_DECAY = 0.01
 ACCUM_STEPS = 1
 WARMUP_EPOCHS = 10
-MAX_PER_CLASS = 3000
 BATCH_TRAIN = 32
 BATCH_EVAL = 128
 NUM_WORKERS = 16
 INPUT_SIZE = 224
 USE_SAMPLER = True
+SAMPLER_POWER = 0.5  # 1/sqrt(count) reweighting: softer correction for long-tailed classes
 AMP = True
 
 # Hardware (edit when switching GPU instances)
@@ -304,7 +326,6 @@ def train(
     epochs: int = EPOCHS,
     lr: float = LR,
     weight_decay: float = WEIGHT_DECAY,
-    max_per_class: Optional[int] = MAX_PER_CLASS,
     accum_steps: int = ACCUM_STEPS,
     warmup_epochs: int = WARMUP_EPOCHS,
     batch_train: int = BATCH_TRAIN,
@@ -333,8 +354,7 @@ def train(
     # Create run subdirectory with hyperparameters
     lr_str = f"{int(round(lr * 1e6)):04d}"
     wd_str = f"{int(round(weight_decay * 10000)):04d}"
-    mpc_str = f"mpc{max_per_class}" if max_per_class else "mpcNone"
-    run_name = f"swin_cropsplit_{mpc_str}_ep{epochs}_lr{lr_str}_wd{wd_str}"
+    run_name = f"swin_cropsplit_full_ep{epochs}_lr{lr_str}_wd{wd_str}"
     run_dir = out_dir / run_name
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -358,8 +378,9 @@ def train(
         batch_train=batch_train,
         batch_eval=batch_eval,
         num_workers=num_workers,
-        max_per_class=max_per_class,
+        max_per_class=None,  # Use all training data; no per-class cap
         merge_groups=None,  # Merging already done in split CSVs
+        sampler_power=SAMPLER_POWER,
     )
 
     classes = meta["classes"]
@@ -385,8 +406,8 @@ def train(
     log(f"  batch_train:      {dl_cfg['batch_train']}")
     log(f"  batch_eval:       {dl_cfg['batch_eval']}")
     log(f"  use_sampler:      {dl_cfg['use_sampler']}")
+    log(f"  sampler_power:    {dl_cfg['sampler_power']}  (1.0 = 1/count, 0.5 = 1/sqrt(count), 0.0 = uniform)")
     log(f"  num_workers:      {dl_cfg['num_workers']}")
-    log(f"  max_per_class:    {dl_cfg['max_per_class']}")
     log(f"  image_root:       {dl_cfg['image_root']}")
     log(f"  label_key:        {dl_cfg['label_key']}")
     log(f"  num_classes:      {num_classes}")
@@ -560,7 +581,6 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=EPOCHS)
     parser.add_argument("--lr", type=float, default=LR)
     parser.add_argument("--weight-decay", type=float, default=WEIGHT_DECAY)
-    parser.add_argument("--max-per-class", type=int, default=MAX_PER_CLASS)
     parser.add_argument("--accum-steps", type=int, default=ACCUM_STEPS)
     parser.add_argument("--warmup-epochs", type=int, default=WARMUP_EPOCHS)
     parser.add_argument("--batch-train", type=int, default=BATCH_TRAIN)
@@ -578,7 +598,6 @@ if __name__ == "__main__":
         epochs=args.epochs,
         lr=args.lr,
         weight_decay=args.weight_decay,
-        max_per_class=args.max_per_class,
         accum_steps=args.accum_steps,
         warmup_epochs=args.warmup_epochs,
         batch_train=args.batch_train,

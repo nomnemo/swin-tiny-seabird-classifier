@@ -1,0 +1,41 @@
+{
+  "train": {
+    "BRPEA_BRPEF": 667,
+    "BRPEC": 1992,
+    "GBHEC": 48,
+    "GREGA_GREGF": 86,
+    "GREGC": 85,
+    "LAGUA_LAGUF": 1155,
+    "OTHERS": 248,
+    "ROTEA_ROTEF": 7315,
+    "SATEA_SATEF": 2209,
+    "TRHEA": 137,
+    "WHIBA_WHIBF": 37
+  },
+  "val": {
+    "BRPEA_BRPEF": 83,
+    "BRPEC": 249,
+    "GBHEC": 6,
+    "GREGA_GREGF": 11,
+    "GREGC": 11,
+    "LAGUA_LAGUF": 144,
+    "OTHERS": 31,
+    "ROTEA_ROTEF": 914,
+    "SATEA_SATEF": 276,
+    "TRHEA": 17,
+    "WHIBA_WHIBF": 5
+  },
+  "test": {
+    "BRPEA_BRPEF": 84,
+    "BRPEC": 249,
+    "GBHEC": 6,
+    "GREGA_GREGF": 11,
+    "GREGC": 11,
+    "LAGUA_LAGUF": 145,
+    "OTHERS": 32,
+    "ROTEA_ROTEF": 915,
+    "SATEA_SATEF": 277,
+    "TRHEA": 18,
+    "WHIBA_WHIBF": 5
+  }
+}

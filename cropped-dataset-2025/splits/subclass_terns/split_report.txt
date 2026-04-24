@@ -1,0 +1,38 @@
+======================================================================
+SPLIT REPORT: subclass_terns
+======================================================================
+
+## Split Method: stratified per remapped class (crop-level)
+
+## Label Mapping (original -> remapped)
+  CATEA_MTRNS <- ['CATEA', 'MTRNS']
+  ROTEA_ROTEF <- ['ROTEA', 'ROTEF']
+  SATEA_SATEF <- ['SATEA', 'SATEF']
+
+## Overall Class Distribution (after remapping)
+  ROTEA_ROTEF: 9144
+  SATEA_SATEF: 2762
+  CATEA_MTRNS: 49
+  TOTAL: 11955
+  NUM CLASSES: 3
+
+## Per-Split Class Distribution
+
+### TRAIN (9563 samples)
+    ROTEA_ROTEF: 7315 (76.5%)
+    SATEA_SATEF: 2209 (23.1%)
+    CATEA_MTRNS: 39 (0.4%)
+
+### VAL (1195 samples)
+    ROTEA_ROTEF: 914 (76.5%)
+    SATEA_SATEF: 276 (23.1%)
+    CATEA_MTRNS: 5 (0.4%)
+
+### TEST (1197 samples)
+    ROTEA_ROTEF: 915 (76.4%)
+    SATEA_SATEF: 277 (23.1%)
+    CATEA_MTRNS: 5 (0.4%)
+
+## Missing Classes Check
+  val: all 3 classes present
+  test: all 3 classes present

@@ -69,18 +69,40 @@ EXP4_CONFIG = {
     "name": "exp4_fine_grained",
     "description": "Fine-grained 11-class grouping: split tern species, split egret life stages",
     "explicit_mapping": {
-        "ROSEATE_TERN":      ["ROTEA", "ROTEF"],
-        "SANDWICH_TERN":     ["SATEA", "SATEF"],
-        "PELICAN_ADULT":     ["BRPEA", "BRPEF"],
-        "PELICAN_CHICK":     ["BRPEC"],
-        "LAUGHING_GULL":     ["LAGUA", "LAGUF"],
-        "TRICOLORED_HERON":  ["TRHEA"],
-        "GREAT_EGRET_ADULT": ["GREGA", "GREGF"],
-        "GREAT_EGRET_CHICK": ["GREGC"],
-        "GBHE_CHICK":        ["GBHEC"],
-        "WHITE_IBIS":        ["WHIBA", "WHIBF"],
+        "ROTEA_ROTEF": ["ROTEA", "ROTEF"],
+        "SATEA_SATEF": ["SATEA", "SATEF"],
+        "BRPEA_BRPEF": ["BRPEA", "BRPEF"],
+        "BRPEC":       ["BRPEC"],
+        "LAGUA_LAGUF": ["LAGUA", "LAGUF"],
+        "TRHEA":       ["TRHEA"],
+        "GREGA_GREGF": ["GREGA", "GREGF"],
+        "GREGC":       ["GREGC"],
+        "GBHEC":       ["GBHEC"],
+        "WHIBA_WHIBF": ["WHIBA", "WHIBF"],
     },
     "others_class": "OTHERS",
+}
+
+SUBCLASS_TERNS_CONFIG = {
+    "name": "subclass_terns",
+    "description": "Sub-classifier under TERNS super-class: 3-way split among tern species",
+    "explicit_mapping": {
+        "ROTEA_ROTEF": ["ROTEA", "ROTEF"],
+        "SATEA_SATEF": ["SATEA", "SATEF"],
+        "CATEA_MTRNS": ["CATEA", "MTRNS"],
+    },
+    "others_class": None,  # drop rows whose species isn't in the mapping
+}
+
+SUBCLASS_LARGE_WHITE_BIRDS_CONFIG = {
+    "name": "subclass_large_white_birds",
+    "description": "Sub-classifier under LARGE_WHITE_BIRDS super-class: GREG adults, GREG chicks, LWBBA",
+    "explicit_mapping": {
+        "GREGA_GREGF": ["GREGA", "GREGF"],
+        "GREGC":       ["GREGC"],
+        "LWBBA":       ["LWBBA"],
+    },
+    "others_class": None,
 }
 
 EXPERIMENT_CONFIGS = {
@@ -88,6 +110,8 @@ EXPERIMENT_CONFIGS = {
     "exp2_10class_terns": EXP2_CONFIG,
     "exp3_hank_coarse": EXP3_CONFIG,
     "exp4_fine_grained": EXP4_CONFIG,
+    "subclass_terns": SUBCLASS_TERNS_CONFIG,
+    "subclass_large_white_birds": SUBCLASS_LARGE_WHITE_BIRDS_CONFIG,
 }
 
 
@@ -141,9 +165,29 @@ def compute_label_mapping_exp3(
     return mapping
 
 
-def apply_label_mapping(df: pd.DataFrame, mapping: Dict[str, str]) -> pd.DataFrame:
+def compute_label_mapping_subclass(
+    explicit_mapping: Dict[str, List[str]],
+) -> Dict[str, str]:
+    """Mapping for sub-classifier splits: only the listed species get a target;
+    unmapped species are dropped from the dataset downstream."""
+    mapping = {}
+    for target, sources in explicit_mapping.items():
+        for src in sources:
+            mapping[src] = target
+    return mapping
+
+
+def apply_label_mapping(
+    df: pd.DataFrame,
+    mapping: Dict[str, str],
+    others_class: "str | None" = "OTHERS",
+) -> pd.DataFrame:
     df = df.copy()
-    df["remapped_label"] = df["species_name"].map(mapping).fillna("OTHERS")
+    df["remapped_label"] = df["species_name"].map(mapping)
+    if others_class is not None:
+        df["remapped_label"] = df["remapped_label"].fillna(others_class)
+    else:
+        df = df.dropna(subset=["remapped_label"]).reset_index(drop=True)
     return df
 
 
@@ -278,6 +322,7 @@ def main():
         exp_dir.mkdir(parents=True, exist_ok=True)
 
         # Compute label mapping
+        others_class = "OTHERS"
         if exp_name == "exp1_11class":
             mapping = compute_label_mapping_exp1(species_counts, config["min_samples"])
         elif exp_name == "exp2_10class_terns":
@@ -289,9 +334,13 @@ def main():
             mapping = compute_label_mapping_exp3(
                 all_species, config["explicit_mapping"], config["others_class"],
             )
+            others_class = config["others_class"]
+        elif exp_name in ("subclass_terns", "subclass_large_white_birds"):
+            mapping = compute_label_mapping_subclass(config["explicit_mapping"])
+            others_class = config["others_class"]  # None -> drop unmapped species
 
         # Apply mapping then stratified split
-        exp_df = apply_label_mapping(df, mapping)
+        exp_df = apply_label_mapping(df, mapping, others_class=others_class)
         exp_df = create_stratified_splits(
             exp_df,
             label_key="remapped_label",

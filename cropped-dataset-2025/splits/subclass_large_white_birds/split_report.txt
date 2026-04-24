@@ -1,0 +1,38 @@
+======================================================================
+SPLIT REPORT: subclass_large_white_birds
+======================================================================
+
+## Split Method: stratified per remapped class (crop-level)
+
+## Label Mapping (original -> remapped)
+  GREGA_GREGF <- ['GREGA', 'GREGF']
+  GREGC <- ['GREGC']
+  LWBBA <- ['LWBBA']
+
+## Overall Class Distribution (after remapping)
+  GREGA_GREGF: 108
+  GREGC: 107
+  LWBBA: 69
+  TOTAL: 284
+  NUM CLASSES: 3
+
+## Per-Split Class Distribution
+
+### TRAIN (226 samples)
+    GREGA_GREGF: 86 (38.1%)
+    GREGC: 85 (37.6%)
+    LWBBA: 55 (24.3%)
+
+### VAL (29 samples)
+    GREGA_GREGF: 11 (37.9%)
+    GREGC: 11 (37.9%)
+    LWBBA: 7 (24.1%)
+
+### TEST (29 samples)
+    GREGA_GREGF: 11 (37.9%)
+    GREGC: 11 (37.9%)
+    LWBBA: 7 (24.1%)
+
+## Missing Classes Check
+  val: all 3 classes present
+  test: all 3 classes present
