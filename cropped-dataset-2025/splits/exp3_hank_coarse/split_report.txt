@@ -1,0 +1,63 @@
+======================================================================
+SPLIT REPORT: exp3_hank_coarse
+======================================================================
+
+## Split Method: stratified per remapped class (crop-level)
+
+## Label Mapping (original -> remapped)
+  GBHE_ADULT <- ['GBHEA']
+  GBHE_CHICK <- ['GBHEC']
+  LARGE_WHITE_BIRDS <- ['GREGA', 'GREGC', 'GREGF', 'LWBBA', 'LWBBC', 'REEGA', 'REEGF', 'REEGWMA', 'SNEGA', 'WHIBA', 'WHIBF']
+  LAUGHING_GULL <- ['LAGUA', 'LAGUF']
+  OTHERS <- ['AMAVA', 'BNSTA', 'DCCOA', 'DCCOF', 'NECOA', 'OTHRA', 'ROSPA', 'ROSPC', 'RUTUA', 'RUTUF', 'TRHEA', 'UNSURE']
+  PELICAN_ADULT <- ['BRPEA', 'BRPEF']
+  PELICAN_CHICK <- ['BRPEC']
+  TERNS <- ['CATEA', 'MTRNS', 'ROTEA', 'ROTEF', 'SATEA', 'SATEF']
+
+## Overall Class Distribution (after remapping)
+  TERNS: 11955
+  PELICAN_CHICK: 2490
+  LAUGHING_GULL: 1444
+  PELICAN_ADULT: 834
+  LARGE_WHITE_BIRDS: 345
+  OTHERS: 326
+  GBHE_CHICK: 60
+  GBHE_ADULT: 25
+  TOTAL: 17479
+  NUM CLASSES: 8
+
+## Per-Split Class Distribution
+
+### TRAIN (13982 samples)
+    TERNS: 9564 (68.4%)
+    PELICAN_CHICK: 1992 (14.2%)
+    LAUGHING_GULL: 1155 (8.3%)
+    PELICAN_ADULT: 667 (4.8%)
+    LARGE_WHITE_BIRDS: 276 (2.0%)
+    OTHERS: 260 (1.9%)
+    GBHE_CHICK: 48 (0.3%)
+    GBHE_ADULT: 20 (0.1%)
+
+### VAL (1747 samples)
+    TERNS: 1196 (68.5%)
+    PELICAN_CHICK: 249 (14.3%)
+    LAUGHING_GULL: 144 (8.2%)
+    PELICAN_ADULT: 83 (4.8%)
+    LARGE_WHITE_BIRDS: 34 (1.9%)
+    OTHERS: 33 (1.9%)
+    GBHE_CHICK: 6 (0.3%)
+    GBHE_ADULT: 2 (0.1%)
+
+### TEST (1750 samples)
+    TERNS: 1195 (68.3%)
+    PELICAN_CHICK: 249 (14.2%)
+    LAUGHING_GULL: 145 (8.3%)
+    PELICAN_ADULT: 84 (4.8%)
+    LARGE_WHITE_BIRDS: 35 (2.0%)
+    OTHERS: 33 (1.9%)
+    GBHE_CHICK: 6 (0.3%)
+    GBHE_ADULT: 3 (0.2%)
+
+## Missing Classes Check
+  val: all 8 classes present
+  test: all 8 classes present

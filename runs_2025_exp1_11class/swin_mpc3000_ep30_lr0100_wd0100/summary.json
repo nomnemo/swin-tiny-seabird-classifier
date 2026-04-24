@@ -1,0 +1,16 @@
+{
+  "experiment": "exp1_11class",
+  "model": "swin_tiny_patch4_window7_224",
+  "epochs": 30,
+  "best_val_macro_f1": 0.5282239448993448,
+  "val_summary": {
+    "macro_f1": 0.5282239448993448,
+    "map_macro": 0.5435015908866394,
+    "n_samples": 1474
+  },
+  "test_summary": {
+    "macro_f1": 0.52996750370721,
+    "map_macro": 0.5628388766585679,
+    "n_samples": 1604
+  }
+}

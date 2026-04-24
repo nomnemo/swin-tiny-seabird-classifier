@@ -55,7 +55,7 @@ def _build_label_map(rows: List[Dict], label_key: str = "species_name"):
     class2id = {class_name: i for i, class_name in enumerate(classes)}
     return class2id, classes
 
-def _cap_per_class(df: pd.DataFrame, max_per_class: int) -> pd.DataFrame:
+def _cap_per_class(df: pd.DataFrame, max_per_class: int, label_key: str = "species_name") -> pd.DataFrame:
     """
     Cap (limit) the number of rows per class, without upsampling.
 
@@ -63,7 +63,7 @@ def _cap_per_class(df: pd.DataFrame, max_per_class: int) -> pd.DataFrame:
         - If max_per_class is None: return df unchanged (no capping).
         - Otherwise:
             * Shuffle the DataFrame once.
-            * For each species_name, keep at most max_per_class rows.
+            * For each class (by label_key), keep at most max_per_class rows.
             * Classes with fewer than max_per_class examples keep all
             their rows (we do NOT create or duplicate samples).
     """
@@ -73,15 +73,16 @@ def _cap_per_class(df: pd.DataFrame, max_per_class: int) -> pd.DataFrame:
     # Shuffle once, then take first K per class
     df = df.sample(frac=1.0, random_state=42)
     return (
-        df.groupby("species_name", group_keys=False)
+        df.groupby(label_key, group_keys=False)
         .head(max_per_class)
-        .reset_index(drop=True) # drop=True means we don’t add the old index as a new column.
+        .reset_index(drop=True) # drop=True means we don't add the old index as a new column.
     )
     
 def _apply_merge_groups(
     df: pd.DataFrame,
     merge_groups: List[List[str]],
     cap_per_class: Optional[int],
+    label_key: str = "species_name",
 ) -> pd.DataFrame:
     """
     Merge specified classes into combined classes with balanced sub-class sampling.
@@ -89,20 +90,21 @@ def _apply_merge_groups(
     For each group (e.g. ["GREG", "WHIB", "MEGRT"]):
       1) Cap each sub-class at cap_per_class // group_size so the merged class
          has roughly equal representation from each original species.
-      2) Rename species_name to the merged name (sorted, joined with "_").
+      2) Rename label to the merged name (sorted, joined with "_").
 
     Args:
-        df:             DataFrame with a 'species_name' column.
+        df:             DataFrame with a label column.
         merge_groups:   list of lists, e.g. [["GREG", "WHIB", "MEGRT"]].
         cap_per_class:  overall per-class cap for this split (max_per_class for
                         train, cap_val_test for val/test).  If None the sub-class
                         balancing step is skipped and all rows are kept.
+        label_key:      column name for labels (default: "species_name").
     """
     for group in merge_groups:
         merged_name = "_".join(sorted(group))
         group_size = len(group)
 
-        mask = df["species_name"].isin(group)
+        mask = df[label_key].isin(group)
         group_df = df[mask].copy()
         other_df = df[~mask].copy()
 
@@ -111,12 +113,12 @@ def _apply_merge_groups(
             sub_cap = max(1, cap_per_class // group_size)
             group_df = group_df.sample(frac=1.0, random_state=42)
             group_df = (
-                group_df.groupby("species_name", group_keys=False)
+                group_df.groupby(label_key, group_keys=False)
                 .head(sub_cap)
             )
 
         # rename to merged label
-        group_df["species_name"] = merged_name
+        group_df[label_key] = merged_name
 
         df = pd.concat([other_df, group_df], ignore_index=True)
 
@@ -127,6 +129,8 @@ def set_up_data_loaders(
     train_csv=TRAIN_CSV,
     val_csv=VAL_CSV,
     test_csv=TEST_CSV,
+    image_root=IMAGE_ROOT,
+    label_key: str = "species_name",
     input_size=INPUT_SIZE,
     use_sampler=USE_SAMPLER,
     batch_train=BATCH_TRAIN,
@@ -141,7 +145,7 @@ def set_up_data_loaders(
     This helper:
       1) Reads split CSVs (train/val/test).
       2) Optionally caps the number of samples per class in each split.
-      3) Builds a consistent label map from species_name -> class index
+      3) Builds a consistent label map from label_key -> class index
          based on the (possibly capped) training split.
       4) Creates BirdDataset instances with appropriate augmentations.
       5) Optionally uses a WeightedRandomSampler on the training set
@@ -151,6 +155,9 @@ def set_up_data_loaders(
         train_csv: path to CSV with training rows (default: DATA_DIR/split_train.csv).
         val_csv:   path to CSV with validation rows (default: DATA_DIR/split_val.csv).
         test_csv:  path to CSV with test rows (default: DATA_DIR/split_test.csv).
+        image_root: root directory for crop images (default: data/crops).
+        label_key: column name for class labels (default: "species_name").
+                   For 2025 dataset with remapped labels, use "remapped_label".
         input_size: image size (pixels, square) for model input; controls
                     resize/crop behavior inside the Albumentations pipeline.
         use_sampler: if True, use a WeightedRandomSampler for the training loader
@@ -187,22 +194,22 @@ def set_up_data_loaders(
         cap_val_test = None
 
     if merge_groups is not None:
-        train_df = _apply_merge_groups(train_df, merge_groups, max_per_class)
-        val_df   = _apply_merge_groups(val_df,   merge_groups, cap_val_test)
-        test_df  = _apply_merge_groups(test_df,  merge_groups, cap_val_test)
+        train_df = _apply_merge_groups(train_df, merge_groups, max_per_class, label_key)
+        val_df   = _apply_merge_groups(val_df,   merge_groups, cap_val_test, label_key)
+        test_df  = _apply_merge_groups(test_df,  merge_groups, cap_val_test, label_key)
 
     # 2b) ================= CAP CLASS SIZES (if max_per_class is provided) =================
-    train_df = _cap_per_class(train_df, max_per_class)
-    val_df  = _cap_per_class(val_df,  cap_val_test)
-    test_df = _cap_per_class(test_df, cap_val_test)
+    train_df = _cap_per_class(train_df, max_per_class, label_key)
+    val_df  = _cap_per_class(val_df,  cap_val_test, label_key)
+    test_df = _cap_per_class(test_df, cap_val_test, label_key)
 
     # 3) convert to list[dict] that BirdDataset expects
     train_rows: List[Dict] = train_df.to_dict(orient="records")
     val_rows: List[Dict] = val_df.to_dict(orient="records")
     test_rows: List[Dict] = test_df.to_dict(orient="records")
 
-    # 4)class label map derived from TRAINING SPLIT ONLY
-    class2id, species = _build_label_map(train_rows)
+    # 4) class label map derived from TRAINING SPLIT ONLY
+    class2id, species = _build_label_map(train_rows, label_key)
 
     # 5) transforms
     train_transformer = get_transforms(input_size, train=True)
@@ -213,14 +220,14 @@ def set_up_data_loaders(
     #    when indexed, will load the image from disk, apply the appropriate
     #    transform (train/eval), and return (image_tensor, label_tensor) pairs.
     # TODO: learn what a tensor is and explain in the report
-    ds_train = BirdDataset(train_rows, class2id, IMAGE_ROOT, train_transformer, missing_size=input_size)
-    ds_val = BirdDataset(val_rows, class2id, IMAGE_ROOT, eval_transformer, missing_size=input_size)
-    ds_test = BirdDataset(test_rows, class2id, IMAGE_ROOT, eval_transformer, missing_size=input_size)
+    ds_train = BirdDataset(train_rows, class2id, image_root, train_transformer, missing_size=input_size, label_key=label_key)
+    ds_val = BirdDataset(val_rows, class2id, image_root, eval_transformer, missing_size=input_size, label_key=label_key)
+    ds_test = BirdDataset(test_rows, class2id, image_root, eval_transformer, missing_size=input_size, label_key=label_key)
 
     # 7) ============= sampler / class weights from CAPPED train set =============
-    
+
     # counting how many from each class in the training set
-    class_counts = Counter([r["species_name"] for r in train_rows])
+    class_counts = Counter([r[label_key] for r in train_rows])
     sampler = None
     if use_sampler:
         # Since our dataset is long-tailed (some classes have many more samples
@@ -228,11 +235,11 @@ def set_up_data_loaders(
         # during training. This sampler assigns a weight to each sample inversely
         # proportional to its class frequency, so that rarer classes are sampled more
         # frequently.
-        
+
         # If we just sample uniformly from the dataset, common classes will dominate in most batches,
-        # and the model will not learn to recognize rare classes well. We want the model to see the 
+        # and the model will not learn to recognize rare classes well. We want the model to see the
         # rare classes more often during training without actually duplicating any data.
-        weights = np.array([1.0 / class_counts[r["species_name"]] for r in train_rows], dtype=np.float64)
+        weights = np.array([1.0 / class_counts[r[label_key]] for r in train_rows], dtype=np.float64)
         
         # WeightedRandomSampler draws length(weights) samples per epoch, essentially creating a new
         # balanced dataset each epoch by oversampling rare classes and undersampling common ones.
@@ -284,6 +291,8 @@ def set_up_data_loaders(
             "num_workers": num_workers,
             "max_per_class": max_per_class,
             "merge_groups": merge_groups,
+            "image_root": str(image_root),
+            "label_key": label_key,
         },
     }
     return dl_train, dl_val, dl_test, meta

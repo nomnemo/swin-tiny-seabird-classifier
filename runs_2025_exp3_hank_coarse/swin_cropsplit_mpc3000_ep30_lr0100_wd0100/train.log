@@ -1,0 +1,118 @@
+[info] Experiment: exp3_hank_coarse
+[info] Description: 8-class Hank coarse grouping
+[info] Run directory: runs_2025_exp3_hank_coarse/swin_cropsplit_mpc3000_ep30_lr0100_wd0100
+============================================================
+TRAINING CONFIGURATION
+============================================================
+  experiment:       exp3_hank_coarse
+  model:            swin_tiny_patch4_window7_224
+  loss:             CrossEntropy
+  epochs:           30
+  warmup_epochs:    10
+  lr:               0.0001
+  weight_decay:     0.01
+  accum_steps:      1
+  AMP:              True
+  device:           cuda
+  hardware:         1x NVIDIA A10 (Lambda)
+  input_size:       224
+  batch_train:      32
+  batch_eval:       128
+  use_sampler:      True
+  num_workers:      16
+  max_per_class:    3000
+  image_root:       cropped-dataset-2025/crops
+  label_key:        remapped_label
+  num_classes:      8
+  classes:          ['GBHE_ADULT', 'GBHE_CHICK', 'LARGE_WHITE_BIRDS', 'LAUGHING_GULL', 'OTHERS', 'PELICAN_ADULT', 'PELICAN_CHICK', 'TERNS']
+  train_size:       7418
+  val_size:         1151
+  test_size:        1155
+============================================================
+[info] saved split_composition.json
+ep 01 | train acc 0.658 loss 1.071 | val acc 0.792 loss 0.599 | macroF1 0.597 | lr 1.00e-05 | val_time 2.8s | ep_time 16.5s
+[info] new best val macro-F1 0.597 at epoch 01
+ep 02 | train acc 0.876 loss 0.399 | val acc 0.831 loss 0.492 | macroF1 0.666 | lr 2.00e-05 | val_time 1.2s | ep_time 13.2s
+[info] new best val macro-F1 0.666 at epoch 02
+ep 03 | train acc 0.919 loss 0.255 | val acc 0.882 loss 0.322 | macroF1 0.750 | lr 3.00e-05 | val_time 1.3s | ep_time 13.2s
+[info] new best val macro-F1 0.750 at epoch 03
+ep 04 | train acc 0.930 loss 0.214 | val acc 0.877 loss 0.414 | macroF1 0.744 | lr 4.00e-05 | val_time 1.3s | ep_time 13.3s
+ep 05 | train acc 0.943 loss 0.178 | val acc 0.827 loss 0.618 | macroF1 0.653 | lr 5.00e-05 | val_time 1.4s | ep_time 13.2s
+ep 06 | train acc 0.946 loss 0.167 | val acc 0.885 loss 0.380 | macroF1 0.796 | lr 6.00e-05 | val_time 1.3s | ep_time 13.4s
+[info] new best val macro-F1 0.796 at epoch 06
+ep 07 | train acc 0.950 loss 0.144 | val acc 0.888 loss 0.389 | macroF1 0.736 | lr 7.00e-05 | val_time 1.3s | ep_time 13.3s
+ep 08 | train acc 0.956 loss 0.140 | val acc 0.911 loss 0.321 | macroF1 0.822 | lr 8.00e-05 | val_time 1.4s | ep_time 13.4s
+[info] new best val macro-F1 0.822 at epoch 08
+ep 09 | train acc 0.954 loss 0.142 | val acc 0.909 loss 0.323 | macroF1 0.803 | lr 9.00e-05 | val_time 1.4s | ep_time 13.3s
+ep 10 | train acc 0.950 loss 0.154 | val acc 0.857 loss 0.480 | macroF1 0.623 | lr 1.00e-04 | val_time 1.2s | ep_time 13.0s
+ep 11 | train acc 0.956 loss 0.131 | val acc 0.924 loss 0.300 | macroF1 0.863 | lr 9.94e-05 | val_time 1.3s | ep_time 13.3s
+[info] new best val macro-F1 0.863 at epoch 11
+ep 12 | train acc 0.960 loss 0.121 | val acc 0.897 loss 0.342 | macroF1 0.758 | lr 9.76e-05 | val_time 1.3s | ep_time 12.9s
+ep 13 | train acc 0.976 loss 0.073 | val acc 0.917 loss 0.295 | macroF1 0.851 | lr 9.46e-05 | val_time 1.2s | ep_time 13.1s
+ep 14 | train acc 0.975 loss 0.078 | val acc 0.925 loss 0.295 | macroF1 0.826 | lr 9.05e-05 | val_time 1.3s | ep_time 13.3s
+ep 15 | train acc 0.978 loss 0.072 | val acc 0.922 loss 0.304 | macroF1 0.811 | lr 8.54e-05 | val_time 1.3s | ep_time 13.0s
+ep 16 | train acc 0.979 loss 0.066 | val acc 0.927 loss 0.273 | macroF1 0.804 | lr 7.94e-05 | val_time 1.4s | ep_time 13.3s
+ep 17 | train acc 0.977 loss 0.067 | val acc 0.933 loss 0.264 | macroF1 0.854 | lr 7.27e-05 | val_time 1.3s | ep_time 13.2s
+ep 18 | train acc 0.983 loss 0.050 | val acc 0.939 loss 0.267 | macroF1 0.835 | lr 6.55e-05 | val_time 1.3s | ep_time 13.1s
+ep 19 | train acc 0.984 loss 0.048 | val acc 0.926 loss 0.280 | macroF1 0.829 | lr 5.78e-05 | val_time 1.3s | ep_time 13.3s
+ep 20 | train acc 0.990 loss 0.038 | val acc 0.937 loss 0.278 | macroF1 0.879 | lr 5.00e-05 | val_time 1.4s | ep_time 13.2s
+[info] new best val macro-F1 0.879 at epoch 20
+ep 21 | train acc 0.989 loss 0.033 | val acc 0.944 loss 0.251 | macroF1 0.882 | lr 4.22e-05 | val_time 1.3s | ep_time 13.2s
+[info] new best val macro-F1 0.882 at epoch 21
+ep 22 | train acc 0.993 loss 0.024 | val acc 0.950 loss 0.251 | macroF1 0.877 | lr 3.45e-05 | val_time 1.2s | ep_time 13.1s
+ep 23 | train acc 0.994 loss 0.016 | val acc 0.940 loss 0.270 | macroF1 0.864 | lr 2.73e-05 | val_time 1.4s | ep_time 13.2s
+ep 24 | train acc 0.994 loss 0.017 | val acc 0.944 loss 0.283 | macroF1 0.855 | lr 2.06e-05 | val_time 1.3s | ep_time 13.2s
+ep 25 | train acc 0.996 loss 0.015 | val acc 0.942 loss 0.261 | macroF1 0.901 | lr 1.46e-05 | val_time 1.3s | ep_time 13.3s
+[info] new best val macro-F1 0.901 at epoch 25
+ep 26 | train acc 0.997 loss 0.011 | val acc 0.944 loss 0.275 | macroF1 0.901 | lr 9.55e-06 | val_time 1.3s | ep_time 13.2s
+[info] new best val macro-F1 0.901 at epoch 26
+ep 27 | train acc 0.996 loss 0.012 | val acc 0.944 loss 0.265 | macroF1 0.905 | lr 5.45e-06 | val_time 1.3s | ep_time 13.2s
+[info] new best val macro-F1 0.905 at epoch 27
+ep 28 | train acc 0.997 loss 0.010 | val acc 0.946 loss 0.266 | macroF1 0.903 | lr 2.45e-06 | val_time 1.3s | ep_time 13.2s
+ep 29 | train acc 0.997 loss 0.010 | val acc 0.946 loss 0.267 | macroF1 0.905 | lr 6.16e-07 | val_time 1.3s | ep_time 13.3s
+ep 30 | train acc 0.998 loss 0.007 | val acc 0.946 loss 0.267 | macroF1 0.905 | lr 0.00e+00 | val_time 1.3s | ep_time 13.3s
+[info] saved curves.pdf
+
+Validation report:
+                   precision    recall  f1-score   support
+
+       GBHE_ADULT      1.000     1.000     1.000         2
+       GBHE_CHICK      0.833     0.833     0.833         6
+LARGE_WHITE_BIRDS      0.784     0.853     0.817        34
+    LAUGHING_GULL      0.958     0.958     0.958       144
+           OTHERS      0.829     0.879     0.853        33
+    PELICAN_ADULT      0.933     0.843     0.886        83
+    PELICAN_CHICK      0.896     0.932     0.913       249
+            TERNS      0.981     0.970     0.976       600
+
+         accuracy                          0.944      1151
+        macro avg      0.902     0.909     0.905      1151
+     weighted avg      0.946     0.944     0.945      1151
+
+Validation report macro-F1: 0.905
+Validation report mAP (macro, one-vs-rest): 0.953
+Validation report per-class AP written to val_ap_per_class.json
+Validation report: 64 misclassified saved to val_misclassified.json
+
+Test report:
+                   precision    recall  f1-score   support
+
+       GBHE_ADULT      0.500     0.667     0.571         3
+       GBHE_CHICK      1.000     0.833     0.909         6
+LARGE_WHITE_BIRDS      0.914     0.914     0.914        35
+    LAUGHING_GULL      0.933     0.959     0.946       145
+           OTHERS      0.867     0.788     0.825        33
+    PELICAN_ADULT      0.925     0.881     0.902        84
+    PELICAN_CHICK      0.936     0.944     0.940       249
+            TERNS      0.973     0.975     0.974       600
+
+         accuracy                          0.951      1155
+        macro avg      0.881     0.870     0.873      1155
+     weighted avg      0.951     0.951     0.951      1155
+
+Test report macro-F1: 0.873
+Test report mAP (macro, one-vs-rest): 0.896
+Test report per-class AP written to test_ap_per_class.json
+Test report: 57 misclassified saved to test_misclassified.json
+[info] saved val_test_cms.pdf
+[info] total run time: 0:06:52

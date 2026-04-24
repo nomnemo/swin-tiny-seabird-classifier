@@ -1,0 +1,219 @@
+[
+  {
+    "crop_path": "crops\\GREG\\2746_33257.jpg",
+    "true_label": "GREG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.2684,
+    "predicted_class_conf": 0.731
+  },
+  {
+    "crop_path": "crops\\WHIB\\4245_37191.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.2152,
+    "predicted_class_conf": 0.7652
+  },
+  {
+    "crop_path": "crops\\WHIB\\13342_78494.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "SNEG",
+    "true_class_conf": 0.0459,
+    "predicted_class_conf": 0.9518
+  },
+  {
+    "crop_path": "crops\\GREG\\10762_71301.jpg",
+    "true_label": "GREG",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.1666,
+    "predicted_class_conf": 0.8279
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4418_37525.jpg",
+    "true_label": "MEGRT",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.2545,
+    "predicted_class_conf": 0.7451
+  },
+  {
+    "crop_path": "crops\\GREG\\11140_71988.jpg",
+    "true_label": "GREG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.2425,
+    "predicted_class_conf": 0.6955
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4418_37524.jpg",
+    "true_label": "MEGRT",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.0317,
+    "predicted_class_conf": 0.9676
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4410_37508.jpg",
+    "true_label": "MEGRT",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.0208,
+    "predicted_class_conf": 0.5507
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4458_37593.jpg",
+    "true_label": "MEGRT",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.4051,
+    "predicted_class_conf": 0.594
+  },
+  {
+    "crop_path": "crops\\WHIB\\10951_71587.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.0284,
+    "predicted_class_conf": 0.771
+  },
+  {
+    "crop_path": "crops\\GREG\\2655_33090.jpg",
+    "true_label": "GREG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0357,
+    "predicted_class_conf": 0.9199
+  },
+  {
+    "crop_path": "crops\\WHIB\\11045_71729.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "SNEG",
+    "true_class_conf": 0.2288,
+    "predicted_class_conf": 0.7709
+  },
+  {
+    "crop_path": "crops\\GREG\\2445_32518.jpg",
+    "true_label": "GREG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.345,
+    "predicted_class_conf": 0.647
+  },
+  {
+    "crop_path": "crops\\GREG\\17537_97809.jpg",
+    "true_label": "GREG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0123,
+    "predicted_class_conf": 0.9116
+  },
+  {
+    "crop_path": "crops\\SNEG\\13207_78034.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0447,
+    "predicted_class_conf": 0.9551
+  },
+  {
+    "crop_path": "crops\\SNEG\\13014_77513.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0027,
+    "predicted_class_conf": 0.9958
+  },
+  {
+    "crop_path": "crops\\WHIB\\13165_77904.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "SNEG",
+    "true_class_conf": 0.0019,
+    "predicted_class_conf": 0.9708
+  },
+  {
+    "crop_path": "crops\\GREG\\15315_84289.jpg",
+    "true_label": "GREG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.041,
+    "predicted_class_conf": 0.9587
+  },
+  {
+    "crop_path": "crops\\SNEG\\17219_96765.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0029,
+    "predicted_class_conf": 0.9903
+  },
+  {
+    "crop_path": "crops\\GREG\\16066_86067.jpg",
+    "true_label": "GREG",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.0033,
+    "predicted_class_conf": 0.9956
+  },
+  {
+    "crop_path": "crops\\WHIB\\10776_71318.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.0013,
+    "predicted_class_conf": 0.9585
+  },
+  {
+    "crop_path": "crops\\SNEG\\17219_96764.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9999
+  },
+  {
+    "crop_path": "crops\\WHIB\\4481_37626.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.0093,
+    "predicted_class_conf": 0.9899
+  },
+  {
+    "crop_path": "crops\\MEGRT\\4505_37676.jpg",
+    "true_label": "MEGRT",
+    "predicted_label": "GREG",
+    "true_class_conf": 0.3543,
+    "predicted_class_conf": 0.6428
+  },
+  {
+    "crop_path": "crops\\GREG\\16073_86076.jpg",
+    "true_label": "GREG",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.0004,
+    "predicted_class_conf": 0.9994
+  },
+  {
+    "crop_path": "crops\\SNEG\\13358_78550.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0098,
+    "predicted_class_conf": 0.9902
+  },
+  {
+    "crop_path": "crops\\SNEG\\17218_96761.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9996
+  },
+  {
+    "crop_path": "crops\\MEGRT\\5201_38901.jpg",
+    "true_label": "MEGRT",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9674
+  },
+  {
+    "crop_path": "crops\\GREG\\16085_86091.jpg",
+    "true_label": "GREG",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.0224,
+    "predicted_class_conf": 0.9767
+  },
+  {
+    "crop_path": "crops\\WHIB\\4203_37111.jpg",
+    "true_label": "WHIB",
+    "predicted_label": "MEGRT",
+    "true_class_conf": 0.2845,
+    "predicted_class_conf": 0.7152
+  },
+  {
+    "crop_path": "crops\\SNEG\\13343_78496.jpg",
+    "true_label": "SNEG",
+    "predicted_label": "WHIB",
+    "true_class_conf": 0.4847,
+    "predicted_class_conf": 0.514
+  }
+]

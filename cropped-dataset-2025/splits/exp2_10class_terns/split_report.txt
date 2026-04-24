@@ -1,0 +1,73 @@
+======================================================================
+SPLIT REPORT: exp2_10class_terns
+======================================================================
+
+## Split Method: stratified per remapped class (crop-level)
+
+## Label Mapping (original -> remapped)
+  BRPEA <- ['BRPEA']
+  BRPEC <- ['BRPEC']
+  GBHEC <- ['GBHEC']
+  GREGA <- ['GREGA']
+  GREGC <- ['GREGC']
+  LAGUA <- ['LAGUA']
+  LWBBA <- ['LWBBA']
+  OTHERS <- ['AMAVA', 'BNSTA', 'BRPEF', 'CATEA', 'DCCOA', 'DCCOF', 'GBHEA', 'GREGF', 'LAGUF', 'NECOA', 'OTHRA', 'REEGA', 'REEGF', 'REEGWMA', 'ROSPA', 'ROSPC', 'RUTUA', 'RUTUF', 'SNEGA', 'UNSURE', 'WHIBA', 'WHIBF']
+  TERNS <- ['MTRNS', 'ROTEA', 'ROTEF', 'SATEA', 'SATEF']
+  TRHEA <- ['TRHEA']
+
+## Overall Class Distribution (after remapping)
+  TERNS: 11950
+  BRPEC: 2490
+  LAGUA: 1433
+  BRPEA: 819
+  OTHERS: 273
+  TRHEA: 172
+  GREGC: 107
+  GREGA: 106
+  LWBBA: 69
+  GBHEC: 60
+  TOTAL: 17479
+  NUM CLASSES: 10
+
+## Per-Split Class Distribution
+
+### TRAIN (13980 samples)
+    TERNS: 9560 (68.4%)
+    BRPEC: 1992 (14.2%)
+    LAGUA: 1146 (8.2%)
+    BRPEA: 655 (4.7%)
+    OTHERS: 218 (1.6%)
+    TRHEA: 137 (1.0%)
+    GREGC: 85 (0.6%)
+    GREGA: 84 (0.6%)
+    LWBBA: 55 (0.4%)
+    GBHEC: 48 (0.3%)
+
+### VAL (1748 samples)
+    TERNS: 1195 (68.4%)
+    BRPEC: 249 (14.2%)
+    LAGUA: 143 (8.2%)
+    BRPEA: 82 (4.7%)
+    OTHERS: 27 (1.5%)
+    TRHEA: 17 (1.0%)
+    GREGA: 11 (0.6%)
+    GREGC: 11 (0.6%)
+    LWBBA: 7 (0.4%)
+    GBHEC: 6 (0.3%)
+
+### TEST (1751 samples)
+    TERNS: 1195 (68.2%)
+    BRPEC: 249 (14.2%)
+    LAGUA: 144 (8.2%)
+    BRPEA: 82 (4.7%)
+    OTHERS: 28 (1.6%)
+    TRHEA: 18 (1.0%)
+    GREGA: 11 (0.6%)
+    GREGC: 11 (0.6%)
+    LWBBA: 7 (0.4%)
+    GBHEC: 6 (0.3%)
+
+## Missing Classes Check
+  val: all 10 classes present
+  test: all 10 classes present

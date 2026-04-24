@@ -1,0 +1,450 @@
+[
+  {
+    "crop_path": "BRPEC/BRPEC_009171.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.0888,
+    "predicted_class_conf": 0.9105
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009247.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1154,
+    "predicted_class_conf": 0.8596
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008163.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1545,
+    "predicted_class_conf": 0.845
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008801.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0161,
+    "predicted_class_conf": 0.9796
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009011.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.1441,
+    "predicted_class_conf": 0.561
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008199.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0669,
+    "predicted_class_conf": 0.9309
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_007495.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1112,
+    "predicted_class_conf": 0.8887
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_009451.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3736,
+    "predicted_class_conf": 0.6256
+  },
+  {
+    "crop_path": "SATEA/SATEA_009087.png",
+    "true_label": "TERNS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0076,
+    "predicted_class_conf": 0.9895
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009341.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.0682,
+    "predicted_class_conf": 0.9309
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008056.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1387,
+    "predicted_class_conf": 0.8431
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008758.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.2871,
+    "predicted_class_conf": 0.6053
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007356.png",
+    "true_label": "TERNS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_007490.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.0604,
+    "predicted_class_conf": 0.6956
+  },
+  {
+    "crop_path": "SATEA/SATEA_009445.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1459,
+    "predicted_class_conf": 0.7397
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009628.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9995
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007694.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0962,
+    "predicted_class_conf": 0.9025
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009644.png",
+    "true_label": "OTHERS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.986
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009404.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9998
+  },
+  {
+    "crop_path": "ROTEF/ROTEF_008217.png",
+    "true_label": "TERNS",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.0688,
+    "predicted_class_conf": 0.7365
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008441.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0215,
+    "predicted_class_conf": 0.9734
+  },
+  {
+    "crop_path": "SATEA/SATEA_009480.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0115,
+    "predicted_class_conf": 0.5
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009574.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.0127,
+    "predicted_class_conf": 0.9866
+  },
+  {
+    "crop_path": "SATEA/SATEA_009497.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.2081,
+    "predicted_class_conf": 0.568
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007482.png",
+    "true_label": "TERNS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.4233,
+    "predicted_class_conf": 0.5719
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_009512.png",
+    "true_label": "TERNS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007987.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.1313,
+    "predicted_class_conf": 0.8561
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008302.png",
+    "true_label": "TERNS",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.0008,
+    "predicted_class_conf": 0.8716
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009552.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0219,
+    "predicted_class_conf": 0.9714
+  },
+  {
+    "crop_path": "SATEA/SATEA_008990.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3865,
+    "predicted_class_conf": 0.6128
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007713.png",
+    "true_label": "TERNS",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.0029,
+    "predicted_class_conf": 0.9809
+  },
+  {
+    "crop_path": "SATEA/SATEA_009066.png",
+    "true_label": "TERNS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009627.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0011,
+    "predicted_class_conf": 0.9986
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008130.png",
+    "true_label": "TERNS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0726,
+    "predicted_class_conf": 0.9274
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009640.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.4055,
+    "predicted_class_conf": 0.5086
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007397.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.034,
+    "predicted_class_conf": 0.966
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009641.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0003,
+    "predicted_class_conf": 0.9972
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009594.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.3258,
+    "predicted_class_conf": 0.6711
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_007244.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0108,
+    "predicted_class_conf": 0.4722
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007493.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.0907,
+    "predicted_class_conf": 0.9092
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009540.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3251,
+    "predicted_class_conf": 0.6543
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009165.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.0564,
+    "predicted_class_conf": 0.9428
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007886.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.125,
+    "predicted_class_conf": 0.6562
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009652.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0022,
+    "predicted_class_conf": 0.9968
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009636.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.0153,
+    "predicted_class_conf": 0.9827
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007414.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.2592,
+    "predicted_class_conf": 0.393
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_007975.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3784,
+    "predicted_class_conf": 0.5505
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_007772.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.0982,
+    "predicted_class_conf": 0.8273
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_008544.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3086,
+    "predicted_class_conf": 0.6901
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_009170.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9476
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_008405.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0023,
+    "predicted_class_conf": 0.5567
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007293.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9998
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009526.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.039,
+    "predicted_class_conf": 0.9608
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_007208.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007594.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_007815.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3842,
+    "predicted_class_conf": 0.4653
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007534.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.1097,
+    "predicted_class_conf": 0.8902
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_007972.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.176,
+    "predicted_class_conf": 0.6827
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009608.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1084,
+    "predicted_class_conf": 0.7762
+  },
+  {
+    "crop_path": "OTHRA/OTHRA_008881.png",
+    "true_label": "OTHERS",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9937
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009596.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0629,
+    "predicted_class_conf": 0.6035
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009619.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "TERNS",
+    "true_class_conf": 0.4455,
+    "predicted_class_conf": 0.5523
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_007294.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3741,
+    "predicted_class_conf": 0.5594
+  },
+  {
+    "crop_path": "OTHRA/OTHRA_008694.png",
+    "true_label": "OTHERS",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0003,
+    "predicted_class_conf": 0.9997
+  }
+]

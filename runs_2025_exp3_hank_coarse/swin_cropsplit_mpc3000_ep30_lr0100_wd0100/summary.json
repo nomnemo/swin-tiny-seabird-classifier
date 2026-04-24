@@ -1,0 +1,16 @@
+{
+  "experiment": "exp3_hank_coarse",
+  "model": "swin_tiny_patch4_window7_224",
+  "epochs": 30,
+  "best_val_macro_f1": 0.9045828202093414,
+  "val_summary": {
+    "macro_f1": 0.9045828202093414,
+    "map_macro": 0.9527386181861218,
+    "n_samples": 1151
+  },
+  "test_summary": {
+    "macro_f1": 0.8728009315505435,
+    "map_macro": 0.8961649339599649,
+    "n_samples": 1155
+  }
+}

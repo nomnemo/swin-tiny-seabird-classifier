@@ -1,0 +1,78 @@
+======================================================================
+SPLIT REPORT: exp1_11class
+======================================================================
+
+## Split Method: stratified per remapped class (crop-level)
+
+## Label Mapping (original -> remapped)
+  BRPEA <- ['BRPEA']
+  BRPEC <- ['BRPEC']
+  GBHEC <- ['GBHEC']
+  GREGA <- ['GREGA']
+  GREGC <- ['GREGC']
+  LAGUA <- ['LAGUA']
+  LWBBA <- ['LWBBA']
+  OTHERS <- ['AMAVA', 'BNSTA', 'BRPEF', 'CATEA', 'DCCOA', 'DCCOF', 'GBHEA', 'GREGF', 'LAGUF', 'MTRNS', 'NECOA', 'OTHRA', 'REEGA', 'REEGF', 'REEGWMA', 'ROSPA', 'ROSPC', 'ROTEF', 'RUTUA', 'RUTUF', 'SATEF', 'SNEGA', 'UNSURE', 'WHIBA', 'WHIBF']
+  ROTEA <- ['ROTEA']
+  SATEA <- ['SATEA']
+  TRHEA <- ['TRHEA']
+
+## Overall Class Distribution (after remapping)
+  ROTEA: 9100
+  SATEA: 2751
+  BRPEC: 2490
+  LAGUA: 1433
+  BRPEA: 819
+  OTHERS: 372
+  TRHEA: 172
+  GREGC: 107
+  GREGA: 106
+  LWBBA: 69
+  GBHEC: 60
+  TOTAL: 17479
+  NUM CLASSES: 11
+
+## Per-Split Class Distribution
+
+### TRAIN (13979 samples)
+    ROTEA: 7280 (52.1%)
+    SATEA: 2200 (15.7%)
+    BRPEC: 1992 (14.2%)
+    LAGUA: 1146 (8.2%)
+    BRPEA: 655 (4.7%)
+    OTHERS: 297 (2.1%)
+    TRHEA: 137 (1.0%)
+    GREGC: 85 (0.6%)
+    GREGA: 84 (0.6%)
+    LWBBA: 55 (0.4%)
+    GBHEC: 48 (0.3%)
+
+### VAL (1748 samples)
+    ROTEA: 910 (52.1%)
+    SATEA: 275 (15.7%)
+    BRPEC: 249 (14.2%)
+    LAGUA: 143 (8.2%)
+    BRPEA: 82 (4.7%)
+    OTHERS: 37 (2.1%)
+    TRHEA: 17 (1.0%)
+    GREGA: 11 (0.6%)
+    GREGC: 11 (0.6%)
+    LWBBA: 7 (0.4%)
+    GBHEC: 6 (0.3%)
+
+### TEST (1752 samples)
+    ROTEA: 910 (51.9%)
+    SATEA: 276 (15.8%)
+    BRPEC: 249 (14.2%)
+    LAGUA: 144 (8.2%)
+    BRPEA: 82 (4.7%)
+    OTHERS: 38 (2.2%)
+    TRHEA: 18 (1.0%)
+    GREGA: 11 (0.6%)
+    GREGC: 11 (0.6%)
+    LWBBA: 7 (0.4%)
+    GBHEC: 6 (0.3%)
+
+## Missing Classes Check
+  val: all 11 classes present
+  test: all 11 classes present
