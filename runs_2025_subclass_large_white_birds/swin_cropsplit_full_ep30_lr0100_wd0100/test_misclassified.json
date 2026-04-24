@@ -1,0 +1,37 @@
+[
+  {
+    "crop_path": "GREGA/GREGA_013122.png",
+    "true_label": "GREGA_GREGF",
+    "predicted_label": "GREGC",
+    "true_class_conf": 0.4052,
+    "predicted_class_conf": 0.5942
+  },
+  {
+    "crop_path": "GREGA/GREGA_012901.png",
+    "true_label": "GREGA_GREGF",
+    "predicted_label": "LWBBA",
+    "true_class_conf": 0.0055,
+    "predicted_class_conf": 0.6031
+  },
+  {
+    "crop_path": "GREGC/GREGC_013137.png",
+    "true_label": "GREGC",
+    "predicted_label": "GREGA_GREGF",
+    "true_class_conf": 0.2484,
+    "predicted_class_conf": 0.7495
+  },
+  {
+    "crop_path": "GREGC/GREGC_012698.png",
+    "true_label": "GREGC",
+    "predicted_label": "GREGA_GREGF",
+    "true_class_conf": 0.2289,
+    "predicted_class_conf": 0.554
+  },
+  {
+    "crop_path": "LWBBA/LWBBA_012860.png",
+    "true_label": "LWBBA",
+    "predicted_label": "GREGC",
+    "true_class_conf": 0.0142,
+    "predicted_class_conf": 0.9799
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "train": {
+    "CATEA_MTRNS": 39,
+    "ROTEA_ROTEF": 7315,
+    "SATEA_SATEF": 2209
+  },
+  "val": {
+    "CATEA_MTRNS": 5,
+    "ROTEA_ROTEF": 914,
+    "SATEA_SATEF": 276
+  },
+  "test": {
+    "CATEA_MTRNS": 5,
+    "ROTEA_ROTEF": 915,
+    "SATEA_SATEF": 277
+  }
+}

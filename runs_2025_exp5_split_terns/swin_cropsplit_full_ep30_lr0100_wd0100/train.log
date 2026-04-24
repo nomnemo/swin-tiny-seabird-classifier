@@ -1,0 +1,34 @@
+[info] Experiment: exp5_split_terns
+[info] Description: 10-class exp3 variant: ROTE/SATE split; TRHEA separated; LARGE_WHITE_BIRDS keeps WHIB
+[info] Run directory: runs_2025_exp5_split_terns/swin_cropsplit_full_ep30_lr0100_wd0100
+============================================================
+TRAINING CONFIGURATION
+============================================================
+  experiment:       exp5_split_terns
+  model:            swin_tiny_patch4_window7_224
+  loss:             CrossEntropy
+  epochs:           30
+  warmup_epochs:    10
+  lr:               0.0001
+  weight_decay:     0.01
+  accum_steps:      1
+  AMP:              True
+  device:           cuda
+  hardware:         1x NVIDIA A10 (Lambda)
+  input_size:       224
+  batch_train:      32
+  batch_eval:       128
+  use_sampler:      True
+  sampler_power:    0.5  (1.0 = 1/count, 0.5 = 1/sqrt(count), 0.0 = uniform)
+  num_workers:      16
+  image_root:       cropped-dataset-2025/crops
+  label_key:        remapped_label
+  num_classes:      10
+  classes:          ['GBHE_ADULT', 'GBHE_CHICK', 'LARGE_WHITE_BIRDS', 'LAUGHING_GULL', 'OTHERS', 'PELICAN_ADULT', 'PELICAN_CHICK', 'ROTEA_ROTEF', 'SATEA_SATEF', 'TRHEA']
+  train_size:       13981
+  val_size:         1745
+  test_size:        1753
+============================================================
+[info] saved split_composition.json
+ep 01 | train acc 0.646 loss 1.039 | val acc 0.832 loss 0.500 | macroF1 0.668 | lr 1.00e-05 | val_time 3.3s | ep_time 26.3s
+[info] new best val macro-F1 0.668 at epoch 01

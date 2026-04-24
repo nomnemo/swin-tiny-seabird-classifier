@@ -1,0 +1,30 @@
+[
+  {
+    "crop_path": "GREGA/GREGA_012964.png",
+    "true_label": "GREGA_GREGF",
+    "predicted_label": "LWBBA",
+    "true_class_conf": 0.0403,
+    "predicted_class_conf": 0.7186
+  },
+  {
+    "crop_path": "GREGA/GREGA_012965.png",
+    "true_label": "GREGA_GREGF",
+    "predicted_label": "GREGC",
+    "true_class_conf": 0.2725,
+    "predicted_class_conf": 0.632
+  },
+  {
+    "crop_path": "GREGA/GREGA_013147.png",
+    "true_label": "GREGA_GREGF",
+    "predicted_label": "GREGC",
+    "true_class_conf": 0.1388,
+    "predicted_class_conf": 0.8528
+  },
+  {
+    "crop_path": "GREGA/GREGA_013049.png",
+    "true_label": "GREGA_GREGF",
+    "predicted_label": "GREGC",
+    "true_class_conf": 0.0462,
+    "predicted_class_conf": 0.9065
+  }
+]

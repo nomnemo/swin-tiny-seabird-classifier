@@ -3,7 +3,8 @@
     "allow": [
       "Bash(python3:*)",
       "Bash(python:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(chmod +x /home/ubuntu/nomin-classification-fs/waterbird-classification/scripts/helper/run_subclassifiers.sh)"
     ]
   }
 }

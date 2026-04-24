@@ -1,0 +1,751 @@
+[
+  {
+    "crop_path": "MTRNS/MTRNS_009450.png",
+    "true_label": "CATEA_MTRNS",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.001,
+    "predicted_class_conf": 0.9582
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_009444.png",
+    "true_label": "CATEA_MTRNS",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0017,
+    "predicted_class_conf": 0.9783
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_008216.png",
+    "true_label": "CATEA_MTRNS",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1604,
+    "predicted_class_conf": 0.838
+  },
+  {
+    "crop_path": "CATEA/CATEA_001380.png",
+    "true_label": "CATEA_MTRNS",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9996
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_016936.png",
+    "true_label": "CATEA_MTRNS",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.062,
+    "predicted_class_conf": 0.585
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017363.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4292,
+    "predicted_class_conf": 0.5702
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016497.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1076,
+    "predicted_class_conf": 0.8911
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013487.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0042,
+    "predicted_class_conf": 0.9958
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001385.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3914,
+    "predicted_class_conf": 0.6086
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013674.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4861,
+    "predicted_class_conf": 0.5129
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007628.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0091,
+    "predicted_class_conf": 0.9908
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014326.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0289,
+    "predicted_class_conf": 0.971
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008470.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0409,
+    "predicted_class_conf": 0.9588
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016467.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3876,
+    "predicted_class_conf": 0.6115
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008833.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2636,
+    "predicted_class_conf": 0.7364
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008824.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0109,
+    "predicted_class_conf": 0.989
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015777.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.026,
+    "predicted_class_conf": 0.9739
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015762.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0089,
+    "predicted_class_conf": 0.991
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004488.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3602,
+    "predicted_class_conf": 0.6397
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017059.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0652,
+    "predicted_class_conf": 0.9347
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014385.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0136,
+    "predicted_class_conf": 0.9864
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_009209.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1228,
+    "predicted_class_conf": 0.877
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013453.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2814,
+    "predicted_class_conf": 0.7185
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006330.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0815,
+    "predicted_class_conf": 0.9184
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002623.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1309,
+    "predicted_class_conf": 0.869
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000679.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0261,
+    "predicted_class_conf": 0.9739
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000054.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.389,
+    "predicted_class_conf": 0.6107
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002991.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1047,
+    "predicted_class_conf": 0.8948
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000643.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0291,
+    "predicted_class_conf": 0.9709
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016793.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.052,
+    "predicted_class_conf": 0.9478
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000540.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4775,
+    "predicted_class_conf": 0.5224
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017365.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0353,
+    "predicted_class_conf": 0.9647
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015320.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.076,
+    "predicted_class_conf": 0.9238
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008199.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0279,
+    "predicted_class_conf": 0.966
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017214.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0177,
+    "predicted_class_conf": 0.9823
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015333.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "CATEA_MTRNS",
+    "true_class_conf": 0.015,
+    "predicted_class_conf": 0.9846
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014553.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "CATEA_MTRNS",
+    "true_class_conf": 0.1259,
+    "predicted_class_conf": 0.873
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004291.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0713,
+    "predicted_class_conf": 0.9277
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004698.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4789,
+    "predicted_class_conf": 0.5209
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015775.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4902,
+    "predicted_class_conf": 0.5097
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001364.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1054,
+    "predicted_class_conf": 0.8945
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015462.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0207,
+    "predicted_class_conf": 0.9793
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007912.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0939,
+    "predicted_class_conf": 0.9061
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014381.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0066,
+    "predicted_class_conf": 0.9934
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000461.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2666,
+    "predicted_class_conf": 0.7332
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000320.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2312,
+    "predicted_class_conf": 0.7683
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002205.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1429,
+    "predicted_class_conf": 0.857
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001691.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1611,
+    "predicted_class_conf": 0.8389
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014418.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1571,
+    "predicted_class_conf": 0.8425
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004594.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0495,
+    "predicted_class_conf": 0.9502
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008920.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9998
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008740.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0024,
+    "predicted_class_conf": 0.9976
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000178.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1884,
+    "predicted_class_conf": 0.8114
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015321.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4716,
+    "predicted_class_conf": 0.5282
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000557.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0231,
+    "predicted_class_conf": 0.9769
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008977.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3557,
+    "predicted_class_conf": 0.6442
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008157.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1691,
+    "predicted_class_conf": 0.8307
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005567.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4046,
+    "predicted_class_conf": 0.595
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014182.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3594,
+    "predicted_class_conf": 0.6406
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013660.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2462,
+    "predicted_class_conf": 0.7538
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013318.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0477,
+    "predicted_class_conf": 0.9523
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004369.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1871,
+    "predicted_class_conf": 0.8128
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017332.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0273,
+    "predicted_class_conf": 0.9727
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008296.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4785,
+    "predicted_class_conf": 0.5214
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006591.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3919,
+    "predicted_class_conf": 0.6081
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004263.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.021,
+    "predicted_class_conf": 0.979
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014409.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0013,
+    "predicted_class_conf": 0.9987
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013639.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2275,
+    "predicted_class_conf": 0.7725
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006723.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1982,
+    "predicted_class_conf": 0.8017
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002685.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1334,
+    "predicted_class_conf": 0.8666
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_013935.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0524,
+    "predicted_class_conf": 0.9476
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008366.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0123,
+    "predicted_class_conf": 0.9876
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016218.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0658,
+    "predicted_class_conf": 0.9338
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006250.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0965,
+    "predicted_class_conf": 0.9025
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015065.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2031,
+    "predicted_class_conf": 0.7969
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004986.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1782,
+    "predicted_class_conf": 0.8217
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001762.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0101,
+    "predicted_class_conf": 0.9899
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_009123.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0607,
+    "predicted_class_conf": 0.9391
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015823.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4111,
+    "predicted_class_conf": 0.5889
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017444.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0266,
+    "predicted_class_conf": 0.9734
+  },
+  {
+    "crop_path": "SATEA/SATEA_017168.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.4332,
+    "predicted_class_conf": 0.5655
+  },
+  {
+    "crop_path": "SATEA/SATEA_002295.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3044,
+    "predicted_class_conf": 0.6954
+  },
+  {
+    "crop_path": "SATEA/SATEA_009534.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2524,
+    "predicted_class_conf": 0.7476
+  },
+  {
+    "crop_path": "SATEA/SATEA_016710.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.421,
+    "predicted_class_conf": 0.5789
+  },
+  {
+    "crop_path": "SATEA/SATEA_013751.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0078,
+    "predicted_class_conf": 0.9922
+  },
+  {
+    "crop_path": "SATEA/SATEA_015742.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0005,
+    "predicted_class_conf": 0.9995
+  },
+  {
+    "crop_path": "SATEA/SATEA_009139.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0888,
+    "predicted_class_conf": 0.9089
+  },
+  {
+    "crop_path": "SATEA/SATEA_015760.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3531,
+    "predicted_class_conf": 0.6469
+  },
+  {
+    "crop_path": "SATEA/SATEA_005428.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2708,
+    "predicted_class_conf": 0.7291
+  },
+  {
+    "crop_path": "SATEA/SATEA_016137.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.4557,
+    "predicted_class_conf": 0.5443
+  },
+  {
+    "crop_path": "SATEA/SATEA_003984.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9998
+  },
+  {
+    "crop_path": "SATEA/SATEA_000930.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3167,
+    "predicted_class_conf": 0.6831
+  },
+  {
+    "crop_path": "SATEA/SATEA_016990.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3951,
+    "predicted_class_conf": 0.6048
+  },
+  {
+    "crop_path": "SATEA/SATEA_006707.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.001,
+    "predicted_class_conf": 0.999
+  },
+  {
+    "crop_path": "SATEA/SATEA_004510.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0413,
+    "predicted_class_conf": 0.9586
+  },
+  {
+    "crop_path": "SATEA/SATEA_004759.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0738,
+    "predicted_class_conf": 0.9262
+  },
+  {
+    "crop_path": "SATEA/SATEA_006716.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9999
+  },
+  {
+    "crop_path": "SATEA/SATEA_009070.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.4828,
+    "predicted_class_conf": 0.517
+  },
+  {
+    "crop_path": "SATEA/SATEA_004894.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.194,
+    "predicted_class_conf": 0.8016
+  },
+  {
+    "crop_path": "SATEA/SATEA_015060.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3468,
+    "predicted_class_conf": 0.653
+  },
+  {
+    "crop_path": "SATEA/SATEA_008431.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1158,
+    "predicted_class_conf": 0.8842
+  },
+  {
+    "crop_path": "SATEA/SATEA_009484.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0982,
+    "predicted_class_conf": 0.9018
+  },
+  {
+    "crop_path": "SATEA/SATEA_000745.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1245,
+    "predicted_class_conf": 0.8753
+  },
+  {
+    "crop_path": "SATEA/SATEA_014807.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.4181,
+    "predicted_class_conf": 0.5817
+  },
+  {
+    "crop_path": "SATEA/SATEA_009401.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0496,
+    "predicted_class_conf": 0.9503
+  },
+  {
+    "crop_path": "SATEA/SATEA_004931.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.007,
+    "predicted_class_conf": 0.993
+  },
+  {
+    "crop_path": "SATEA/SATEA_008585.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0303,
+    "predicted_class_conf": 0.9696
+  }
+]

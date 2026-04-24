@@ -1,0 +1,16 @@
+{
+  "experiment": "subclass_large_white_birds",
+  "model": "swin_tiny_patch4_window7_224",
+  "epochs": 30,
+  "best_val_macro_f1": 0.8637037037037038,
+  "val_summary": {
+    "macro_f1": 0.8637037037037038,
+    "map_macro": 0.9562480448844086,
+    "n_samples": 29
+  },
+  "test_summary": {
+    "macro_f1": 0.8311688311688311,
+    "map_macro": 0.8914102206539182,
+    "n_samples": 29
+  }
+}

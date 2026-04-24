@@ -1,0 +1,17 @@
+{
+  "train": {
+    "GREGA_GREGF": 86,
+    "GREGC": 85,
+    "LWBBA": 55
+  },
+  "val": {
+    "GREGA_GREGF": 11,
+    "GREGC": 11,
+    "LWBBA": 7
+  },
+  "test": {
+    "GREGA_GREGF": 11,
+    "GREGC": 11,
+    "LWBBA": 7
+  }
+}

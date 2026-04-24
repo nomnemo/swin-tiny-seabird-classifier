@@ -1,0 +1,16 @@
+{
+  "experiment": "subclass_terns",
+  "model": "swin_tiny_patch4_window7_224",
+  "epochs": 30,
+  "best_val_macro_f1": 0.7093251404561595,
+  "val_summary": {
+    "macro_f1": 0.7093251404561595,
+    "map_macro": 0.7141788705617941,
+    "n_samples": 1195
+  },
+  "test_summary": {
+    "macro_f1": 0.5902971440753383,
+    "map_macro": 0.6651209254203178,
+    "n_samples": 1197
+  }
+}

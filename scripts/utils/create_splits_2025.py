@@ -10,6 +10,7 @@ Supports multiple experiment configurations with label remapping:
 - exp2_10class_terns: Same as exp1 but terns merged into TERNS
 - exp3_hank_coarse: Hank's 8-class coarse grouping
 - exp4_fine_grained: 11-class fine-grained grouping (split terns, split egret life stages)
+- exp5_split_terns: Variant of exp3: ROTE/SATE split out; TRHEA its own class; LARGE_WHITE_BIRDS unchanged
 
 Usage:
     python scripts/utils/create_splits_2025.py \
@@ -83,6 +84,26 @@ EXP4_CONFIG = {
     "others_class": "OTHERS",
 }
 
+EXP5_CONFIG = {
+    "name": "exp5_split_terns",
+    "description": "Variant of exp3: ROTE/SATE split out; TRHEA separated; LARGE_WHITE_BIRDS retains WHIB",
+    "explicit_mapping": {
+        "PELICAN_ADULT":     ["BRPEA", "BRPEF"],
+        "PELICAN_CHICK":     ["BRPEC"],
+        "ROTEA_ROTEF":       ["ROTEA", "ROTEF"],
+        "SATEA_SATEF":       ["SATEA", "SATEF"],
+        "LAUGHING_GULL":     ["LAGUA", "LAGUF"],
+        "LARGE_WHITE_BIRDS": [
+            "GREGA", "GREGC", "GREGF", "SNEGA", "WHIBA", "WHIBF",
+            "REEGA", "REEGF", "REEGWMA", "LWBBA", "LWBBC",
+        ],
+        "GBHE_ADULT":        ["GBHEA"],
+        "GBHE_CHICK":        ["GBHEC"],
+        "TRHEA":             ["TRHEA"],
+    },
+    "others_class": "OTHERS",
+}
+
 SUBCLASS_TERNS_CONFIG = {
     "name": "subclass_terns",
     "description": "Sub-classifier under TERNS super-class: 3-way split among tern species",
@@ -110,6 +131,7 @@ EXPERIMENT_CONFIGS = {
     "exp2_10class_terns": EXP2_CONFIG,
     "exp3_hank_coarse": EXP3_CONFIG,
     "exp4_fine_grained": EXP4_CONFIG,
+    "exp5_split_terns": EXP5_CONFIG,
     "subclass_terns": SUBCLASS_TERNS_CONFIG,
     "subclass_large_white_birds": SUBCLASS_LARGE_WHITE_BIRDS_CONFIG,
 }
@@ -330,7 +352,7 @@ def main():
                 species_counts, config["min_samples"],
                 config["tern_merge"], config["tern_target"],
             )
-        elif exp_name in ("exp3_hank_coarse", "exp4_fine_grained"):
+        elif exp_name in ("exp3_hank_coarse", "exp4_fine_grained", "exp5_split_terns"):
             mapping = compute_label_mapping_exp3(
                 all_species, config["explicit_mapping"], config["others_class"],
             )
