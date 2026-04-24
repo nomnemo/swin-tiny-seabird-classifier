@@ -1,0 +1,16 @@
+{
+  "experiment": "exp5_split_terns",
+  "model": "swin_tiny_patch4_window7_224",
+  "epochs": 30,
+  "best_val_macro_f1": 0.9035739058667076,
+  "val_summary": {
+    "macro_f1": 0.9035739058667076,
+    "map_macro": 0.9395506266150708,
+    "n_samples": 1745
+  },
+  "test_summary": {
+    "macro_f1": 0.8765506880726711,
+    "map_macro": 0.9041647429466522,
+    "n_samples": 1753
+  }
+}

@@ -1,0 +1,989 @@
+[
+  {
+    "crop_path": "GBHEC/GBHEC_013021.png",
+    "true_label": "GBHE_CHICK",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0014,
+    "predicted_class_conf": 0.4537
+  },
+  {
+    "crop_path": "WHIBA/WHIBA_012717.png",
+    "true_label": "LARGE_WHITE_BIRDS",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.1502,
+    "predicted_class_conf": 0.8445
+  },
+  {
+    "crop_path": "LWBBA/LWBBA_013008.png",
+    "true_label": "LARGE_WHITE_BIRDS",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.0096,
+    "predicted_class_conf": 0.4407
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009748.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0086,
+    "predicted_class_conf": 0.9856
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009652.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.048,
+    "predicted_class_conf": 0.941
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_007592.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.4687,
+    "predicted_class_conf": 0.5311
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_016655.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.0125,
+    "predicted_class_conf": 0.6032
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_005693.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9099
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_005641.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.2513,
+    "predicted_class_conf": 0.6885
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_009706.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0903,
+    "predicted_class_conf": 0.6025
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_013419.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.0519,
+    "predicted_class_conf": 0.9378
+  },
+  {
+    "crop_path": "LAGUA/LAGUA_012629.png",
+    "true_label": "LAUGHING_GULL",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0003,
+    "predicted_class_conf": 0.9631
+  },
+  {
+    "crop_path": "RUTUA/RUTUA_013340.png",
+    "true_label": "OTHERS",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9689
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_002906.png",
+    "true_label": "OTHERS",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0257,
+    "predicted_class_conf": 0.4547
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_016767.png",
+    "true_label": "OTHERS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9805
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_000158.png",
+    "true_label": "OTHERS",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 0.9981
+  },
+  {
+    "crop_path": "ROSPA/ROSPA_012844.png",
+    "true_label": "OTHERS",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0054,
+    "predicted_class_conf": 0.6019
+  },
+  {
+    "crop_path": "MTRNS/MTRNS_006422.png",
+    "true_label": "OTHERS",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0006,
+    "predicted_class_conf": 0.8183
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_011073.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0004,
+    "predicted_class_conf": 0.9967
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_007490.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0005,
+    "predicted_class_conf": 0.6093
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_012625.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "OTHERS",
+    "true_class_conf": 0.2619,
+    "predicted_class_conf": 0.6741
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_012120.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0004,
+    "predicted_class_conf": 0.9995
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_010331.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.2147,
+    "predicted_class_conf": 0.7853
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_012297.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0007,
+    "predicted_class_conf": 0.9104
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_012341.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_010516.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3919,
+    "predicted_class_conf": 0.5702
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_017473.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0007,
+    "predicted_class_conf": 0.7714
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_016619.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0011,
+    "predicted_class_conf": 0.9979
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_011647.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0002,
+    "predicted_class_conf": 0.9892
+  },
+  {
+    "crop_path": "BRPEA/BRPEA_003671.png",
+    "true_label": "PELICAN_ADULT",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.1819,
+    "predicted_class_conf": 0.7811
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_010946.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.2026,
+    "predicted_class_conf": 0.7952
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_010938.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1056,
+    "predicted_class_conf": 0.8944
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009594.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1968,
+    "predicted_class_conf": 0.8031
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009605.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.3155,
+    "predicted_class_conf": 0.3617
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009564.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0634,
+    "predicted_class_conf": 0.7199
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_010969.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0155,
+    "predicted_class_conf": 0.8081
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_012226.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0085,
+    "predicted_class_conf": 0.9395
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009979.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.0019,
+    "predicted_class_conf": 0.8843
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009862.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.0841,
+    "predicted_class_conf": 0.9113
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_012311.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.2862,
+    "predicted_class_conf": 0.7138
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009011.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0436,
+    "predicted_class_conf": 0.6431
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_013212.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0261,
+    "predicted_class_conf": 0.9511
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_011784.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0896,
+    "predicted_class_conf": 0.8285
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_011529.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0006,
+    "predicted_class_conf": 0.4997
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_007167.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2559,
+    "predicted_class_conf": 0.7376
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_011978.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1769,
+    "predicted_class_conf": 0.6521
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_010226.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0755,
+    "predicted_class_conf": 0.9195
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009171.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0117,
+    "predicted_class_conf": 0.6411
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_009165.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0009,
+    "predicted_class_conf": 0.8607
+  },
+  {
+    "crop_path": "BRPEC/BRPEC_011842.png",
+    "true_label": "PELICAN_CHICK",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1996,
+    "predicted_class_conf": 0.6367
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014370.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0869,
+    "predicted_class_conf": 0.9131
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008170.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1629,
+    "predicted_class_conf": 0.8369
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004275.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0222,
+    "predicted_class_conf": 0.9778
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005983.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2268,
+    "predicted_class_conf": 0.7732
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016357.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0119,
+    "predicted_class_conf": 0.9881
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006579.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4888,
+    "predicted_class_conf": 0.5102
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007369.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.053,
+    "predicted_class_conf": 0.947
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001129.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0247,
+    "predicted_class_conf": 0.9753
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006291.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "PELICAN_ADULT",
+    "true_class_conf": 0.478,
+    "predicted_class_conf": 0.478
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005087.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0937,
+    "predicted_class_conf": 0.797
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006326.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2872,
+    "predicted_class_conf": 0.6998
+  },
+  {
+    "crop_path": "ROTEF/ROTEF_000089.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0321,
+    "predicted_class_conf": 0.9679
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000409.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.013,
+    "predicted_class_conf": 0.987
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008420.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3219,
+    "predicted_class_conf": 0.6762
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016864.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0753,
+    "predicted_class_conf": 0.9246
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015843.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0221,
+    "predicted_class_conf": 0.9776
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016294.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0382,
+    "predicted_class_conf": 0.9618
+  },
+  {
+    "crop_path": "ROTEF/ROTEF_005648.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "LARGE_WHITE_BIRDS",
+    "true_class_conf": 0.4628,
+    "predicted_class_conf": 0.5327
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014371.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0851,
+    "predicted_class_conf": 0.9148
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014512.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4798,
+    "predicted_class_conf": 0.5188
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001329.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1407,
+    "predicted_class_conf": 0.8588
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016280.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3544,
+    "predicted_class_conf": 0.6418
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017293.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0127,
+    "predicted_class_conf": 0.9873
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005292.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0066,
+    "predicted_class_conf": 0.9918
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016815.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.048,
+    "predicted_class_conf": 0.952
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_003303.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0361,
+    "predicted_class_conf": 0.9639
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006482.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0369,
+    "predicted_class_conf": 0.9629
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002015.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2751,
+    "predicted_class_conf": 0.7247
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_003299.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0124,
+    "predicted_class_conf": 0.9742
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015834.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0322,
+    "predicted_class_conf": 0.9493
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016792.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0121,
+    "predicted_class_conf": 0.9878
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_007911.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2351,
+    "predicted_class_conf": 0.7649
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001723.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2926,
+    "predicted_class_conf": 0.7074
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015557.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.022,
+    "predicted_class_conf": 0.978
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008915.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3148,
+    "predicted_class_conf": 0.6795
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014307.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0184,
+    "predicted_class_conf": 0.9815
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014700.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0186,
+    "predicted_class_conf": 0.9248
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008450.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0313,
+    "predicted_class_conf": 0.9686
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002148.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.3508,
+    "predicted_class_conf": 0.6377
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_003238.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2695,
+    "predicted_class_conf": 0.7298
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_016350.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0266,
+    "predicted_class_conf": 0.9734
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017073.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0783,
+    "predicted_class_conf": 0.9213
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005285.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3905,
+    "predicted_class_conf": 0.6095
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006220.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4552,
+    "predicted_class_conf": 0.5448
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005146.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.2757,
+    "predicted_class_conf": 0.6691
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017287.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.216,
+    "predicted_class_conf": 0.784
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_001277.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4629,
+    "predicted_class_conf": 0.537
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004450.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.4073,
+    "predicted_class_conf": 0.5927
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_004279.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0898,
+    "predicted_class_conf": 0.9102
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014336.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0213,
+    "predicted_class_conf": 0.9785
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_017112.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3065,
+    "predicted_class_conf": 0.6933
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015276.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0039,
+    "predicted_class_conf": 0.9961
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015562.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0014,
+    "predicted_class_conf": 0.9985
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006209.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3298,
+    "predicted_class_conf": 0.6259
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_002920.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0013,
+    "predicted_class_conf": 0.9986
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000217.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0427,
+    "predicted_class_conf": 0.9572
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008350.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3905,
+    "predicted_class_conf": 0.5932
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_015334.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0061,
+    "predicted_class_conf": 0.9939
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_008774.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1958,
+    "predicted_class_conf": 0.7448
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_014449.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.1393,
+    "predicted_class_conf": 0.8603
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_006334.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.0511,
+    "predicted_class_conf": 0.9489
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_000272.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.259,
+    "predicted_class_conf": 0.7408
+  },
+  {
+    "crop_path": "ROTEA/ROTEA_005186.png",
+    "true_label": "ROTEA_ROTEF",
+    "predicted_label": "SATEA_SATEF",
+    "true_class_conf": 0.3923,
+    "predicted_class_conf": 0.6076
+  },
+  {
+    "crop_path": "SATEA/SATEA_000880.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0036,
+    "predicted_class_conf": 0.9964
+  },
+  {
+    "crop_path": "SATEA/SATEA_005357.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0061,
+    "predicted_class_conf": 0.9939
+  },
+  {
+    "crop_path": "SATEA/SATEA_014133.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0614,
+    "predicted_class_conf": 0.9386
+  },
+  {
+    "crop_path": "SATEA/SATEA_013492.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0328,
+    "predicted_class_conf": 0.9671
+  },
+  {
+    "crop_path": "SATEA/SATEA_008988.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0028,
+    "predicted_class_conf": 0.9972
+  },
+  {
+    "crop_path": "SATEA/SATEA_008998.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0008,
+    "predicted_class_conf": 0.9992
+  },
+  {
+    "crop_path": "SATEA/SATEA_005159.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2069,
+    "predicted_class_conf": 0.793
+  },
+  {
+    "crop_path": "SATEA/SATEA_015504.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.4436,
+    "predicted_class_conf": 0.5564
+  },
+  {
+    "crop_path": "SATEA/SATEA_008421.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2108,
+    "predicted_class_conf": 0.7892
+  },
+  {
+    "crop_path": "SATEA/SATEA_009224.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.9999
+  },
+  {
+    "crop_path": "SATEA/SATEA_006451.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0001,
+    "predicted_class_conf": 0.5867
+  },
+  {
+    "crop_path": "SATEA/SATEA_013748.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2492,
+    "predicted_class_conf": 0.7497
+  },
+  {
+    "crop_path": "SATEA/SATEA_014765.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0021,
+    "predicted_class_conf": 0.9979
+  },
+  {
+    "crop_path": "SATEA/SATEA_016762.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2422,
+    "predicted_class_conf": 0.7578
+  },
+  {
+    "crop_path": "SATEA/SATEA_008652.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0432,
+    "predicted_class_conf": 0.9567
+  },
+  {
+    "crop_path": "SATEA/SATEA_015949.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0023,
+    "predicted_class_conf": 0.9977
+  },
+  {
+    "crop_path": "SATEA/SATEA_004748.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2108,
+    "predicted_class_conf": 0.7892
+  },
+  {
+    "crop_path": "SATEF/SATEF_016738.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0062,
+    "predicted_class_conf": 0.9938
+  },
+  {
+    "crop_path": "SATEA/SATEA_008454.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0194,
+    "predicted_class_conf": 0.9806
+  },
+  {
+    "crop_path": "SATEA/SATEA_009202.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0083,
+    "predicted_class_conf": 0.9917
+  },
+  {
+    "crop_path": "SATEF/SATEF_015344.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.2262,
+    "predicted_class_conf": 0.7712
+  },
+  {
+    "crop_path": "SATEA/SATEA_004751.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1258,
+    "predicted_class_conf": 0.6589
+  },
+  {
+    "crop_path": "SATEA/SATEA_000039.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0081,
+    "predicted_class_conf": 0.9291
+  },
+  {
+    "crop_path": "SATEA/SATEA_008622.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.0006,
+    "predicted_class_conf": 0.9994
+  },
+  {
+    "crop_path": "SATEA/SATEA_014412.png",
+    "true_label": "SATEA_SATEF",
+    "predicted_label": "ROTEA_ROTEF",
+    "true_class_conf": 0.1625,
+    "predicted_class_conf": 0.8349
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_010254.png",
+    "true_label": "TRHEA",
+    "predicted_label": "PELICAN_CHICK",
+    "true_class_conf": 0.0006,
+    "predicted_class_conf": 0.4518
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_011123.png",
+    "true_label": "TRHEA",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0,
+    "predicted_class_conf": 1.0
+  },
+  {
+    "crop_path": "TRHEA/TRHEA_009627.png",
+    "true_label": "TRHEA",
+    "predicted_label": "LAUGHING_GULL",
+    "true_class_conf": 0.0485,
+    "predicted_class_conf": 0.9514
+  }
+]
