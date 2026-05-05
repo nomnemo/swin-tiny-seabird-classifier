@@ -1,0 +1,38 @@
+{
+  "train": {
+    "ROTEA_ROTEF": 7315,
+    "SATEA_SATEF": 2209,
+    "PELICAN_CHICK": 1992,
+    "LAUGHING_GULL": 1155,
+    "PELICAN_ADULT": 667,
+    "LARGE_WHITE_BIRDS": 276,
+    "TRHEA": 137,
+    "OTHERS": 127,
+    "GBHE_CHICK": 48,
+    "GBHE_ADULT": 20
+  },
+  "val": {
+    "ROTEA_ROTEF": 914,
+    "SATEA_SATEF": 276,
+    "PELICAN_CHICK": 249,
+    "LAUGHING_GULL": 144,
+    "PELICAN_ADULT": 83,
+    "LARGE_WHITE_BIRDS": 34,
+    "TRHEA": 17,
+    "OTHERS": 16,
+    "GBHE_CHICK": 6,
+    "GBHE_ADULT": 2
+  },
+  "test": {
+    "ROTEA_ROTEF": 915,
+    "SATEA_SATEF": 277,
+    "PELICAN_CHICK": 249,
+    "LAUGHING_GULL": 145,
+    "PELICAN_ADULT": 84,
+    "LARGE_WHITE_BIRDS": 35,
+    "TRHEA": 18,
+    "OTHERS": 16,
+    "GBHE_CHICK": 6,
+    "GBHE_ADULT": 3
+  }
+}

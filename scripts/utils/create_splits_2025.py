@@ -11,6 +11,7 @@ Supports multiple experiment configurations with label remapping:
 - exp3_hank_coarse: Hank's 8-class coarse grouping
 - exp4_fine_grained: 11-class fine-grained grouping (split terns, split egret life stages)
 - exp5_split_terns: Variant of exp3: ROTE/SATE split out; TRHEA its own class; LARGE_WHITE_BIRDS unchanged
+- exp6_drop_mtrns:  Same as exp5 but MTRNS rows are dropped from the dataset entirely
 
 Usage:
     python scripts/utils/create_splits_2025.py \
@@ -104,6 +105,14 @@ EXP5_CONFIG = {
     "others_class": "OTHERS",
 }
 
+EXP6_CONFIG = {
+    "name": "exp6_drop_mtrns",
+    "description": "Same as exp5_split_terns but MTRNS rows are dropped from the dataset",
+    "explicit_mapping": EXP5_CONFIG["explicit_mapping"],
+    "others_class": "OTHERS",
+    "drop_species": ["MTRNS"],
+}
+
 SUBCLASS_TERNS_CONFIG = {
     "name": "subclass_terns",
     "description": "Sub-classifier under TERNS super-class: 3-way split among tern species",
@@ -132,6 +141,7 @@ EXPERIMENT_CONFIGS = {
     "exp3_hank_coarse": EXP3_CONFIG,
     "exp4_fine_grained": EXP4_CONFIG,
     "exp5_split_terns": EXP5_CONFIG,
+    "exp6_drop_mtrns": EXP6_CONFIG,
     "subclass_terns": SUBCLASS_TERNS_CONFIG,
     "subclass_large_white_birds": SUBCLASS_LARGE_WHITE_BIRDS_CONFIG,
 }
@@ -352,7 +362,7 @@ def main():
                 species_counts, config["min_samples"],
                 config["tern_merge"], config["tern_target"],
             )
-        elif exp_name in ("exp3_hank_coarse", "exp4_fine_grained", "exp5_split_terns"):
+        elif exp_name in ("exp3_hank_coarse", "exp4_fine_grained", "exp5_split_terns", "exp6_drop_mtrns"):
             mapping = compute_label_mapping_exp3(
                 all_species, config["explicit_mapping"], config["others_class"],
             )
@@ -361,8 +371,17 @@ def main():
             mapping = compute_label_mapping_subclass(config["explicit_mapping"])
             others_class = config["others_class"]  # None -> drop unmapped species
 
+        # Optionally drop specific species before applying the mapping
+        drop_species = config.get("drop_species")
+        if drop_species:
+            before = len(df)
+            exp_input_df = df[~df["species_name"].isin(drop_species)].copy()
+            print(f"[info] dropping species {drop_species}: {before - len(exp_input_df)} rows removed")
+        else:
+            exp_input_df = df
+
         # Apply mapping then stratified split
-        exp_df = apply_label_mapping(df, mapping, others_class=others_class)
+        exp_df = apply_label_mapping(exp_input_df, mapping, others_class=others_class)
         exp_df = create_stratified_splits(
             exp_df,
             label_key="remapped_label",

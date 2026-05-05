@@ -1,5 +1,5 @@
 ======================================================================
-SPLIT REPORT: exp5_split_terns
+SPLIT REPORT: exp6_drop_mtrns
 ======================================================================
 
 ## Split Method: stratified per remapped class (crop-level)
@@ -7,7 +7,7 @@ SPLIT REPORT: exp5_split_terns
 ## Label Mapping (original -> remapped)
   GBHE_ADULT <- ['GBHEA']
   GBHE_CHICK <- ['GBHEC']
-  LARGE_WHITE_BIRDS <- ['GREGA', 'GREGC', 'GREGF', 'LWBBA', 'REEGA', 'REEGF', 'REEGWMA', 'SNEGA', 'WHIBA', 'WHIBF']
+  LARGE_WHITE_BIRDS <- ['GREGA', 'GREGC', 'GREGF', 'LWBBA', 'LWBBC', 'REEGA', 'REEGF', 'REEGWMA', 'SNEGA', 'WHIBA', 'WHIBF']
   LAUGHING_GULL <- ['LAGUA', 'LAGUF']
   OTHERS <- ['AMAVA', 'BNSTA', 'CATEA', 'DCCOA', 'DCCOF', 'MTRNS', 'NECOA', 'OTHRA', 'ROSPA', 'ROSPC', 'RUTUA', 'RUTUF', 'UNSURE']
   PELICAN_ADULT <- ['BRPEA', 'BRPEF']
@@ -23,48 +23,48 @@ SPLIT REPORT: exp5_split_terns
   LAUGHING_GULL: 1444
   PELICAN_ADULT: 834
   LARGE_WHITE_BIRDS: 345
-  OTHERS: 203
   TRHEA: 172
+  OTHERS: 159
   GBHE_CHICK: 60
   GBHE_ADULT: 25
-  TOTAL: 17479
+  TOTAL: 17435
   NUM CLASSES: 10
 
 ## Per-Split Class Distribution
 
-### TRAIN (13981 samples)
-    ROTEA_ROTEF: 7315 (52.3%)
+### TRAIN (13946 samples)
+    ROTEA_ROTEF: 7315 (52.5%)
     SATEA_SATEF: 2209 (15.8%)
-    PELICAN_CHICK: 1992 (14.2%)
+    PELICAN_CHICK: 1992 (14.3%)
     LAUGHING_GULL: 1155 (8.3%)
     PELICAN_ADULT: 667 (4.8%)
     LARGE_WHITE_BIRDS: 276 (2.0%)
-    OTHERS: 162 (1.2%)
     TRHEA: 137 (1.0%)
+    OTHERS: 127 (0.9%)
     GBHE_CHICK: 48 (0.3%)
     GBHE_ADULT: 20 (0.1%)
 
-### VAL (1745 samples)
-    ROTEA_ROTEF: 914 (52.4%)
-    SATEA_SATEF: 276 (15.8%)
+### VAL (1741 samples)
+    ROTEA_ROTEF: 914 (52.5%)
+    SATEA_SATEF: 276 (15.9%)
     PELICAN_CHICK: 249 (14.3%)
     LAUGHING_GULL: 144 (8.3%)
     PELICAN_ADULT: 83 (4.8%)
-    LARGE_WHITE_BIRDS: 34 (1.9%)
-    OTHERS: 20 (1.1%)
+    LARGE_WHITE_BIRDS: 34 (2.0%)
     TRHEA: 17 (1.0%)
+    OTHERS: 16 (0.9%)
     GBHE_CHICK: 6 (0.3%)
     GBHE_ADULT: 2 (0.1%)
 
-### TEST (1753 samples)
-    ROTEA_ROTEF: 915 (52.2%)
+### TEST (1748 samples)
+    ROTEA_ROTEF: 915 (52.3%)
     SATEA_SATEF: 277 (15.8%)
     PELICAN_CHICK: 249 (14.2%)
     LAUGHING_GULL: 145 (8.3%)
     PELICAN_ADULT: 84 (4.8%)
     LARGE_WHITE_BIRDS: 35 (2.0%)
-    OTHERS: 21 (1.2%)
     TRHEA: 18 (1.0%)
+    OTHERS: 16 (0.9%)
     GBHE_CHICK: 6 (0.3%)
     GBHE_ADULT: 3 (0.2%)
 

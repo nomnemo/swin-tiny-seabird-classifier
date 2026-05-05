@@ -7,6 +7,7 @@ Supports 4 main + 2 sub-classifier experiment presets:
   - exp3_hank_coarse:           8-class Hank coarse grouping
   - exp4_fine_grained:          11-class fine-grained (split terns, split egret life stages)
   - exp5_split_terns:           10-class: exp3 with ROTE/SATE split out and TRHEA separated
+  - exp6_drop_mtrns:            same as exp5 but MTRNS rows dropped from dataset entirely
   - subclass_terns:             3-class sub-classifier under TERNS super-class
   - subclass_large_white_birds: 3-class sub-classifier under LARGE_WHITE_BIRDS super-class
 
@@ -95,6 +96,16 @@ EXPERIMENT_PRESETS = {
         "train_csv": SPLITS_ROOT / "exp5_split_terns" / "train.csv",
         "val_csv": SPLITS_ROOT / "exp5_split_terns" / "val.csv",
         "test_csv": SPLITS_ROOT / "exp5_split_terns" / "test.csv",
+        "image_root": IMAGE_ROOT,
+        "label_key": "remapped_label",
+        "num_classes": 10,
+    },
+    "exp6_drop_mtrns": {
+        "name": "exp6_drop_mtrns",
+        "description": "Same as exp5_split_terns but MTRNS rows dropped from dataset",
+        "train_csv": SPLITS_ROOT / "exp6_drop_mtrns" / "train.csv",
+        "val_csv": SPLITS_ROOT / "exp6_drop_mtrns" / "val.csv",
+        "test_csv": SPLITS_ROOT / "exp6_drop_mtrns" / "test.csv",
         "image_root": IMAGE_ROOT,
         "label_key": "remapped_label",
         "num_classes": 10,
